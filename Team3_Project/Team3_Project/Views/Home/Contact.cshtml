@@ -1,33 +1,34 @@
-﻿@using System.Data
+﻿@model System.Data.DataSet
 @{
-    ViewBag.Title = "Contact";
-}
-@model System.Data.DataSet
-<table>
-    <tr>
-        @foreach (DataColumn col in Model.Tables[0].Columns) {
-            <th>@col.ToString()</th>}
-
-    </tr>
-    @foreach (DataRow row in Model.Tables[0].Rows) {
-        <tr>
-            @for (int i = 0; i < Model.Tables[0].Columns.Count; i++) {
-                <td>@row[i]</td>
-            }
-        </tr>
-    }
-</table>
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+	ViewBag.Title = "Contact";
+}			<table>
+				<tr>
+@foreach (System.Data.DataColumn DataColumn in Model.Tables[0].Columns) {
+					<th>
+						@DataColumn.ToString()
+					</th>
+}				</tr>
+@foreach (System.Data.DataRow DataRow in Model.Tables[0].Rows) {
+				<tr>
+@for (System.Int32 index = 0; index < Model.Tables[0].Columns.Count; index += 1) {
+					<td>
+						@DataRow[index]
+					</td>
+}				</tr>
+}			</table>
+			<h2>
+				@ViewBag.Title.
+			</h2>
+			<h3>
+				@ViewBag.Message
+			</h3>
+			<address>
+				One Microsoft Way<br />
+				Redmond, WA 98052-6399<br />
+				<abbr title="Phone">P:</abbr>
+				425.555.0100
+			</address>
+			<address>
+				<strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+				<strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+			</address>
