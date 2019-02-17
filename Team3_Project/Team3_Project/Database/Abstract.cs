@@ -1,6 +1,5 @@
-﻿
-namespace Team3_Project.Objects.Database {
-	public class Database {
+﻿namespace Team3_Project.Database {
+	abstract public class Database {
 		private readonly System.String connection_string;
 		internal Database(System.String database) {
 			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {

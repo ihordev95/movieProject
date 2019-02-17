@@ -1,10 +1,10 @@
-﻿namespace Team3_Project.Objects.Database {
-	public class DatabaseMovies : Database {
+﻿namespace Team3_Project.Database.Movies {
+	abstract public class Abstract : Database {
 		private readonly System.String table;
 		private readonly System.UInt32? limit;
-		internal DatabaseMovies(System.String table) : this(table, null) {
+		internal Abstract(System.String table) : this(table, null) {
 		}
-		internal DatabaseMovies(System.String table, System.UInt32? limit) : base("memdixyp_imdb") {
+		internal Abstract(System.String table, System.UInt32? limit) : base("memdixyp_imdb") {
 			this.table = table;
 			this.limit = limit;
 		}

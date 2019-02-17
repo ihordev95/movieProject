@@ -47,9 +47,6 @@ namespace Team3_Project.Controllers {
 			this.ViewBag.ReturnUrl = returnUrl;
 			this.ViewBag.Message = "Your application description page.";
 			return this.View();
-			// Objects.Database.DatabaseMovies movie = new Objects.Database.DatabaseMovies();
-			// System.Data.DataSet results = movie.SELECT("SELECT * FROM title_basics limit 10;");
-			// return this.View(results);
 		}
 
 		//
