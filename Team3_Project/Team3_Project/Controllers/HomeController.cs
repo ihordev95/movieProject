@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data;
-using System.Web.Mvc;
+﻿namespace Team3_Project.Controllers {
+	public class HomeController : System.Web.Mvc.Controller {
+		public System.Web.Mvc.ActionResult Index() {
+			return this.View();
+		}
 
-namespace Team3_Project.Controllers {
-    public class HomeController : Controller {
-        public ActionResult Index() {
-            return View();
-        }
+		public System.Web.Mvc.ActionResult About() {
+			DatabaseAccess db = new DatabaseAccess();
+			this.ViewBag.Message = "Your application description page.";
+			System.Data.DataSet results = db.GetDataSet();
+			return this.View(results);
+		}
 
-        public ActionResult About() {
-            DatabaseAccess db = new DatabaseAccess();
-            ViewBag.Message = "Your application description page.";
-            DataSet results = db.GetDataSet();
-            return View(results);
-        }
-
-        public ActionResult Contact() {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-    }
+		public System.Web.Mvc.ActionResult Contact() {
+			this.ViewBag.Message = "Your contact page.";
+			Objects.Database.DatabaseMovies movie = new Objects.Database.DatabaseMovies();
+			System.Data.DataSet results = movie.SELECT("SELECT * FROM title_basics limit 10;");
+			return this.View(results);
+		}
+	}
 }
