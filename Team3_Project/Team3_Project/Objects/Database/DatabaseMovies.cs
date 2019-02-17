@@ -18,13 +18,3 @@
 		}
 	}
 }
-/*
-name_basics
-	title_akas
-	title_basics
-	title_crew
-	title_episode
-	title_principals
-	title_ratings
-
-	*/
