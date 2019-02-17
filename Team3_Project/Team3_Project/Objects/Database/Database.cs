@@ -12,12 +12,11 @@ namespace Team3_Project.Objects.Database {
 			};
 			this.connection_string = MySqlConnectionStringBuilder.ToString();
 		}
-		public System.Data.DataSet SELECT(System.String query) {
+		internal System.Data.DataSet run(System.String query) {
 			System.Data.DataSet DataSet = new System.Data.DataSet();
 			using (MySql.Data.MySqlClient.MySqlConnection MySqlConnection = new MySql.Data.MySqlClient.MySqlConnection(this.connection_string)) {
 				using (MySql.Data.MySqlClient.MySqlCommand MySqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query , MySqlConnection)) {
 					using (MySql.Data.MySqlClient.MySqlDataAdapter MySqlDataAdapter = new MySql.Data.MySqlClient.MySqlDataAdapter(MySqlCommand)) {
-						//MySqlConnection.Open();
 						MySqlDataAdapter.Fill(DataSet);
 					}
 				}

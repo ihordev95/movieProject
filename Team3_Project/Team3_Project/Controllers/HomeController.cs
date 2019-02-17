@@ -13,8 +13,8 @@
 
 		public System.Web.Mvc.ActionResult Contact() {
 			this.ViewBag.Message = "Your contact page.";
-			Objects.Database.DatabaseMovies movie = new Objects.Database.DatabaseMovies();
-			System.Data.DataSet results = movie.SELECT("SELECT * FROM title_basics limit 10;");
+			Objects.Database.TitleBasics  movie = new Objects.Database.TitleBasics(10);
+			System.Data.DataSet results = movie.SELECT();
 			return this.View(results);
 		}
 	}

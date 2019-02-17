@@ -210,6 +210,7 @@
     <Compile Include="Objects\Database\Database.cs" />
     <Compile Include="Objects\Database\DatabaseMovies.cs" />
     <Compile Include="Objects\Database\DatabaseUsers.cs" />
+    <Compile Include="Objects\Database\TitleBasics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
