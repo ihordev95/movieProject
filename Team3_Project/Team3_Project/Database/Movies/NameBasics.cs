@@ -1,7 +1,10 @@
 ﻿namespace Team3_Project.Database.Movies {
 	public class NameBasics : Abstract {
-		private static readonly System.String[] column = { "nconst" , "primaryName" , "birthYear" , "deathYear" , "primaryProfession" , "knownForTitles" };
-		public NameBasics() : base("name_basics" , column) {
+		protected override System.String table() {
+			return "name_basics";
+		}
+		protected override System.String[] column() {
+			return new System.String[] { "nconst" , "primaryName" , "birthYear" , "deathYear" , "primaryProfession" , "knownForTitles" };
 		}
 	}
 }

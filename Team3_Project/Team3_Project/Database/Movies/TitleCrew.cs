@@ -1,7 +1,10 @@
 ﻿namespace Team3_Project.Database.Movies {
 	public class TitleCrew : Abstract {
-		private static readonly System.String[] column = { "tconst" , "directors" , "writers" };
-		public TitleCrew() : base("title_crew" , column) {
+		protected override System.String table() {
+			return "title_crew";
+		}
+		protected override System.String[] column() {
+			return new System.String[] { "tconst" , "directors" , "writers" };
 		}
 	}
 }

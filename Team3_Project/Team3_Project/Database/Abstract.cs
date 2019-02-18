@@ -1,12 +1,11 @@
 ﻿namespace Team3_Project.Database {
 	public abstract class Database {
 		private readonly System.String connection_string;
-		protected Database(System.String database) {
+		protected Database() {
 			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {
 				Server = "memdixyp.mysql.db.hostpoint.ch" ,
 				UserID = "memdixyp_user" ,
 				Password = "rmpvzSp4BsNm" ,
-				Database = database ,
 				SslMode = MySql.Data.MySqlClient.MySqlSslMode.None
 			};
 			this.connection_string = MySqlConnectionStringBuilder.ToString();
