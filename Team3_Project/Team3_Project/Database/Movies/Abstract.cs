@@ -1,19 +1,18 @@
 ﻿namespace Team3_Project.Database.Movies {
-	abstract public class Abstract : Database {
+	public abstract class Abstract : Database {
+		public System.String log;
 		private readonly System.String table;
-		private readonly System.UInt32? limit;
-		internal Abstract(System.String table) : this(table, null) {
-		}
-		internal Abstract(System.String table, System.UInt32? limit) : base("memdixyp_imdb") {
+		private readonly System.String column;
+		protected Abstract(System.String table , System.String[] column) : base("memdixyp_imdb") {
+			this.log = System.String.Empty;
 			this.table = table;
-			this.limit = limit;
+			this.column = System.String.Join(", " , column);
 		}
-		public System.Data.DataSet SELECT() {
-			return this.SELECT(System.String.Empty);
-		}
-		public System.Data.DataSet SELECT(System.String WHERE) {
-			System.String LIMIT = this.limit == null ? System.String.Empty : System.String.Concat(" LIMIT " , this.limit);
-			System.String query = System.String.Concat("SELECT * FROM " , this.table , WHERE, LIMIT);
+		public System.Data.DataSet SELECT(System.String WHERE = "" , System.UInt32? limit = null) {
+			System.String SELECT = System.String.Concat("SELECT " , this.column , " FROM " , this.table);
+			System.String LIMIT = limit == null ? System.String.Empty : System.String.Concat(" LIMIT " , limit , ";");
+			System.String query = System.String.Concat(SELECT , WHERE , LIMIT);
+			this.log = query;
 			return this.run(query);
 		}
 	}

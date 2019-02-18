@@ -13,8 +13,9 @@
 
 		public System.Web.Mvc.ActionResult Contact() {
 			this.ViewBag.Message = "Your contact page.";
-			Objects.Database.TitleBasics  movie = new Objects.Database.TitleBasics(10);
-			System.Data.DataSet results = movie.SELECT();
+			System.String[] value = this.Request.QueryString.GetValues("table");
+			Database.Movies.TitleBasics  movie = new Database.Movies.TitleBasics();
+			System.Data.DataSet results = movie.SELECT(System.String.Empty, 10);
 			return this.View(results);
 		}
 	}

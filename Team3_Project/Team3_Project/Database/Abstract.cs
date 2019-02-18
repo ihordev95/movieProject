@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database {
-	abstract public class Database {
+	public abstract class Database {
 		private readonly System.String connection_string;
-		internal Database(System.String database) {
+		protected Database(System.String database) {
 			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {
 				Server = "memdixyp.mysql.db.hostpoint.ch" ,
 				UserID = "memdixyp_user" ,
@@ -11,7 +11,7 @@
 			};
 			this.connection_string = MySqlConnectionStringBuilder.ToString();
 		}
-		internal System.Data.DataSet run(System.String query) {
+		protected System.Data.DataSet run(System.String query) {
 			System.Data.DataSet DataSet = new System.Data.DataSet();
 			using (MySql.Data.MySqlClient.MySqlConnection MySqlConnection = new MySql.Data.MySqlClient.MySqlConnection(this.connection_string)) {
 				using (MySql.Data.MySqlClient.MySqlCommand MySqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query , MySqlConnection)) {

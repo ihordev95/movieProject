@@ -1,8 +1,7 @@
 ﻿namespace Team3_Project.Database.Movies {
 	public class TitlePrincipals : Abstract {
-		public TitlePrincipals() : this(null) {
-		}
-		public TitlePrincipals(System.UInt32? limit) : base("title_principals" , limit) {
+		private static readonly System.String[] column = { "tconst" , "ordering" , "nconst" , "category" , "job" , "characters" };
+		public TitlePrincipals() : base("title_principals" , column) {
 		}
 	}
 }

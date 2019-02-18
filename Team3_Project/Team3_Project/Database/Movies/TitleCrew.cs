@@ -1,8 +1,7 @@
 ﻿namespace Team3_Project.Database.Movies {
 	public class TitleCrew : Abstract {
-		public TitleCrew() : this(null) {
-		}
-		public TitleCrew(System.UInt32? limit) : base("title_crew" , limit) {
+		private static readonly System.String[] column = { "tconst" , "directors" , "writers" };
+		public TitleCrew() : base("title_crew" , column) {
 		}
 	}
 }
