@@ -1,6 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+//TABLES:
+//user: used for authentication
+//title_basics:
+
 
 public class DatabaseAccess {
 
