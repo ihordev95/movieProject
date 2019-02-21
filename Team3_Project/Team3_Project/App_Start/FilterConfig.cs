@@ -1,10 +1,7 @@
-﻿using System.Web;
-using System.Web.Mvc;
-
-namespace Team3_Project {
-    public class FilterConfig {
-        public static void RegisterGlobalFilters(GlobalFilterCollection filters) {
-            filters.Add(new HandleErrorAttribute());
-        }
-    }
+﻿namespace Team3_Project {
+	public class FilterConfig {
+		public static void RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection filters) {
+			filters.Add(new System.Web.Mvc.HandleErrorAttribute());
+		}
+	}
 }
