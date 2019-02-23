@@ -200,12 +200,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Landing.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Database\Abstract.cs" />
     <Compile Include="Database\Movies\Abstract.cs" />
@@ -224,10 +226,24 @@
     <Compile Include="App_Data\DatabaseAccess.cs" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\landing-page.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\bg-masthead.jpg" />
+    <Content Include="Images\bg-showcase-1.jpg" />
+    <Content Include="Images\bg-showcase-2.jpg" />
+    <Content Include="Images\bg-showcase-3.jpg" />
+    <Content Include="Images\connect.jpg" />
+    <Content Include="Images\connect_opt.jpg" />
+    <Content Include="Images\movies-tiles.jpg" />
+    <Content Include="Images\Streaming.jpg" />
+    <Content Include="Images\testimonials-1.jpg" />
+    <Content Include="Images\testimonials-2.jpg" />
+    <Content Include="Images\testimonials-3.jpg" />
+    <Content Include="Images\theater-names.jpg" />
+    <Content Include="Images\theater-names_opt.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -278,6 +294,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
+    <Content Include="Views\Landing\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
