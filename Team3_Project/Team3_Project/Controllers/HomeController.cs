@@ -1,4 +1,6 @@
-﻿namespace Team3_Project.Controllers {
+﻿using System;
+
+namespace Team3_Project.Controllers {
 	public class HomeController : System.Web.Mvc.Controller {
 		public System.Web.Mvc.ActionResult Index() {
 			return this.View();
@@ -6,8 +8,10 @@
 
 		public System.Web.Mvc.ActionResult About() {
 			DatabaseAccess db = new DatabaseAccess();
-			this.ViewBag.Message = "Your application description page.";
+			this.ViewBag.Message = "Your application description page." + db.getHash("TestHash2").ToString();
 			System.Data.DataSet results = db.GetDataSet();
+            //db.insertAccount("TEST", "TESTEMAIL@EMAIL.COM", "Password");
+            //Nullable<bool> test = db.comparePass("TESTEMAIL@EMAIL2.COM", "Password");
 			return this.View(results);
 		}
 

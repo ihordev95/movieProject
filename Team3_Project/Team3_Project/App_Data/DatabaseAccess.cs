@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 //TABLES:
 //user: used for authentication
 //title_basics:
@@ -17,10 +19,10 @@ public class DatabaseAccess {
 	public DataSet GetDataSet() //Example function to run a "GET" stored procedure
 	{
 		try {
-			MySqlConnection connection = new MySqlConnection(this.conn); //Make a new connection using our connection string
+			MySqlConnection connection = new MySqlConnection(this.conn2); //Make a new connection using our connection string
 			DataSet ds = new DataSet();
 
-			MySqlCommand cmd = new MySqlCommand("SELECT * FROM title_basics limit 1000;" , connection);
+			MySqlCommand cmd = new MySqlCommand("SELECT * FROM user limit 1000;" , connection);
 			//MySqlCommand cmd = new MySqlCommand("<stored procedure name>", connection);
 			//cmd.CommandType = CommandType.StoredProcedure; //This tells it we are using a stored procedure instead of passing in a query of our own
 
@@ -89,4 +91,83 @@ public class DatabaseAccess {
 			//MessageBox.Show(ex.Message);
 		}
 	}
+
+    //Hash a string and return the result
+    public String getHash(String s)
+    {
+        HashAlgorithm algo = SHA256.Create();
+        Byte[] hash = algo.ComputeHash(Encoding.UTF8.GetBytes(s));
+        return Convert.ToBase64String(hash);
+    }
+
+    //Insert a new user account with the username, email, and will hash the password and insert it
+    public void insertAccount(String username, String email,  String password)
+    {
+        try
+        {
+            MySqlConnection connection = new MySqlConnection(this.conn2); //Make a new connection using our connection string
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO user (name, password, email) VALUES ('" + username + "', '" 
+                + getHash(password) + "', '" + email + "');", connection);
+            try
+            {
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+
+            finally
+            {
+                connection.Close(); //Make sure we always close the database connection when done with it
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new ArgumentException(ex.Message);
+        }
+    }
+
+
+    //This will return true if the password matches the email, false if it doesnt, and null if the email does not exist in the database
+    public Nullable<bool> comparePass(String email, String password)
+    {
+        String hashedPass = "";
+
+        try
+        {
+            MySqlConnection connection = new MySqlConnection(this.conn2); //Make a new connection using our connection string
+            MySqlCommand cmd = new MySqlCommand("SELECT password FROM user WHERE email = @email", connection);
+            cmd.Parameters.AddWithValue("@email", email);
+            try
+            {
+                connection.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    hashedPass = reader.GetString(0);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
+
+            finally
+            {
+                connection.Close(); //Make sure we always close the database connection when done with it
+            }
+        }
+        catch (Exception ex)
+        {
+            throw new ArgumentException(ex.Message);
+        }
+        if(hashedPass == "")
+        {
+            return null;
+        }
+        return hashedPass.Equals(getHash(password));
+    }
 }
