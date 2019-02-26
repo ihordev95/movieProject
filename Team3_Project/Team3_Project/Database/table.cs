@@ -1,24 +1,19 @@
 ﻿namespace Team3_Project.Database {
 	public class Table {
-		private static System.String[] prefix_array(System.String prefix , System.String[] array) {
-			System.Int32 index = array.Length;
-			System.String[] result = new System.String[index];
-			while (index > 0) {
-				index -= 1;
-				result[index] = System.String.Concat(prefix , array[index]);
-			}
-			return result;
-		}
 		public readonly System.String schema;
 		public readonly System.String table;
 		public readonly System.String column;
 		public readonly System.String select;
 		public readonly System.String insert;
 		public Table(System.String schema , System.String table , System.String[] column) {
-			this.schema = schema;
-			this.table = System.String.Concat(this.schema , '.' , table);
-			System.String prefix = System.String.Concat(this.table , ".");
-			System.String[] result = prefix_array(prefix , column);
+			this.schema = System.String.Concat("`", schema, "`");
+			this.table = System.String.Concat(this.schema , ".`" , table, "`");
+			System.Int32 index = column.Length;
+			System.String[] result = new System.String[index];
+			while (index > 0) {
+				index -= 1;
+				result[index] = System.String.Concat(this.table , ".`" , column[index] , "`");
+			}
 			this.column = System.String.Join(", " , result);
 			this.select = System.String.Concat(new System.String[] {
 				"SELECT ",
