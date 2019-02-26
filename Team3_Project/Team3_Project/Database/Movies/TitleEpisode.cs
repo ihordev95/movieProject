@@ -1,10 +1,21 @@
 ﻿namespace Team3_Project.Database.Movies {
-	public class TitleEpisode : Abstract {
-		protected override System.String table() {
-			return "title_episode";
+	public class TitleEpisode : Database {
+		static TitleEpisode() {
+			Database.Table[typeof(TitleEpisode)] = new Table("memdixyp_imdb" , "title_akas" , new System.String[] {
+				"tconst",
+				"parentTconst",
+				"seasonNumber",
+				"episodeNumber"
+			});
 		}
-		protected override System.String[] column() {
-			return new System.String[] { "tconst" , "parentTconst" , "seasonNumber" , "episodeNumber" };
+		public override System.Data.DataSet SELECT(System.String where = "" , System.UInt32? limit = null) {
+			return this.run(Database.Table[typeof(TitleEpisode)].SELECT(where , limit));
+		}
+		public override System.Data.DataSet INSERT() {
+			throw new System.NotImplementedException();
+		}
+		public override System.String[] values() {
+			throw new System.NotImplementedException();
 		}
 	}
 }

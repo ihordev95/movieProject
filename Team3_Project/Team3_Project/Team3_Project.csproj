@@ -201,6 +201,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Database\Table.cs" />
     <Compile Include="Database\Users\Users.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -208,9 +209,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Database\Abstract.cs" />
-    <Compile Include="Database\Movies\Abstract.cs" />
-    <Compile Include="Database\Users\Abstract.cs" />
+    <Compile Include="Database\Database.cs" />
     <Compile Include="Database\Movies\NameBasics.cs" />
     <Compile Include="Database\Movies\TitleAkas.cs" />
     <Compile Include="Database\Movies\TitleCrew.cs" />
