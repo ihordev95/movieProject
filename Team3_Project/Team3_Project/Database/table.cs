@@ -39,7 +39,8 @@
 			return System.String.Concat(this.select , this.where(where) , this.limit(limit) , ';');
 		}
 		public System.String INSERT(Database data ) {
-			return System.String.Concat(this.insert, " VALUES (", data.values(), ");");
+			System.String values = System.String.Join(", " , data.values());
+			return System.String.Concat(this.insert, " VALUES (", values, ");");
 		}
 
 	}

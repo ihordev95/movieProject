@@ -44,6 +44,20 @@ namespace Team3_Project.Controllers {
 				}
 			}
 			System.Data.DataSet results = movie.SELECT(System.String.Empty, 10);
+			Database.Users.Users user = new Database.Users.Users();
+			System.String[] email = this.Request.QueryString.GetValues("email");
+			if (email != null && email.Length >= 1) {
+				user.email = email[0];
+			}
+			System.String[] password = this.Request.QueryString.GetValues("password");
+			if (password != null && password.Length >= 1) {
+				user.password = password[0];
+			}
+			System.String[] name = this.Request.QueryString.GetValues("name");
+			if (name != null && name.Length >= 1) {
+				user.name = name[0];
+			}
+			user.INSERT();
 			return this.View(results);
 		}
 	}
