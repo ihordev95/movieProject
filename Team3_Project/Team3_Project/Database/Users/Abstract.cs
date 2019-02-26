@@ -1,13 +1,7 @@
 ﻿namespace Team3_Project.Database {
-	public class Abstract : Database {
-		protected override System.String database() {
+	public abstract class Abstract : Database {
+		protected sealed override System.String schema() {
 			return "memdixyp_film";
-		}
-		protected override System.String table() {
-			throw new System.NotImplementedException();
-		}
-		protected override System.String[] column() {
-			throw new System.NotImplementedException();
 		}
 	}
 }

@@ -107,7 +107,7 @@ public class DatabaseAccess {
         {
             MySqlConnection connection = new MySqlConnection(this.conn2); //Make a new connection using our connection string
             MySqlCommand cmd = new MySqlCommand("INSERT INTO user (name, password, email) VALUES ('" + username + "', '" 
-                + getHash(password) + "', '" + email + "');", connection);
+                + this.getHash(password) + "', '" + email + "');", connection);
             try
             {
                 connection.Open();
@@ -131,7 +131,7 @@ public class DatabaseAccess {
 
 
     //This will return true if the password matches the email, false if it doesnt, and null if the email does not exist in the database
-    public Nullable<bool> comparePass(String email, String password)
+    public Nullable<System.Boolean> comparePass(String email, String password)
     {
         String hashedPass = "";
 
@@ -164,10 +164,6 @@ public class DatabaseAccess {
         {
             throw new ArgumentException(ex.Message);
         }
-        if(hashedPass == "")
-        {
-            return null;
-        }
-        return hashedPass.Equals(getHash(password));
-    }
+		return hashedPass == "" ? null : (Boolean?) hashedPass.Equals(this.getHash(password));
+	}
 }
