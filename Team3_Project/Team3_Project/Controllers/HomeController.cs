@@ -46,8 +46,7 @@ namespace Team3_Project.Controllers {
 					movie = new database.memdixyp_film.user();
 				}
 			}
-			System.String query = movie.SELECT(System.String.Empty , 50);
-			System.Data.DataSet results = movie.run(query);
+			System.Data.DataSet results = movie.SELECT(System.String.Empty , 50);
 			database.memdixyp_film.user user = new database.memdixyp_film.user();
 			System.String[] email = this.Request.QueryString.GetValues("email");
 			if (email != null && email.Length >= 1) {
