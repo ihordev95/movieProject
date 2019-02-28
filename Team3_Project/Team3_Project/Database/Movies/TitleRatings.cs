@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database.Movies {
 	public class TitleRatings : Database {
 		static TitleRatings() {
-			Database.Table[typeof(TitleRatings)] = new Table("memdixyp_imdb" , "title_ratings" , new System.String[] {
+			Database.Table[typeof(TitleRatings)] = new Tables("memdixyp_imdb" , "title_ratings" , new System.String[] {
 				"tconst",
 				"averageRating",
 				"numVotes"

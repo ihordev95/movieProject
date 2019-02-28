@@ -1,9 +1,9 @@
 ﻿namespace Team3_Project.Database {
 	public abstract class Database {
-		protected static System.Collections.Generic.Dictionary<System.Type , Table> Table;
+		protected static System.Collections.Generic.Dictionary<System.Type , Tables> Table;
 		private static readonly System.String connection_string;
 		static Database() {
-			Table = new System.Collections.Generic.Dictionary<System.Type , Table>();
+			Table = new System.Collections.Generic.Dictionary<System.Type , Tables>();
 			//
 			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {
 				Server = "memdixyp.mysql.db.hostpoint.ch" ,

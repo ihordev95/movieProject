@@ -1,11 +1,11 @@
 ﻿namespace Team3_Project.Database {
-	public class Table {
+	public class Tables {
 		public readonly System.String schema;
 		public readonly System.String table;
 		public readonly System.String column;
 		public readonly System.String select;
 		public readonly System.String insert;
-		public Table(System.String schema , System.String table , System.String[] column) {
+		public Tables(System.String schema , System.String table , System.String[] column) {
 			this.schema = System.String.Concat("`", schema, "`");
 			this.table = System.String.Concat(this.schema , ".`" , table, "`");
 			System.Int32 index = column.Length;

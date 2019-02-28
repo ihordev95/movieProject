@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database.Movies {
 	public class TitleEpisode : Database {
 		static TitleEpisode() {
-			Database.Table[typeof(TitleEpisode)] = new Table("memdixyp_imdb" , "title_episode" , new System.String[] {
+			Database.Table[typeof(TitleEpisode)] = new Tables("memdixyp_imdb" , "title_episode" , new System.String[] {
 				"tconst",
 				"parentTconst",
 				"seasonNumber",

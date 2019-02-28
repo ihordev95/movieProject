@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database.Movies {
 	public class TitleBasics : Database {
 		static TitleBasics() {
-			Database.Table[typeof(TitleBasics)] = new Table("memdixyp_imdb" , "title_basics" , new System.String[] {
+			Database.Table[typeof(TitleBasics)] = new Tables("memdixyp_imdb" , "title_basics" , new System.String[] {
 				"tconst",
 				"titleType",
 				"primaryTitle",

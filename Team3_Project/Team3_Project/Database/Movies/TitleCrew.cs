@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database.Movies {
 	public class TitleCrew : Database {
 		static TitleCrew() {
-			Database.Table[typeof(TitleCrew)] = new Table("memdixyp_imdb" , "title_crew" , new System.String[] {
+			Database.Table[typeof(TitleCrew)] = new Tables("memdixyp_imdb" , "title_crew" , new System.String[] {
 				"tconst",
 				"directors",
 				"writers" 

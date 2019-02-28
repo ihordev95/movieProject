@@ -202,7 +202,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Database\Table.cs" />
+    <Compile Include="Database\column.cs" />
+    <Compile Include="Database\table.cs" />
+    <Compile Include="Database\schema.cs" />
+    <Compile Include="Database\Tables.cs" />
+    <Compile Include="Database\test\name_basics.cs" />
+    <Compile Include="Database\test\memdixyp_imdb.cs" />
     <Compile Include="Database\Users\Users.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

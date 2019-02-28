@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database.Movies {
 	public class NameBasics : Database {
 		static NameBasics() {
-			Database.Table[typeof(NameBasics)] = new Table("memdixyp_imdb" , "name_basics" , new System.String[] {
+			Database.Table[typeof(NameBasics)] = new Tables("memdixyp_imdb" , "name_basics" , new System.String[] {
 				"nconst" ,
 				"primaryName",
 				"birthYear",

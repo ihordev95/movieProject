@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database.Movies {
 	public class TitleAkas : Database {
 		static TitleAkas() {
-			Database.Table[typeof(TitleAkas)] = new Table("memdixyp_imdb" , "title_akas" , new System.String[] {
+			Database.Table[typeof(TitleAkas)] = new Tables("memdixyp_imdb" , "title_akas" , new System.String[] {
 				"titleId",
 				"ordering",
 				"title",

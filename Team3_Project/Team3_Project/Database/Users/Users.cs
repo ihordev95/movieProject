@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database.Users {
 	public class Users : Database {
 		static Users() {
-			Database.Table[typeof(Users)] = new Table("memdixyp_film" , "user" , new System.String[] {
+			Database.Table[typeof(Users)] = new Tables("memdixyp_film" , "user" , new System.String[] {
 				"identifier",
 				"name",
 				"password",
