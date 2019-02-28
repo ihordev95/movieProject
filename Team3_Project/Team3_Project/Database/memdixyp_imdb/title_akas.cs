@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.database.memdixyp_imdb {
 	public class title_akas : database {
 		public System.String titleId;
-		public System.Byte orderig;
+		public System.Byte ordering;
 		public System.String title;
 		public System.String region;
 		public System.String language;
@@ -17,7 +17,7 @@
 		public override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.titleId),
-				nameof(this.orderig),
+				nameof(this.ordering),
 				nameof(this.title),
 				nameof(this.region),
 				nameof(this.language),
@@ -29,7 +29,7 @@
 		public override System.Object[] values() {
 			return new System.Object[] {
 				this.titleId,
-				this.orderig,
+				this.ordering,
 				this.title,
 				this.region,
 				this.language,

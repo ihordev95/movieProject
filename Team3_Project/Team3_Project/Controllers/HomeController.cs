@@ -18,33 +18,37 @@ namespace Team3_Project.Controllers {
 		public System.Web.Mvc.ActionResult Contact() {
 			this.ViewBag.Message = "Your contact page.";
 			System.String[] value = this.Request.QueryString.GetValues("table");
-			Database.root movie = new Database.Movies.TitleBasics();
+			database.database movie = new database.memdixyp_imdb.title_basics();
 			if (value != null && value.Length >= 1) {
 				System.String table = value[0];
 				if (table == "0") {
-					movie = new Database.Movies.NameBasics();
+					movie = new database.memdixyp_imdb.name_basics();
 				}
 				if (table == "1") {
-					movie = new Database.Movies.TitleAkas();
+					movie = new database.memdixyp_imdb.title_akas();
 				}
 				if (table == "2") {
-					movie = new Database.Movies.TitleBasics();
+					movie = new database.memdixyp_imdb.title_basics();
 				}
 				if (table == "3") {
-					movie = new Database.Movies.TitleCrew();
+					movie = new database.memdixyp_imdb.title_crew();
 				}
 				if (table == "4") {
-					movie = new Database.Movies.TitleEpisode();
+					movie = new database.memdixyp_imdb.title_episode();
 				}
 				if (table == "5") {
-					movie = new Database.Movies.TitlePrincipals();
+					movie = new database.memdixyp_imdb.title_principals();
 				}
 				if (table == "6") {
-					movie = new Database.Movies.TitleRatings();
+					movie = new database.memdixyp_imdb.title_ratings();
+				}
+				if (table == "7") {
+					movie = new database.memdixyp_film.user();
 				}
 			}
-			System.Data.DataSet results = movie.SELECT(System.String.Empty, 10);
-			Database.Users.Users user = new Database.Users.Users();
+			System.String query = movie.SELECT(System.String.Empty , 50);
+			System.Data.DataSet results = movie.run(query);
+			database.memdixyp_film.user user = new database.memdixyp_film.user();
 			System.String[] email = this.Request.QueryString.GetValues("email");
 			if (email != null && email.Length >= 1) {
 				user.email = email[0];
