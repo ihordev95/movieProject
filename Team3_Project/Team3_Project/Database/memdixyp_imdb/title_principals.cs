@@ -1,5 +1,5 @@
-﻿namespace Team3_Project.Database.memdixyp_imdb {
-	public class title_principals : root {
+﻿namespace Team3_Project.database.memdixyp_imdb {
+	public class title_principals : database {
 		public System.String tconst;
 		public System.Int16 ordering;
 		public System.String nconst;

@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database.Movies {
-	public class TitleAkas : Database {
+	public class TitleAkas : root {
 		static TitleAkas() {
-			Database.Table[typeof(TitleAkas)] = new Tables("memdixyp_imdb" , "title_akas" , new System.String[] {
+			root.Table[typeof(TitleAkas)] = new Tables("memdixyp_imdb" , "title_akas" , new System.String[] {
 				"titleId",
 				"ordering",
 				"title",
@@ -21,7 +21,7 @@
 		public System.String attributes;
 		public System.Boolean isOriginalTitle;
 		public override System.Data.DataSet SELECT(System.String where = "" , System.UInt32? limit = null) {
-			return this.run(Database.Table[typeof(TitleAkas)].SELECT(where , limit));
+			return this.run(root.Table[typeof(TitleAkas)].SELECT(where , limit));
 		}
 		public override System.Data.DataSet INSERT() {
 			throw new System.NotImplementedException();

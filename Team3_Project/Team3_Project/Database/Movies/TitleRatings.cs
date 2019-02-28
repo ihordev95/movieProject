@@ -1,14 +1,14 @@
 ﻿namespace Team3_Project.Database.Movies {
-	public class TitleRatings : Database {
+	public class TitleRatings : root {
 		static TitleRatings() {
-			Database.Table[typeof(TitleRatings)] = new Tables("memdixyp_imdb" , "title_ratings" , new System.String[] {
+			root.Table[typeof(TitleRatings)] = new Tables("memdixyp_imdb" , "title_ratings" , new System.String[] {
 				"tconst",
 				"averageRating",
 				"numVotes"
 			});
 		}
 		public override System.Data.DataSet SELECT(System.String where = "" , System.UInt32? limit = null) {
-			return this.run(Database.Table[typeof(TitleRatings)].SELECT(where , limit));
+			return this.run(root.Table[typeof(TitleRatings)].SELECT(where , limit));
 		}
 		public override System.Data.DataSet INSERT() {
 			throw new System.NotImplementedException();

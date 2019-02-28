@@ -1,5 +1,5 @@
-﻿namespace Team3_Project.Database.memdixyp_imdb {
-	public class title_basics : root {
+﻿namespace Team3_Project.database.memdixyp_imdb {
+	public class title_basics : database {
 		public System.String tconst;
 		public System.String titleType;
 		public System.String primaryTitle;

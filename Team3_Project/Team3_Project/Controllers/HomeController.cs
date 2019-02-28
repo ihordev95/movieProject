@@ -18,7 +18,7 @@ namespace Team3_Project.Controllers {
 		public System.Web.Mvc.ActionResult Contact() {
 			this.ViewBag.Message = "Your contact page.";
 			System.String[] value = this.Request.QueryString.GetValues("table");
-			Database.Database movie = new Database.Movies.TitleBasics();
+			Database.root movie = new Database.Movies.TitleBasics();
 			if (value != null && value.Length >= 1) {
 				System.String table = value[0];
 				if (table == "0") {

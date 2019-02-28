@@ -1,5 +1,5 @@
-﻿namespace Team3_Project.Database.memdixyp_imdb {
-	public class title_ratings : root {
+﻿namespace Team3_Project.database.memdixyp_imdb {
+	public class title_ratings : database {
 		public System.String tconst;
 		public System.Single averageRating;
 		public System.Int32 numVotes;

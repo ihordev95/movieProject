@@ -38,7 +38,7 @@
 		public System.String SELECT(System.String where = "" , System.UInt32? limit = null) {
 			return System.String.Concat(this.select , this.where(where) , this.limit(limit) , ';');
 		}
-		public System.String INSERT(Database data ) {
+		public System.String INSERT(root data ) {
 			System.String values = System.String.Join(", " , data.values());
 			return System.String.Concat(this.insert, " VALUES (", values, ");");
 		}

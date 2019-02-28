@@ -1,5 +1,5 @@
-﻿namespace Team3_Project.Database.memdixyp_imdb {
-	public class title_episode : root {
+﻿namespace Team3_Project.database.memdixyp_imdb {
+	public class title_episode : database {
 		public System.String tconst;
 		public System.String parentTconst;
 		public System.Int16? seasonNumber;

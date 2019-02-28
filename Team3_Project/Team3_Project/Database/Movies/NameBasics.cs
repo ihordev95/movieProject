@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database.Movies {
-	public class NameBasics : Database {
+	public class NameBasics : root {
 		static NameBasics() {
-			Database.Table[typeof(NameBasics)] = new Tables("memdixyp_imdb" , "name_basics" , new System.String[] {
+			root.Table[typeof(NameBasics)] = new Tables("memdixyp_imdb" , "name_basics" , new System.String[] {
 				"nconst" ,
 				"primaryName",
 				"birthYear",
@@ -17,7 +17,7 @@
 		public System.String primaryProfession;
 		public System.String knownForTitles;
 		public override System.Data.DataSet SELECT(System.String where = "" , System.UInt32? limit = null) {
-			return this.run(Database.Table[typeof(NameBasics)].SELECT(where , limit));
+			return this.run(root.Table[typeof(NameBasics)].SELECT(where , limit));
 		}
 		public override System.Data.DataSet INSERT() {
 			throw new System.NotImplementedException();

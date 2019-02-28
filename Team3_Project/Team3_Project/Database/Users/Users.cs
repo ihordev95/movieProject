@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Database.Users {
-	public class Users : Database {
+	public class Users : root {
 		static Users() {
-			Database.Table[typeof(Users)] = new Tables("memdixyp_film" , "user" , new System.String[] {
+			root.Table[typeof(Users)] = new Tables("memdixyp_film" , "user" , new System.String[] {
 				"identifier",
 				"name",
 				"password",
@@ -19,10 +19,10 @@
 			this.email = "";
 		}
 		public override System.Data.DataSet SELECT(System.String where = "" , System.UInt32? limit = null) {
-			return this.run(Database.Table[typeof(Users)].SELECT(where , limit));
+			return this.run(root.Table[typeof(Users)].SELECT(where , limit));
 		}
 		public override System.Data.DataSet INSERT() {
-			return this.run(Database.Table[typeof(Users)].INSERT(this));
+			return this.run(root.Table[typeof(Users)].INSERT(this));
 		}
 		public override System.String[] values() {
 			return new System.String[] {

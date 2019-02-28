@@ -1,4 +1,4 @@
-﻿namespace Team3_Project.Database {
+﻿namespace Team3_Project.database {
 	public static class keyword {
 		public const System.String SPACE = " ";
 		public const System.String GRAVE_ACCENT = "`";

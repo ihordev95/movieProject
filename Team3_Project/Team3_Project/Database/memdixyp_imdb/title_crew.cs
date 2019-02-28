@@ -1,5 +1,5 @@
-﻿namespace Team3_Project.Database.memdixyp_imdb {
-	public class title_crew : root {
+﻿namespace Team3_Project.database.memdixyp_imdb {
+	public class title_crew : database {
 		public System.String tconst;
 		public System.String directors;
 		public System.String writers;

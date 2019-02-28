@@ -1,5 +1,5 @@
-﻿namespace Team3_Project.Database.memdixyp_imdb {
-	public class name_basics : root {
+﻿namespace Team3_Project.database.memdixyp_imdb {
+	public class name_basics : database {
 		public System.String nconst;
 		public System.String primaryName;
 		public System.Int16? birthYear;
