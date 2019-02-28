@@ -25,7 +25,7 @@
 				nameof(this.startYear),
 				nameof(this.endYear),
 				nameof(this.runtimeMinutes),
-				nameof(this.genres
+				nameof(this.genres)
 			};
 		}
 		public override System.Object[] values() {
