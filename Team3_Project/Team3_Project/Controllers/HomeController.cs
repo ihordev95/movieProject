@@ -42,8 +42,11 @@ namespace Team3_Project.Controllers {
 				if (table == "6") {
 					movie = new Database.Movies.TitleRatings();
 				}
+				if (table == "7") {
+					movie = new Database.Users.Users();
+				}
 			}
-			System.Data.DataSet results = movie.SELECT(System.String.Empty, 10);
+			System.Data.DataSet results = movie.SELECT(System.String.Empty, 50);
 			Database.Users.Users user = new Database.Users.Users();
 			System.String[] email = this.Request.QueryString.GetValues("email");
 			if (email != null && email.Length >= 1) {
