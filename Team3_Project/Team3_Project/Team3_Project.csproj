@@ -219,16 +219,16 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Database\Abstract.cs" />
-    <Compile Include="Database\Movies\Abstract.cs" />
-    <Compile Include="Database\Users\Abstract.cs" />
-    <Compile Include="Database\Movies\NameBasics.cs" />
-    <Compile Include="Database\Movies\TitleAkas.cs" />
-    <Compile Include="Database\Movies\TitleCrew.cs" />
-    <Compile Include="Database\Movies\TitleEpisode.cs" />
-    <Compile Include="Database\Movies\TitlePrincipals.cs" />
-    <Compile Include="Database\Movies\TitleRatings.cs" />
-    <Compile Include="Database\Movies\TitleBasics.cs" />
+    <Compile Include="database\memdixyp_film\user.cs" />
+    <Compile Include="database\database.cs" />
+    <Compile Include="database\keyword.cs" />
+    <Compile Include="database\memdixyp_imdb\name_basics.cs" />
+    <Compile Include="database\memdixyp_imdb\title_crew.cs" />
+    <Compile Include="database\memdixyp_imdb\title_episode.cs" />
+    <Compile Include="database\memdixyp_imdb\title_principals.cs" />
+    <Compile Include="database\memdixyp_imdb\title_ratings.cs" />
+    <Compile Include="database\memdixyp_imdb\title_akas.cs" />
+    <Compile Include="database\memdixyp_imdb\title_basics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
