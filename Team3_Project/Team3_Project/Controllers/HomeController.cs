@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Team3_Project.Controllers {
+﻿namespace Team3_Project.Controllers {
 	public class HomeController : System.Web.Mvc.Controller {
 		public System.Web.Mvc.ActionResult Index() {
 			return this.View();
@@ -19,7 +17,8 @@ namespace Team3_Project.Controllers {
 			this.ViewBag.Message = "Your contact page.";
 			System.Collections.Specialized.NameValueCollection QueryString = this.Request.QueryString;
 			database.database movie = database.database.get(QueryString);
-			System.Data.DataSet results = movie.SELECT(System.String.Empty , 50);
+			System.String where = database.url.name_value(QueryString , "where");
+			System.Data.DataSet results = movie.SELECT(where , 50);
 			database.memdixyp_film.user user = new database.memdixyp_film.user();
 			System.String[] email = this.Request.QueryString.GetValues("email");
 			if (email != null && email.Length >= 1) {

@@ -214,6 +214,7 @@
     <Compile Include="database\memdixyp_imdb\title_ratings.cs" />
     <Compile Include="database\memdixyp_imdb\title_akas.cs" />
     <Compile Include="database\memdixyp_imdb\title_basics.cs" />
+    <Compile Include="database\url.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
