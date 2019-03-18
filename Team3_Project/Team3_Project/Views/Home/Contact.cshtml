@@ -2,41 +2,150 @@
 @{
 	ViewBag.Title = "Contact";
 }			<form>
-				<select name="table">
-					<option value="name_basics">
-						Name Basics
-					</option>
-					<option value="title_akas">
-						Title Akas
-					</option>
-					<option value="title_basics">
-						Title Basics
-					</option>
-					<option value="title_crew">
-						Title Crew
-					</option>
-					<option value="title_episode">
-						Title Episode
-					</option>
-					<option value="title_principals">
-						Title Principals
-					</option>
-					<option value="title_ratings">
-						Title Ratings
-					</option>
-					<option value="list">
-						List
-					</option>
-					<option value="list_film">
-						List Film
-					</option>
-					<option value="user">
-						User
-					</option>
-				</select>
-				<input name="where" type="text" />
+				<table>
+					<tr>
+						<td>
+							Table
+						</td>
+						<td>
+							<select name="table">
+								<option value="name_basics">
+									Name Basics
+								</option>
+								<option value="title_akas">
+									Title Akas
+								</option>
+								<option value="title_basics">
+									Title Basics
+								</option>
+								<option value="title_crew">
+									Title Crew
+								</option>
+								<option value="title_episode">
+									Title Episode
+								</option>
+								<option value="title_principals">
+									Title Principals
+								</option>
+								<option value="title_ratings">
+									Title Ratings
+								</option>
+								<option value="list">
+									List
+								</option>
+								<option value="list_film">
+									List Film
+								</option>
+								<option value="user">
+									User
+								</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Where
+						</td>
+						<td>
+							<input name="where" type="text" />
+						</td>
+					</tr>
+				</table>
 				<button type="submit">
 					Search
+				</button>
+			</form>
+			<form>
+				<table>
+					<tr>
+						<td>
+							User
+						</td>
+						<td>
+							<input name="user" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Name
+						</td>
+						<td>
+							<input name="name" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Hidden
+						</td>
+						<td>
+							<input name="hidden" type="checkbox" />
+						</td>
+					</tr>
+				</table>
+				<input name="identifier" type="hidden" value="0" />
+				<input name="insert_list" type="hidden" value="True" />
+				<input name="table" type="hidden" value="list" />
+				<button type="submit">
+					Insert List
+				</button>
+			</form>
+			<form>
+				<table>
+					<tr>
+						<td>
+							List
+						</td>
+						<td>
+							<input name="list" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Film
+						</td>
+						<td>
+							<input name="film" type="text" />
+						</td>
+					</tr>
+				</table>
+				<input name="insert_list_film" type="hidden" value="True" />
+				<input name="table" type="hidden" value="list_film" />
+				<button type="submit">
+					Insert List Film
+				</button>
+			</form>
+			<form>
+				<table>
+					<tr>
+						<td>
+							Name
+						</td>
+						<td>
+							<input name="name" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Password
+						</td>
+						<td>
+							<input name="password" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Email
+						</td>
+						<td>
+							<input name="email" type="text" />
+						</td>
+					</tr>
+				</table>
+				<input name="identifier" type="hidden" value="0" />
+				<input name="insert_user" type="hidden" value="True" />
+				<input name="table" type="hidden" value="user" />
+				<button type="submit">
+					Insert User
 				</button>
 			</form>
 			<table>
