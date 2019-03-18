@@ -100,7 +100,7 @@
 			query.Append(keyword.SEMICOLON);
 			return this.run(query.ToString());
 		}
-		public System.Data.DataSet INSERT(System.String where = "" , System.UInt32? limit = null) {
+		public System.Data.DataSet INSERT() {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
 			query.Append(keyword.INSERT);
 			query.Append(keyword.SPACE);
@@ -148,7 +148,7 @@
 			return DataSet;
 		}
 		public static database get(System.Collections.Specialized.NameValueCollection NameValueCollection) {
-			switch (url.name_value(NameValueCollection , "table")) {
+			switch (url.String(NameValueCollection , "table")) {
 				case "name_basics":
 					return new memdixyp_imdb.name_basics();
 				case "title_akas":
@@ -164,11 +164,11 @@
 				case "title_ratings":
 					return new memdixyp_imdb.title_ratings();
 				case "list":
-					return new memdixyp_film.list();
+					return new memdixyp_film.list(NameValueCollection);
 				case "list_film":
-					return new memdixyp_film.list_film();
+					return new memdixyp_film.list_film(NameValueCollection);
 				case "user":
-					return new memdixyp_film.user();
+					return new memdixyp_film.user(NameValueCollection);
 				default:
 					return new memdixyp_imdb.title_basics();
 			}

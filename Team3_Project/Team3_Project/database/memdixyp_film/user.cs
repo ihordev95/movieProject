@@ -4,6 +4,12 @@
 		public System.String name;
 		public System.String password;
 		public System.String email;
+		public user (System.Collections.Specialized.NameValueCollection NameValueCollection) {
+			this.identifier = url.Int32(NameValueCollection , "identifier");
+			this.name = url.String(NameValueCollection , "name");
+			this.password = url.String(NameValueCollection , "password");
+			this.email = url.String(NameValueCollection , "email");
+		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
 		}

@@ -17,21 +17,9 @@
 			this.ViewBag.Message = "Your contact page.";
 			System.Collections.Specialized.NameValueCollection QueryString = this.Request.QueryString;
 			database.database movie = database.database.get(QueryString);
-			System.String where = database.url.name_value(QueryString , "where");
+			System.String where = database.url.String(QueryString , "where");
 			System.Data.DataSet results = movie.SELECT(where , 50);
-			database.memdixyp_film.user user = new database.memdixyp_film.user();
-			System.String[] email = this.Request.QueryString.GetValues("email");
-			if (email != null && email.Length >= 1) {
-				user.email = email[0];
-			}
-			System.String[] password = this.Request.QueryString.GetValues("password");
-			if (password != null && password.Length >= 1) {
-				user.password = password[0];
-			}
-			System.String[] name = this.Request.QueryString.GetValues("name");
-			if (name != null && name.Length >= 1) {
-				user.name = name[0];
-			}
+			database.memdixyp_film.user user = new database.memdixyp_film.user(QueryString);
 			user.INSERT();
 			return this.View(results);
 		}
