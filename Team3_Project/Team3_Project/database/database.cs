@@ -147,5 +147,33 @@
 			}
 			return DataSet;
 		}
+		public static database get (System.Collections.Specialized.NameValueCollection NameValueCollection) {
+			System.String[] values = NameValueCollection.GetValues("table");
+			if (values != null && values.Length >= 1) {
+				switch (values[0]) {
+					case "name_basics":
+						return new memdixyp_imdb.name_basics();
+					case "title_akas":
+						return new memdixyp_imdb.title_akas();
+					case "title_basics":
+						return new memdixyp_imdb.title_basics();
+					case "title_crew":
+						return new memdixyp_imdb.title_crew();
+					case "title_episode":
+						return new memdixyp_imdb.title_episode();
+					case "title_principals":
+						return new memdixyp_imdb.title_principals();
+					case "title_ratings":
+						return new memdixyp_imdb.title_ratings();
+					case "list":
+						return new memdixyp_film.list();
+					case "list_film":
+						return new memdixyp_film.list_film();
+					case "user":
+						return new memdixyp_film.user();
+				}
+			}
+			return new memdixyp_imdb.title_basics();
+		}
 	}
 }

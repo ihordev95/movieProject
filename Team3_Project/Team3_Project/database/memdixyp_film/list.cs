@@ -1,0 +1,30 @@
+﻿	namespace Team3_Project.database.memdixyp_film {
+	public class list : database {
+		public System.Int32 identifier;
+		public System.Int32 user;
+		public System.String name;
+		public System.Boolean hidden;
+		public override System.String schema() {
+			return nameof(memdixyp_film);
+		}
+		public override System.String table() {
+			return nameof(list);
+		}
+		public override System.String[] columns() {
+			return new System.String[] {
+				nameof(this.identifier),
+				nameof(this.user),
+				nameof(this.name),
+				nameof(this.hidden)
+			};
+		}
+		public override System.Object[] values() {
+			return new System.Object[] {
+				this.identifier,
+				this.user,
+				this.name,
+				this.hidden
+			};
+		}
+	}
+}
