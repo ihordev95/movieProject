@@ -218,13 +218,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\DatabaseAccess.cs" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\landing-page.css" />
-    <Content Include="Content\register-login.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Images\connect_opt.jpg" />
     <Content Include="Images\movies-tiles.jpg" />
     <Content Include="Images\Streaming.jpg" />
