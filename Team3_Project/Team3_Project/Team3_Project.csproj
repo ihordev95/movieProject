@@ -202,20 +202,20 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="database\memdixyp_film\list.cs" />
-    <Compile Include="database\memdixyp_film\list_follow.cs" />
-    <Compile Include="database\memdixyp_film\list_movie.cs" />
-    <Compile Include="database\memdixyp_film\user.cs" />
-    <Compile Include="database\database.cs" />
-    <Compile Include="database\keyword.cs" />
-    <Compile Include="database\memdixyp_imdb\name_basics.cs" />
-    <Compile Include="database\memdixyp_imdb\title_crew.cs" />
-    <Compile Include="database\memdixyp_imdb\title_episode.cs" />
-    <Compile Include="database\memdixyp_imdb\title_principals.cs" />
-    <Compile Include="database\memdixyp_imdb\title_ratings.cs" />
-    <Compile Include="database\memdixyp_imdb\title_akas.cs" />
-    <Compile Include="database\memdixyp_imdb\title_basics.cs" />
-    <Compile Include="database\url.cs" />
+    <Compile Include="Adatabase\memdixyp_film\list.cs" />
+    <Compile Include="Adatabase\memdixyp_film\list_follow.cs" />
+    <Compile Include="Adatabase\memdixyp_film\list_movie.cs" />
+    <Compile Include="Adatabase\memdixyp_film\user.cs" />
+    <Compile Include="Adatabase\database.cs" />
+    <Compile Include="Adatabase\keyword.cs" />
+    <Compile Include="Adatabase\memdixyp_imdb\name_basics.cs" />
+    <Compile Include="Adatabase\memdixyp_imdb\title_crew.cs" />
+    <Compile Include="Adatabase\memdixyp_imdb\title_episode.cs" />
+    <Compile Include="Adatabase\memdixyp_imdb\title_principals.cs" />
+    <Compile Include="Adatabase\memdixyp_imdb\title_ratings.cs" />
+    <Compile Include="Adatabase\memdixyp_imdb\title_akas.cs" />
+    <Compile Include="Adatabase\memdixyp_imdb\title_basics.cs" />
+    <Compile Include="Adatabase\url.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
