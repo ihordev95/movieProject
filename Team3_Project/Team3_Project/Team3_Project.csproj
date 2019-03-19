@@ -206,7 +206,6 @@
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\UserHomePageController.cs" />
     <Compile Include="Controllers\ViewListController.cs" />
-    <Compile Include="Databases\Abstract.cs" />
     <Compile Include="Databases\database.cs" />
     <Compile Include="Databases\keyword.cs" />
     <Compile Include="Databases\memdixyp_film\list.cs" />
@@ -220,17 +219,8 @@
     <Compile Include="Databases\memdixyp_imdb\title_episode.cs" />
     <Compile Include="Databases\memdixyp_imdb\title_principals.cs" />
     <Compile Include="Databases\memdixyp_imdb\title_ratings.cs" />
-    <Compile Include="Databases\Movies\Abstract.cs" />
-    <Compile Include="Databases\Movies\NameBasics.cs" />
-    <Compile Include="Databases\Movies\TitleAkas.cs" />
-    <Compile Include="Databases\Movies\TitleBasics.cs" />
-    <Compile Include="Databases\Movies\TitleCrew.cs" />
-    <Compile Include="Databases\Movies\TitleEpisode.cs" />
-    <Compile Include="Databases\Movies\TitlePrincipals.cs" />
-    <Compile Include="Databases\Movies\TitleRatings.cs" />
     <Compile Include="Databases\unicode.cs" />
     <Compile Include="Databases\url.cs" />
-    <Compile Include="Databases\Users\Abstract.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
