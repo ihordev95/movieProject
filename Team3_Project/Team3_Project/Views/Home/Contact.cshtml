@@ -33,8 +33,11 @@
 								<option value="list">
 									List
 								</option>
-								<option value="list_film">
-									List Film
+								<option value="list_follow">
+									List Follow
+								</option>
+								<option value="list_movie">
+									List Movie
 								</option>
 								<option value="user">
 									User
@@ -93,6 +96,31 @@
 				<table>
 					<tr>
 						<td>
+							User
+						</td>
+						<td>
+							<input name="user" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							List
+						</td>
+						<td>
+							<input name="list" type="text" />
+						</td>
+					</tr>
+				</table>
+				<input name="insert_list_follow" type="hidden" value="True" />
+				<input name="table" type="hidden" value="list_follow" />
+				<button type="submit">
+					Insert List Follow
+				</button>
+			</form>
+			<form>
+				<table>
+					<tr>
+						<td>
 							List
 						</td>
 						<td>
@@ -101,17 +129,17 @@
 					</tr>
 					<tr>
 						<td>
-							Film
+							Movie
 						</td>
 						<td>
-							<input name="film" type="text" />
+							<input name="movie" type="text" />
 						</td>
 					</tr>
 				</table>
-				<input name="insert_list_film" type="hidden" value="True" />
-				<input name="table" type="hidden" value="list_film" />
+				<input name="insert_list_movie" type="hidden" value="True" />
+				<input name="table" type="hidden" value="list_movie" />
 				<button type="submit">
-					Insert List Film
+					Insert List Movie
 				</button>
 			</form>
 			<form>

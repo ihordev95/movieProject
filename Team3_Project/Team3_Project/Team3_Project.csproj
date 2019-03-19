@@ -203,7 +203,8 @@
     <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="database\memdixyp_film\list.cs" />
-    <Compile Include="database\memdixyp_film\list_film.cs" />
+    <Compile Include="database\memdixyp_film\list_follow.cs" />
+    <Compile Include="database\memdixyp_film\list_movie.cs" />
     <Compile Include="database\memdixyp_film\user.cs" />
     <Compile Include="database\database.cs" />
     <Compile Include="database\keyword.cs" />

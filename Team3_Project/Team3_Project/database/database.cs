@@ -4,8 +4,8 @@
 		public abstract System.String table();
 		public abstract System.String[] columns();
 		public abstract System.Object[] values();
-		private System.String log = System.String.Empty;
-		private System.String error = System.String.Empty;
+		public System.String log = System.String.Empty;
+		public System.String error = System.String.Empty;
 		private System.String QUOTE_IDENTIFIER(System.String IDENTIFIER) {
 			return System.String.Concat(keyword.GRAVE_ACCENT , IDENTIFIER , keyword.GRAVE_ACCENT);
 		}
@@ -165,8 +165,10 @@
 					return new memdixyp_imdb.title_ratings();
 				case "list":
 					return new memdixyp_film.list(NameValueCollection);
-				case "list_film":
-					return new memdixyp_film.list_film(NameValueCollection);
+				case "list_follow":
+					return new memdixyp_film.list_follow(NameValueCollection);
+				case "list_movie":
+					return new memdixyp_film.list_movie(NameValueCollection);
 				case "user":
 					return new memdixyp_film.user(NameValueCollection);
 				default:

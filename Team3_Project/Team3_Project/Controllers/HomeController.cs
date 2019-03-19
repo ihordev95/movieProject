@@ -20,8 +20,11 @@
 			if (database.url.Boolean(QueryString , "insert_list")) {
 				new database.memdixyp_film.list(QueryString).INSERT();
 			}
-			if (database.url.Boolean(QueryString , "insert_list_film")) {
-				new database.memdixyp_film.list_film(QueryString).INSERT();
+			if (database.url.Boolean(QueryString , "insert_list_follow")) {
+				new database.memdixyp_film.list_follow(QueryString).INSERT();
+			}
+			if (database.url.Boolean(QueryString , "insert_list_movie")) {
+				new database.memdixyp_film.list_movie(QueryString).INSERT();
 			}
 			if (database.url.Boolean(QueryString , "insert_user")) {
 				new database.memdixyp_film.user(QueryString).INSERT();
