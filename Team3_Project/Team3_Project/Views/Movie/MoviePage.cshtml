@@ -1,10 +1,38 @@
-﻿
+﻿@model System.Data.DataSet
 @{
-    ViewBag.Title = "MoviePage";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-<h2>MoviePage</h2>
-
-
-<p>This is the page that would be loaded dynamically.</p>
+	ViewBag.Title = "MoviePage";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}			<h2>MoviePage</h2>
+			<p>This is the page that would be loaded dynamically.</p>
+			<form>
+				<table>
+					<tr>
+						<td>
+							Movie Id
+						</td>
+						<td>
+							<input name="movie" type="text" value="tt0000001" />
+						</td>
+						<td>
+							<button type="submit">
+								Search
+							</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<table>
+				<tr>
+@foreach (System.Data.DataColumn DataColumn in Model.Tables[0].Columns) {
+					<th>
+						@DataColumn.ToString()
+					</th>
+}				</tr>
+@foreach (System.Data.DataRow DataRow in Model.Tables[0].Rows) {
+				<tr>
+@for (System.Int32 index = 0; index < Model.Tables[0].Columns.Count; index += 1) {
+					<td>
+						@DataRow[index]
+					</td>
+}				</tr>
+}			</table>
