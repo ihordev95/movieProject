@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Team3_Project.Controllers
-{
-    public class UserHomePageController : Controller
-    {
-        // GET: UserHomePage
-        public ActionResult UserHomepage()
-        {
-            return View();
-        }
-    }
+﻿namespace Team3_Project.Controllers {
+	public class UserHomePageController : System.Web.Mvc.Controller {
+		// GET: UserHomePage
+		public System.Web.Mvc.ActionResult UserHomepage() {
+			return this.View();
+		}
+	}
 }
