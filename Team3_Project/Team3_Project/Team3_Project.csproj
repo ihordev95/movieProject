@@ -199,9 +199,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BrowseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\UserHomePageController.cs" />
+    <Compile Include="Controllers\ViewListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -290,6 +294,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Landing\Index.cshtml" />
+    <Content Include="Views\Browse\BrowseMovies.cshtml" />
+    <Content Include="Views\UserHomePage\UserHomepage.cshtml" />
+    <Content Include="Views\Movie\MoviePage.cshtml" />
+    <Content Include="Views\ViewList\ViewList.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
