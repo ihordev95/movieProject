@@ -6,8 +6,8 @@
 		<title>
 			@ViewBag.Title - My ASP.NET Application
 		</title>
-		<link href="/Styles/bootstrap.css" rel="stylesheet" />
-		<link href="/Styles/site.css" rel="stylesheet" />
+		<link href="/Content/bootstrap.css" rel="stylesheet" />
+		<link href="/Content/site.css" rel="stylesheet" />
 		<script src="/Scripts/modernizr-2.6.2.js">
 		</script>
 		<script src="/Scripts/head.js">
@@ -20,41 +20,52 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarCollapse">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="/Home/Index">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/Home/About">About</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="/Home/Contact" id="dropdown_table" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Tables
-						</a>
-						<div class="dropdown-menu" aria-labelledby="dropdown_table">
-							<a class="dropdown-item" href="/Home/Contact?table=name_basics">Name Basics</a>
-							<a class="dropdown-item" href="/Home/Contact?table=title_akas">Title Akas</a>
-							<a class="dropdown-item" href="/Home/Contact?table=title_basics">Title Basics</a>
-							<a class="dropdown-item" href="/Home/Contact?table=title_crew">Title Crew</a>
-							<a class="dropdown-item" href="/Home/Contact?table=title_episode">Title Episode</a>
-							<a class="dropdown-item" href="/Home/Contact?table=title_principals">Title Pricipals</a>
-							<a class="dropdown-item" href="/Home/Contact?table=title_ratings">Title Ratings</a>
-							<a class="dropdown-item" href="/Home/Contact?table=list">List</a>
-							<a class="dropdown-item" href="/Home/Contact?table=list_follow">List Follow</a>
-							<a class="dropdown-item" href="/Home/Contact?table=list_movie">List Movie</a>
-							<a class="dropdown-item" href="/Home/Contact?table=user">User</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/Account/Register">Register</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/Account/Login">Log in</a>
-					</li>
-					<li class="nav-item active">
-						<a class="nav-link" href="/Landing/Index">Landing Page</a>
-					</li>
-				</ul>
+                <ul class="navbar-nav mr-auto">
+                    <!--
+    <li class="nav-item active">
+        <a class="nav-link" href="/Home/Index">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/Home/About">About</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/Home/Contact" id="dropdown_table" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tables
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdown_table">
+            <a class="dropdown-item" href="/Home/Contact?table=0">Name Basics</a>
+            <a class="dropdown-item" href="/Home/Contact?table=1">Title Akas</a>
+            <a class="dropdown-item" href="/Home/Contact?table=2">Title Basics</a>
+            <a class="dropdown-item" href="/Home/Contact?table=3">Title Crew</a>
+            <a class="dropdown-item" href="/Home/Contact?table=4">Title Episode</a>
+            <a class="dropdown-item" href="/Home/Contact?table=5">Title Pricipals</a>
+            <a class="dropdown-item" href="/Home/Contact?table=6">Title Ratings</a>
+        </div>
+    </li>
+       -->
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Landing/Index">Landing Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Account/Login">Log in</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/UserHomePage/UserHomepage">User Homepage</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Browse/BrowseMovies">Browsing Page</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Movie/MoviePage">Movie Page</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/ViewList/ViewList">View List Page</a>
+                    </li>
+                </ul>
 				<form class="form-inline mt-2 mt-md-0">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

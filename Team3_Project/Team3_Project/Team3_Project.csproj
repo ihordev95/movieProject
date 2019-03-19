@@ -199,24 +199,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BrowseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Databases\unicode.cs" />
-    <Compile Include="Databases\memdixyp_film\list.cs" />
-    <Compile Include="Databases\memdixyp_film\list_follow.cs" />
-    <Compile Include="Databases\memdixyp_film\list_movie.cs" />
-    <Compile Include="Databases\memdixyp_film\user.cs" />
-    <Compile Include="Databases\database.cs" />
-    <Compile Include="Databases\keyword.cs" />
-    <Compile Include="Databases\memdixyp_imdb\name_basics.cs" />
-    <Compile Include="Databases\memdixyp_imdb\title_crew.cs" />
-    <Compile Include="Databases\memdixyp_imdb\title_episode.cs" />
-    <Compile Include="Databases\memdixyp_imdb\title_principals.cs" />
-    <Compile Include="Databases\memdixyp_imdb\title_ratings.cs" />
-    <Compile Include="Databases\memdixyp_imdb\title_akas.cs" />
-    <Compile Include="Databases\memdixyp_imdb\title_basics.cs" />
-    <Compile Include="Databases\url.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\UserHomePageController.cs" />
+    <Compile Include="Controllers\ViewListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,18 +213,29 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Landing.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Database\Abstract.cs" />
+    <Compile Include="Database\Movies\Abstract.cs" />
+    <Compile Include="Database\Users\Abstract.cs" />
+    <Compile Include="Database\Movies\NameBasics.cs" />
+    <Compile Include="Database\Movies\TitleAkas.cs" />
+    <Compile Include="Database\Movies\TitleCrew.cs" />
+    <Compile Include="Database\Movies\TitleEpisode.cs" />
+    <Compile Include="Database\Movies\TitlePrincipals.cs" />
+    <Compile Include="Database\Movies\TitleRatings.cs" />
+    <Compile Include="Database\Movies\TitleBasics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\DatabaseAccess.cs" />
-    <Content Include="Fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Styles\bootstrap.css" />
-    <Content Include="Styles\bootstrap.min.css" />
-    <Content Include="Styles\landing-page.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\landing-page.css" />
+    <Content Include="Content\register-login.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Styles\Site.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Images\connect_opt.jpg" />
     <Content Include="Images\movies-tiles.jpg" />
     <Content Include="Images\Streaming.jpg" />
@@ -245,9 +245,6 @@
     <Content Include="Images\theater-names_opt.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -297,9 +294,16 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <Content Include="Views\Landing\Index.cshtml" />
+    <Content Include="Views\Browse\BrowseMovies.cshtml" />
+    <Content Include="Views\UserHomePage\UserHomepage.cshtml" />
+    <Content Include="Views\Movie\MoviePage.cshtml" />
+    <Content Include="Views\ViewList\ViewList.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
