@@ -1,4 +1,4 @@
-﻿namespace Team3_Project.database.memdixyp_imdb {
+﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_akas : database {
 		public System.String titleId;
 		public System.Byte ordering;

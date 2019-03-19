@@ -1,4 +1,4 @@
-﻿namespace Team3_Project.database.memdixyp_imdb {
+﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class name_basics : database {
 		public System.String nconst;
 		public System.String primaryName;

@@ -1,4 +1,4 @@
-﻿namespace Team3_Project.database.memdixyp_film {
+﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list_movie :  database {
 		public System.Int32 list;
 		public System.Int32 movie;

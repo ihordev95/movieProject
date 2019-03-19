@@ -1,4 +1,4 @@
-﻿namespace Team3_Project.database.memdixyp_imdb {
+﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_principals : database {
 		public System.String tconst;
 		public System.Int16 ordering;

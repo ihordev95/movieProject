@@ -1,4 +1,4 @@
-﻿namespace Team3_Project.database {
+﻿namespace Team3_Project.Databases {
 	static public class url {
 		public static System.String String(System.Collections.Specialized.NameValueCollection NameValueCollection , System.String name) {
 			System.String[] GetValues = NameValueCollection.GetValues(name);

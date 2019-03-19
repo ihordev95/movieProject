@@ -1,4 +1,4 @@
-﻿namespace Team3_Project.database {
+﻿namespace Team3_Project.Databases {
 	public static class keyword {
 		public const System.Char SPACE = (System.Char) 0x0020;
 		public const System.Char APOSTROPHE = (System.Char) 0x0027;

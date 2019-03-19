@@ -1,4 +1,4 @@
-﻿namespace Team3_Project.database.memdixyp_imdb {
+﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_ratings : database {
 		public System.String tconst;
 		public System.Single averageRating;

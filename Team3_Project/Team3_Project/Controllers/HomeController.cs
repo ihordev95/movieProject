@@ -17,21 +17,21 @@
 			this.ViewBag.Message = "Your contact page.";
 			System.Collections.Specialized.NameValueCollection QueryString = this.Request.QueryString;
 			//
-			if (database.url.Boolean(QueryString , "insert_list")) {
-				new database.memdixyp_film.list(QueryString).INSERT();
+			if (Databases.url.Boolean(QueryString , "insert_list")) {
+				new Databases.memdixyp_film.list(QueryString).INSERT();
 			}
-			if (database.url.Boolean(QueryString , "insert_list_follow")) {
-				new database.memdixyp_film.list_follow(QueryString).INSERT();
+			if (Databases.url.Boolean(QueryString , "insert_list_follow")) {
+				new Databases.memdixyp_film.list_follow(QueryString).INSERT();
 			}
-			if (database.url.Boolean(QueryString , "insert_list_movie")) {
-				new database.memdixyp_film.list_movie(QueryString).INSERT();
+			if (Databases.url.Boolean(QueryString , "insert_list_movie")) {
+				new Databases.memdixyp_film.list_movie(QueryString).INSERT();
 			}
-			if (database.url.Boolean(QueryString , "insert_user")) {
-				new database.memdixyp_film.user(QueryString).INSERT();
+			if (Databases.url.Boolean(QueryString , "insert_user")) {
+				new Databases.memdixyp_film.user(QueryString).INSERT();
 			}
 			//
-			database.database movie = database.database.get(QueryString);
-			System.String where = database.url.String(QueryString , "where");
+			Databases.database movie = Databases.database.get(QueryString);
+			System.String where = Databases.url.String(QueryString , "where");
 			System.Data.DataSet results = movie.SELECT(where , 50);
 			return this.View(results);
 		}

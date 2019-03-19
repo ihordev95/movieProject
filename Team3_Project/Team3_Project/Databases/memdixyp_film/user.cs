@@ -1,4 +1,4 @@
-﻿namespace Team3_Project.database.memdixyp_film {
+﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class user : database {
 		public System.Int32 identifier;
 		public System.String name;

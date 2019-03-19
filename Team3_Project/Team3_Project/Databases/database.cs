@@ -1,4 +1,4 @@
-﻿namespace Team3_Project.database {
+﻿namespace Team3_Project.Databases {
 	public abstract class database {
 		public abstract System.String schema();
 		public abstract System.String table();
