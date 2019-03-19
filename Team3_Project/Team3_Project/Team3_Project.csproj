@@ -206,6 +206,31 @@
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\UserHomePageController.cs" />
     <Compile Include="Controllers\ViewListController.cs" />
+    <Compile Include="Databases\Abstract.cs" />
+    <Compile Include="Databases\database.cs" />
+    <Compile Include="Databases\keyword.cs" />
+    <Compile Include="Databases\memdixyp_film\list.cs" />
+    <Compile Include="Databases\memdixyp_film\list_follow.cs" />
+    <Compile Include="Databases\memdixyp_film\list_movie.cs" />
+    <Compile Include="Databases\memdixyp_film\user.cs" />
+    <Compile Include="Databases\memdixyp_imdb\name_basics.cs" />
+    <Compile Include="Databases\memdixyp_imdb\title_akas.cs" />
+    <Compile Include="Databases\memdixyp_imdb\title_basics.cs" />
+    <Compile Include="Databases\memdixyp_imdb\title_crew.cs" />
+    <Compile Include="Databases\memdixyp_imdb\title_episode.cs" />
+    <Compile Include="Databases\memdixyp_imdb\title_principals.cs" />
+    <Compile Include="Databases\memdixyp_imdb\title_ratings.cs" />
+    <Compile Include="Databases\Movies\Abstract.cs" />
+    <Compile Include="Databases\Movies\NameBasics.cs" />
+    <Compile Include="Databases\Movies\TitleAkas.cs" />
+    <Compile Include="Databases\Movies\TitleBasics.cs" />
+    <Compile Include="Databases\Movies\TitleCrew.cs" />
+    <Compile Include="Databases\Movies\TitleEpisode.cs" />
+    <Compile Include="Databases\Movies\TitlePrincipals.cs" />
+    <Compile Include="Databases\Movies\TitleRatings.cs" />
+    <Compile Include="Databases\unicode.cs" />
+    <Compile Include="Databases\url.cs" />
+    <Compile Include="Databases\Users\Abstract.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,6 +244,7 @@
   <ItemGroup>
     <Compile Include="App_Data\DatabaseAccess.cs" />
     <Content Include="favicon.ico" />
+    <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\connect_opt.jpg" />
     <Content Include="Images\movies-tiles.jpg" />
@@ -229,6 +255,9 @@
     <Content Include="Images\theater-names_opt.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -242,6 +271,11 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\head.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Styles\bootstrap.css" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\landing-page.css" />
+    <Content Include="Styles\register-login.css" />
+    <Content Include="Styles\Site.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
