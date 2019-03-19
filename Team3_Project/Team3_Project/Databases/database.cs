@@ -7,13 +7,13 @@
 		public System.String log = System.String.Empty;
 		public System.String error = System.String.Empty;
 		private System.String QUOTE_IDENTIFIER(System.String IDENTIFIER) {
-			return System.String.Concat(keyword.GRAVE_ACCENT , IDENTIFIER , keyword.GRAVE_ACCENT);
+			return System.String.Concat(unicode.GRAVE_ACCENT , IDENTIFIER , unicode.GRAVE_ACCENT);
 		}
 		private System.String STRING_LITERAL(System.String STRING) {
-			return System.String.Concat(keyword.APOSTROPHE , STRING , keyword.APOSTROPHE);
+			return System.String.Concat(unicode.APOSTROPHE , STRING , unicode.APOSTROPHE);
 		}
 		private System.String QUALIFY_IDENTIFIER(System.String QUALIFIER , System.String IDENTIFIER) {
-			return System.String.Concat(QUALIFIER , keyword.FULL_STOP , IDENTIFIER);
+			return System.String.Concat(QUALIFIER , unicode.FULL_STOP , IDENTIFIER);
 		}
 		public System.String SCHEMA() {
 			System.String schema = this.schema();
@@ -67,9 +67,9 @@
 		private System.String LIMIT(System.UInt32? limit = null) {
 			if (limit != null) {
 				System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
-				StringBuilder.Append(keyword.SPACE);
+				StringBuilder.Append(unicode.SPACE);
 				StringBuilder.Append(keyword.LIMIT);
-				StringBuilder.Append(keyword.SPACE);
+				StringBuilder.Append(unicode.SPACE);
 				StringBuilder.Append(limit);
 				return StringBuilder.ToString();
 			}
@@ -78,9 +78,9 @@
 		private System.String WHERE(System.String where = "") {
 			if (!System.String.IsNullOrEmpty(where)) {
 				System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
-				StringBuilder.Append(keyword.SPACE);
+				StringBuilder.Append(unicode.SPACE);
 				StringBuilder.Append(keyword.WHERE);
-				StringBuilder.Append(keyword.SPACE);
+				StringBuilder.Append(unicode.SPACE);
 				StringBuilder.Append(where);
 				return StringBuilder.ToString();
 			}
@@ -89,35 +89,35 @@
 		public System.Data.DataSet SELECT(System.String where = "" , System.UInt32? limit = null) {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
 			query.Append(keyword.SELECT);
-			query.Append(keyword.SPACE);
+			query.Append(unicode.SPACE);
 			query.Append(this.COLUMN());
-			query.Append(keyword.SPACE);
+			query.Append(unicode.SPACE);
 			query.Append(keyword.FROM);
-			query.Append(keyword.SPACE);
+			query.Append(unicode.SPACE);
 			query.Append(this.TABLE());
 			query.Append(this.WHERE(where));
 			query.Append(this.LIMIT(limit));
-			query.Append(keyword.SEMICOLON);
+			query.Append(unicode.SEMICOLON);
 			return this.run(query.ToString());
 		}
 		public System.Data.DataSet INSERT() {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
 			query.Append(keyword.INSERT);
-			query.Append(keyword.SPACE);
+			query.Append(unicode.SPACE);
 			query.Append(keyword.INTO);
-			query.Append(keyword.SPACE);
+			query.Append(unicode.SPACE);
 			query.Append(this.TABLE());
-			query.Append(keyword.SPACE);
-			query.Append(keyword.LEFT_PARENTHESIS);
+			query.Append(unicode.SPACE);
+			query.Append(unicode.LEFT_PARENTHESIS);
 			query.Append(this.COLUMN());
-			query.Append(keyword.RIGHT_PARENTHESIS);
-			query.Append(keyword.SPACE);
+			query.Append(unicode.RIGHT_PARENTHESIS);
+			query.Append(unicode.SPACE);
 			query.Append(keyword.VALUES);
-			query.Append(keyword.SPACE);
-			query.Append(keyword.LEFT_PARENTHESIS);
+			query.Append(unicode.SPACE);
+			query.Append(unicode.LEFT_PARENTHESIS);
 			query.Append(this.VALUES());
-			query.Append(keyword.RIGHT_PARENTHESIS);
-			query.Append(keyword.SEMICOLON);
+			query.Append(unicode.RIGHT_PARENTHESIS);
+			query.Append(unicode.SEMICOLON);
 			return this.run(query.ToString());
 		}
 		private static readonly System.String connection_string;

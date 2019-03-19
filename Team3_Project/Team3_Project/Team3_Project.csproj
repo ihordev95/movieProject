@@ -202,6 +202,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Databases\unicode.cs" />
     <Compile Include="Databases\memdixyp_film\list.cs" />
     <Compile Include="Databases\memdixyp_film\list_follow.cs" />
     <Compile Include="Databases\memdixyp_film\list_movie.cs" />

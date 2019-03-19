@@ -1,20 +1,12 @@
 ﻿namespace Team3_Project.Databases {
 	public static class keyword {
-		public const System.Char SPACE = (System.Char) 0x0020;
-		public const System.Char APOSTROPHE = (System.Char) 0x0027;
-		public const System.Char LEFT_PARENTHESIS = (System.Char) 0x0028;
-		public const System.Char RIGHT_PARENTHESIS = (System.Char) 0x0029;
-		public const System.Char COMMA = (System.Char) 0x002C;
-		public const System.Char FULL_STOP = (System.Char) 0x002E;
-		public const System.Char SEMICOLON = (System.Char) 0x003B;
-		public const System.Char GRAVE_ACCENT = (System.Char) 0x0060;
-		public const System.String SELECT = "SELECT";
-		public const System.String FROM = "FROM";
-		public const System.String LIMIT = "LIMIT";
-		public const System.String WHERE = "WHERE";
-		public const System.String INSERT = "INSERT";
-		public const System.String INTO = "INTO";
-		public const System.String VALUES = "VALUES";
-		public static readonly System.String COMMA_SEPARATED = System.String.Concat(COMMA , SPACE);
+		public const System.String SELECT = unicode.LATIN_CAPITAL_LETTER_S + unicode.LATIN_CAPITAL_LETTER_E + unicode.LATIN_CAPITAL_LETTER_L + unicode.LATIN_CAPITAL_LETTER_E + unicode.LATIN_CAPITAL_LETTER_C + unicode.LATIN_CAPITAL_LETTER_T;
+		public const System.String FROM = unicode.LATIN_CAPITAL_LETTER_F + unicode.LATIN_CAPITAL_LETTER_R + unicode.LATIN_CAPITAL_LETTER_O + unicode.LATIN_CAPITAL_LETTER_M;
+		public const System.String LIMIT = unicode.LATIN_CAPITAL_LETTER_L + unicode.LATIN_CAPITAL_LETTER_I + unicode.LATIN_CAPITAL_LETTER_M + unicode.LATIN_CAPITAL_LETTER_I + unicode.LATIN_CAPITAL_LETTER_T;
+		public const System.String WHERE = unicode.LATIN_CAPITAL_LETTER_W + unicode.LATIN_CAPITAL_LETTER_H + unicode.LATIN_CAPITAL_LETTER_E + unicode.LATIN_CAPITAL_LETTER_R + unicode.LATIN_CAPITAL_LETTER_E;
+		public const System.String INSERT = unicode.LATIN_CAPITAL_LETTER_I + unicode.LATIN_CAPITAL_LETTER_N + unicode.LATIN_CAPITAL_LETTER_S + unicode.LATIN_CAPITAL_LETTER_E + unicode.LATIN_CAPITAL_LETTER_R + unicode.LATIN_CAPITAL_LETTER_T;
+		public const System.String INTO = unicode.LATIN_CAPITAL_LETTER_I + unicode.LATIN_CAPITAL_LETTER_N + unicode.LATIN_CAPITAL_LETTER_T + unicode.LATIN_CAPITAL_LETTER_O;
+		public const System.String VALUES = unicode.LATIN_CAPITAL_LETTER_V + unicode.LATIN_CAPITAL_LETTER_A + unicode.LATIN_CAPITAL_LETTER_L + unicode.LATIN_CAPITAL_LETTER_U + unicode.LATIN_CAPITAL_LETTER_E + unicode.LATIN_CAPITAL_LETTER_S;
+		public const System.String COMMA_SEPARATED = unicode.COMMA + unicode.SPACE;
 	}
 }
