@@ -17,9 +17,9 @@
 					  "~/Scripts/bootstrap.js" ,
 					  "~/Scripts/respond.js"));
 
-			bundles.Add(new System.Web.Optimization.StyleBundle("~/Content/css").Include(
-					  "~/Content/bootstrap.css" ,
-					  "~/Content/site.css"));
+			bundles.Add(new System.Web.Optimization.StyleBundle("~/Styles/css").Include(
+					  "~/Styles/bootstrap.css" ,
+					  "~/Styles/site.css"));
 		}
 	}
 }
