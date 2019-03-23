@@ -1,0 +1,35 @@
+﻿body {
+}
+
+.header{
+
+}
+
+.search {
+
+}
+
+.searchresults {
+
+}
+
+.dynamicmovieload {
+    white-space: nowrap;
+    margin-top: 20px;
+}
+
+.movieposter {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.moviedetails {
+    display: inline-block;
+    vertical-align: top;
+    width: 900px;
+    white-space: normal;
+    padding: 20px 20px 20px 20px;
+    font-size: 20px;
+}
+
+

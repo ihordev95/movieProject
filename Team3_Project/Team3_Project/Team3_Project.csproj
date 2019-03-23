@@ -265,6 +265,7 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Styles\bootstrap.css" />
     <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\dynamicmovie-page.css" />
     <Content Include="Styles\landing-page.css" />
     <Content Include="Styles\register-login.css" />
     <Content Include="Styles\Site.css" />
