@@ -12,7 +12,7 @@
     {
         <tr>
 
-            <td>@movie.title</td>
+            <td><a href="@Url.Action( "MoviePage", "Movie", new { ID = movie.imdbID })" class="elements">@movie.title</a></td>
             <td>@movie.year</td>
             
         </tr>
