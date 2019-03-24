@@ -14,7 +14,7 @@ namespace Team3_Project.Helpers
 
         public String GetAPIinfo(String apiString)
         {
-            string urlAddress = "http://www.omdbapi.com/?apikey=61c1a60f&" + apiString;
+            string urlAddress = "http://www.omdbapi.com/?apikey=61c1a60f&" + apiString + "&plot=full";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
