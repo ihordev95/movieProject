@@ -1,16 +1,6 @@
 ﻿body {
-}
-
-.header{
-
-}
-
-.search {
-
-}
-
-.searchresults {
-
+    background-image: linear-gradient(to right, rgba(225, 225, 225, 0.25), rgba(225, 225, 225, 0.25)), url(/Images/movie-theater-film-reel.png);
+    color: white;
 }
 
 .dynamicmovieload {
@@ -21,15 +11,27 @@
 .movieposter {
     display: inline-block;
     vertical-align: top;
+    border: 1px solid white;
+    //padding: 20px;
+    height: 500px;
 }
 
 .moviedetails {
     display: inline-block;
     vertical-align: top;
-    width: 900px;
     white-space: normal;
-    padding: 20px 20px 20px 20px;
-    font-size: 20px;
+    padding: 20px 20px 20px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: rgba(225, 225, 225, 0.45);
+    height: 500px;
+    color: black;
+}
+
+.test{
+    padding: 40px;
+    margin-left: 200px;
+
 }
 
 

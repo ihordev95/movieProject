@@ -238,7 +238,10 @@
     <Content Include="favicon.ico" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\2019-03-23_9-37-31.jpg" />
+    <Content Include="Images\8858392d9845b33.jpg" />
     <Content Include="Images\connect_opt.jpg" />
+    <Content Include="Images\movie-theater-film-reel.png" />
     <Content Include="Images\movies-tiles.jpg" />
     <Content Include="Images\Streaming.jpg" />
     <Content Include="Images\testimonials-1.jpg" />
