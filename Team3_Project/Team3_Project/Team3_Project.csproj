@@ -225,6 +225,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\ODBAPI.cs" />
+    <Compile Include="Helpers\SearchResults.cs" />
     <Compile Include="Helpers\Watchable.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -312,6 +313,7 @@
     <Content Include="Views\UserHomePage\UserHomepage.cshtml" />
     <Content Include="Views\Movie\MoviePage.cshtml" />
     <Content Include="Views\ViewList\ViewList.cshtml" />
+    <Content Include="Views\Browse\SearchMovies.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

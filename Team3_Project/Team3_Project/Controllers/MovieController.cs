@@ -17,7 +17,7 @@ namespace Team3_Project.Controllers {
 
 
             Helpers.ODBAPI api = new Helpers.ODBAPI();
-            string response = api.getIDinfo(ID);
+            string response = api.GetAPIinfo("i=" + ID + "&plot=full");
             Helpers.Watchable w = JsonConvert.DeserializeObject<Helpers.Watchable>(response);
             ViewBag.json = w;
             return this.View(results);

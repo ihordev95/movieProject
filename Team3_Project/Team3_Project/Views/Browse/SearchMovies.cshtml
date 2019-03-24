@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "SearchMovies";
+}
+
+<table>
+    <tr>
+        <td>Title:</td>
+        <td>Year:</td>
+    </tr>
+    @foreach (var movie in ViewBag.searchResults)
+    {
+        <tr>
+
+            <td>@movie.title</td>
+            <td>@movie.year</td>
+            
+        </tr>
+    }
+    </table>
+
