@@ -8,14 +8,14 @@ namespace Team3_Project.Controllers {
 			return this.View();
 		}
 
-        public System.Web.Mvc.ActionResult SearchMovies(string Title)
+        public System.Web.Mvc.ActionResult SearchMovies(System.String Title)
         {
             List<Helpers.Watchable> resultList = new List<Helpers.Watchable>();
 
             Helpers.ODBAPI api = new Helpers.ODBAPI();
-            string response = api.GetAPIinfo("s=" + Title);
+            System.String response = api.GetAPIinfo("s=" + Title);
             api.ParseSearch(resultList, response);
-            ViewBag.searchResults = resultList;
+            this.ViewBag.searchResults = resultList;
             
             return this.View();
         }

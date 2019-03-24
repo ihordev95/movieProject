@@ -3,7 +3,7 @@
 namespace Team3_Project.Controllers {
 	public class MovieController : System.Web.Mvc.Controller {
 		// GET: Movie
-		public System.Web.Mvc.ActionResult MoviePage(string ID = "tt0000001") {
+		public System.Web.Mvc.ActionResult MoviePage(System.String ID = "tt0000001") {
 			Databases.memdixyp_imdb.title_akas title_akas = new Databases.memdixyp_imdb.title_akas();
 			Databases.memdixyp_imdb.title_basics title_basics = new Databases.memdixyp_imdb.title_basics();
 			Databases.memdixyp_imdb.title_episode title_episode = new Databases.memdixyp_imdb.title_episode();
@@ -17,9 +17,9 @@ namespace Team3_Project.Controllers {
 
 
             Helpers.ODBAPI api = new Helpers.ODBAPI();
-            string response = api.GetAPIinfo("i=" + ID);
+            System.String response = api.GetAPIinfo("i=" + ID);
             Helpers.Watchable w = JsonConvert.DeserializeObject<Helpers.Watchable>(response);
-            ViewBag.json = w;
+            this.ViewBag.json = w;
             return this.View(results);
 		}
 	}

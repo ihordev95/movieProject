@@ -14,7 +14,7 @@ namespace Team3_Project.Helpers
 
         public String GetAPIinfo(String apiString)
         {
-            string urlAddress = "http://www.omdbapi.com/?apikey=61c1a60f&" + apiString + "&plot=full";
+            System.String urlAddress = "http://www.omdbapi.com/?apikey=61c1a60f&" + apiString + "&plot=full";
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
@@ -22,18 +22,10 @@ namespace Team3_Project.Helpers
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 Stream receiveStream = response.GetResponseStream();
-                StreamReader readStream = null;
+                StreamReader readStream = response.CharacterSet == null ? new StreamReader(receiveStream)
+					: new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet));
 
-                if (response.CharacterSet == null)
-                {
-                    readStream = new StreamReader(receiveStream);
-                }
-                else
-                {
-                    readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet));
-                }
-
-                string data = readStream.ReadToEnd();
+				System.String data = readStream.ReadToEnd();
 
                 response.Close();
                 readStream.Close();
@@ -44,18 +36,18 @@ namespace Team3_Project.Helpers
 
         public void ParseSearch(List<Helpers.Watchable> list, String response)
         {
-            bool inResults = false;
-            string item = "";
-            foreach(char c in response)
+            System.Boolean inResults = false;
+            System.String item = "";
+            foreach(System.Char c in response)
             {
                 if (c.Equals('['))
                 {
                     inResults = true;
                     continue;
                 }
-                if (c.Equals(']'))
+                if (c.Equals(']')) {
                     inResults = false;
-
+                }
                 if(inResults)
                 {
                     if (!(c.Equals(',') && item.Equals("")))
