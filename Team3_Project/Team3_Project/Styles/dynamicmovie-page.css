@@ -24,14 +24,20 @@
     font-size: 24px;
     font-weight: bold;
     background-color: rgba(225, 225, 225, 0.45);
-    height: auto;
+    min-height: 500px;
+    overflow: auto;
     color: black;
 }
 
-.test{
-    padding: 40px;
-    margin-left: 200px;
+.test1{
+    position: relative;
+}
 
+.test{
+    padding: 20px;
+    margin-left: 70px;
+    margin-top: 525px;
+    position: absolute;
 }
 
 

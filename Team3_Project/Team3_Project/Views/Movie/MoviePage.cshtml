@@ -62,13 +62,8 @@
     -->
 
 <div class="dynamicmovieload w3-mobile">
-    <img src=@ViewBag.json.poster alt="A picture of the movie poster" class="movieposter w3-third" />
-
-    <div class="moviedetails w3-mobile w3-twothird">
-        <label>Title: @ViewBag.json.title</label><br />
-        <label>Year: @ViewBag.json.year</label><br />
-        <label>Type: @ViewBag.json.type</label><br />
-        <label>Descritpion: @ViewBag.json.plot</label><br />
+    <div class="test1">
+        <img src=@ViewBag.json.poster alt="A picture of the movie poster" class="movieposter w3-third" />
 
         <div class="test">
             <button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit" id="Save">
@@ -78,5 +73,14 @@
                 Rate
             </button>
         </div>
+    </div>
+
+    <div class="moviedetails w3-mobile w3-twothird">
+        <label>Title: @ViewBag.json.title</label><br />
+        <label>Year: @ViewBag.json.year</label><br />
+        <label>Type: @ViewBag.json.type</label><br />
+        <label>Descritpion: @ViewBag.json.plot</label><br />
+
+
     </div>
 </div>
