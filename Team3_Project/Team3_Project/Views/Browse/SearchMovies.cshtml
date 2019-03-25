@@ -3,19 +3,29 @@
     ViewBag.Title = "SearchMovies";
 }
 
-<table>
-    <tr>
-        <td>Title:</td>
-        <td>Year:</td>
-    </tr>
-    @foreach (var movie in ViewBag.searchResults)
-    {
-        <tr>
+<head>
+    <link href="~/Styles/BrowseSearchMovies.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
 
-            <td><a href="@Url.Action( "MoviePage", "Movie", new { ID = movie.imdbID })" class="elements">@movie.title</a></td>
-            <td>@movie.year</td>
-            
+<div class="PageHeader">
+    <p>Search Results</p>
+</div>
+
+<div class="SearchResults">
+    <table class="resultTable">
+        <tr class="tableHeader">
+            <td>Title:</td>
+            <td>Year:</td>
         </tr>
-    }
-    </table>
+        @foreach (var movie in ViewBag.searchResults)
+        {
+            <tr>
 
+                <td class="tableMovieTitle"><a href="@Url.Action( "MoviePage", "Movie", new { ID = movie.imdbID })" class="elements">@movie.title</a></td>
+                <td>@movie.year</td>
+
+            </tr>
+        }
+    </table>
+</div>

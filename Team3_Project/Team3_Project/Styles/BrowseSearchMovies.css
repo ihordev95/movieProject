@@ -1,0 +1,44 @@
+﻿body {
+    background-image: linear-gradient(to right, rgba(225, 225, 225, 0.35), rgba(225, 225, 225, 0.35)), url(/Images/190324.jpg);
+    background-repeat: repeat, no-repeat;
+    background-size: cover, cover;
+}
+
+
+.newest5 {
+    margin-top: 50px;
+}
+
+.tableHeader {
+    font-weight: bold;
+}
+
+.textSearch {
+    text-align: center;
+    background-color: rgba(225, 225, 225, 1);
+    height: 100px;
+    width: auto;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.SearchResults {
+
+}
+
+.resultTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tableMovieTitle {
+
+    width: 300px;
+}
+
+.PageHeader {
+    font-weight: bolder;
+    font-size: 40px;
+    margin-bottom: 30px;
+    text-align: center;
+}

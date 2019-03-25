@@ -4,10 +4,43 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>BrowseMovies</h2>
-@using (Html.BeginForm("SearchMovies", "Browse", FormMethod.Post))
-{
-    <input type="text" name="Title" id="titleBox" />
-    <button type="submit">Search</button>
-}
-<p>This is a test.</p>
+<head>
+    <link href="~/Styles/BrowseSearchMovies.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+
+
+<div class="PageHeader">
+    <p>Browse/Search for Movies</p>
+</div>
+ 
+<div class="textSearch">
+    <p>Please enter the start of the movie name or the entire movie name and click search</p>
+
+    @using (Html.BeginForm("SearchMovies", "Browse", FormMethod.Post))
+    {
+        <input type="text" name="Title" id="titleBox" />
+        <button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit">Search</button>
+    }
+</div>
+
+
+<div class="newest5">
+    <div class="newest5 moviescroll">
+        <p>This is a section the newest 5 Action movies</p>
+    </div>
+    <div class="newest5 moviescroll">
+        <p>This is a section the newest 5 Drama movies</p>
+    </div>
+    <div class="newest5 moviescroll">
+        <p>This is a section the newest 5 SciFi movies</p>
+    </div>
+    <div class="newest5 moviescroll">
+        <p>This is a section the newest 5 Comedy movies</p>
+    </div>
+    <div class="newest5 moviescroll">
+        <p>This is a section the newest 5 Adventure movies</p>
+    </div>
+</div>
+
