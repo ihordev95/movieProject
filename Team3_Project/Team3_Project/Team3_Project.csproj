@@ -220,6 +220,7 @@
     <Compile Include="Databases\memdixyp_imdb\title_principals.cs" />
     <Compile Include="Databases\memdixyp_imdb\title_ratings.cs" />
     <Compile Include="Databases\memdixyp_film\view_list.cs" />
+    <Compile Include="Databases\parse.cs" />
     <Compile Include="Databases\procedure.cs" />
     <Compile Include="Databases\unicode.cs" />
     <Compile Include="Databases\url.cs" />
@@ -275,6 +276,7 @@
     <Content Include="Styles\landing-page.css" />
     <Content Include="Styles\register-login.css" />
     <Content Include="Styles\Site.css" />
+    <Content Include="Styles\w3.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
