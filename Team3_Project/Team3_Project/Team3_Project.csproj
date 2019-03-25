@@ -219,6 +219,8 @@
     <Compile Include="Databases\memdixyp_imdb\title_episode.cs" />
     <Compile Include="Databases\memdixyp_imdb\title_principals.cs" />
     <Compile Include="Databases\memdixyp_imdb\title_ratings.cs" />
+    <Compile Include="Databases\memdixyp_film\view_list.cs" />
+    <Compile Include="Databases\procedure.cs" />
     <Compile Include="Databases\unicode.cs" />
     <Compile Include="Databases\url.cs" />
     <Compile Include="Global.asax.cs">

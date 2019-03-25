@@ -130,7 +130,7 @@
 			};
 			connection_string = MySqlConnectionStringBuilder.ToString();
 		}
-		private System.Data.DataSet run(System.String query) {
+		protected System.Data.DataSet run(System.String query) {
 			this.log = query;
 			System.Data.DataSet DataSet = new System.Data.DataSet();
 			using (MySql.Data.MySqlClient.MySqlConnection MySqlConnection = new MySql.Data.MySqlClient.MySqlConnection(connection_string)) {
@@ -147,6 +147,7 @@
 			}
 			return DataSet;
 		}
+
 		public static database get(System.Collections.Specialized.NameValueCollection NameValueCollection) {
 			switch (url.String(NameValueCollection , "table")) {
 				case "name_basics":
@@ -174,6 +175,7 @@
 				default:
 					return new memdixyp_imdb.title_basics();
 			}
+
 		}
 	}
 }

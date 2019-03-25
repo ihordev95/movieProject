@@ -1,8 +1,18 @@
 ﻿
 @{
-    ViewBag.Title = "ViewList";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+	ViewBag.Title = "ViewList";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}			<table>
+				<tr>
+@foreach (System.Data.DataRow DataRow in Model.Tables[0].Rows) {
+				<tr>
+					<td>
+						<a href="/Movie/MoviePage/@DataRow[0]" class="elements">
+							@DataRow[1] (@DataRow[2])
+						</a>
+					</td>
+-				</tr>
+}			</table>
 
 <h2>ViewList</h2>
 

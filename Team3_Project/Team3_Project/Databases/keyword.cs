@@ -8,5 +8,6 @@
 		public const System.String INTO = unicode.LATIN_CAPITAL_LETTER_I + unicode.LATIN_CAPITAL_LETTER_N + unicode.LATIN_CAPITAL_LETTER_T + unicode.LATIN_CAPITAL_LETTER_O;
 		public const System.String VALUES = unicode.LATIN_CAPITAL_LETTER_V + unicode.LATIN_CAPITAL_LETTER_A + unicode.LATIN_CAPITAL_LETTER_L + unicode.LATIN_CAPITAL_LETTER_U + unicode.LATIN_CAPITAL_LETTER_E + unicode.LATIN_CAPITAL_LETTER_S;
 		public const System.String COMMA_SEPARATED = unicode.COMMA + unicode.SPACE;
+		public const System.String CALL = unicode.LATIN_CAPITAL_LETTER_C + unicode.LATIN_CAPITAL_LETTER_A + unicode.LATIN_CAPITAL_LETTER_L + unicode.LATIN_CAPITAL_LETTER_L;
 	}
 }

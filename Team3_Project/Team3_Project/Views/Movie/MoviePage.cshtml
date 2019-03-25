@@ -1,82 +1,22 @@
 ﻿@model System.Data.DataSet
 @{
-    ViewBag.Title = "MoviePage";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-
+	ViewBag.Title = "MoviePage";
+	Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<head>
-    <link href="~/Styles/dynamicmovie-page.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
-
-<!--
-<div class="header">
-    <h2>MoviePage</h2>
-    <p>This is the page that would be loaded dynamically.</p>
-</div>
-
-<div class="search">
-    <form>
-        <table>
-            <tr>
-                <td>
-                    Movie Id
-                </td>
-                <td>
-                    <input name="movie" type="text" value="tt0000001" />
-                </td>
-                <td>
-                    <button type="submit">
-                        Search
-                    </button>
-                </td>
-            </tr>
-        </table>
-    </form>
-</div>
-
-<div class="searchresults">
-    <table>
-        <tr>
-            @foreach (System.Data.DataColumn DataColumn in Model.Tables[0].Columns)
-            {
-                <th>
-                    @DataColumn.ToString()
-                </th>
-            }
-        </tr>
-        @foreach (System.Data.DataRow DataRow in Model.Tables[0].Rows)
-        {
-            <tr>
-                @for (System.Int32 index = 0; index < Model.Tables[0].Columns.Count; index += 1)
-                {
-                    <td>
-                        @DataRow[index]
-                    </td>
-                }
-            </tr>
-        }
-    </table>
-</div>
-    -->
-
-<div class="dynamicmovieload w3-mobile">
-    <img src=@ViewBag.json.poster alt="A picture of the movie poster" class="movieposter w3-third" />
-
-    <div class="moviedetails w3-mobile w3-twothird">
-        <label>Title: @ViewBag.json.title</label><br />
-        <label>Year: @ViewBag.json.year</label><br />
-        <label>Type: @ViewBag.json.type</label><br />
-        <label>Descritpion: @ViewBag.json.plot</label><br />
-
-        <div class="test">
-            <button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit" id="Save">
-                Save
-            </button>
-            <button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit" id="Rate">
-                Rate
-            </button>
-        </div>
-    </div>
-</div>
+			<div class="dynamicmovieload w3-mobile">
+				<img src=@ViewBag.json.poster alt="A picture of the movie poster" class="movieposter w3-third" />
+				<div class="moviedetails w3-mobile w3-twothird">
+					<label>Title: @ViewBag.json.title</label><br />
+					<label>Year: @ViewBag.json.year</label><br />
+					<label>Type: @ViewBag.json.type</label><br />
+					<label>Descritpion: @ViewBag.json.plot</label><br />
+					<div class="test">
+						<button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit" id="Save">
+							Save
+						</button>
+						<button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit" id="Rate">
+							Rate
+						</button>
+					</div>
+				</div>
+			</div>
