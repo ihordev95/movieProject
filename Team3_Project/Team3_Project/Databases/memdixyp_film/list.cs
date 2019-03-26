@@ -4,11 +4,13 @@
 		public System.Int32 user;
 		public System.String name;
 		public System.Boolean hidden;
+		public System.DateTime modified;
 		public list(System.Collections.Specialized.NameValueCollection NameValueCollection) {
 			this.identifier = url.Int32(NameValueCollection , "identifier");
 			this.user = url.Int32(NameValueCollection , "user");
 			this.name = url.String(NameValueCollection , "name");
 			this.hidden = url.Boolean(NameValueCollection , "hidden");
+			//this.modified = url.DateTime("modified")
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);

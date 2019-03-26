@@ -1,9 +1,13 @@
-﻿
-@{
+﻿@{
 	ViewBag.Title = "ViewList";
 	Layout = "/Views/Shared/_Layout.cshtml";
-}			<table>
-				<tr>
+}			<h2>
+				ViewList
+			</h2>
+			<p>
+				This is the page that would show a list selected by the user.
+			</p>
+			<table>
 @foreach (System.Data.DataRow DataRow in Model.Tables[0].Rows) {
 				<tr>
 					<td>
@@ -11,9 +15,5 @@
 							@DataRow[1] (@DataRow[2])
 						</a>
 					</td>
--				</tr>
+				</tr>
 }			</table>
-
-<h2>ViewList</h2>
-
-<p>This is the page that would show a list selected by the user.</p>
