@@ -1,6 +1,6 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class String : abstraction {
-		private System.String value;
+		public System.String value;
 		public String() {
 			this.value = System.String.Empty;
 		}

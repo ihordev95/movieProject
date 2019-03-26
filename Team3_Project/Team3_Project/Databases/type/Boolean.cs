@@ -1,6 +1,6 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Boolean : abstraction {
-		private System.Boolean value;
+		public System.Boolean value;
 		public Boolean() {
 			this.value = false;
 		}

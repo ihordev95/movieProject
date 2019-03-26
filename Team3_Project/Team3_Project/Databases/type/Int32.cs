@@ -1,6 +1,6 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Int32 : abstraction {
-		private System.Int32 value;
+		public System.Int32 value;
 		public Int32() {
 			this.value = 0;
 		}

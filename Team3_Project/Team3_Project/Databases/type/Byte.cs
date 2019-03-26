@@ -1,6 +1,6 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Byte : abstraction {
-		private System.Byte value;
+		public System.Byte value;
 		public Byte() {
 			this.value = 0;
 		}

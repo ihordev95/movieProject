@@ -48,14 +48,13 @@
 			}
 			return System.String.Empty;
 		}
-		public System.String VALUES() {
-			type.abstraction[] values = this.values();
+		private System.String value_array(type.abstraction[] array) {
 			System.Int32 index = 0;
-			System.Int32 count = values.Length;
+			System.Int32 count = array.Length;
 			if (count > 0) {
 				System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
 				do {
-					StringBuilder.Append(this.STRING_LITERAL(values[index].ToString()));
+					StringBuilder.Append(this.STRING_LITERAL(array[index].ToString()));
 					index += 1;
 					if (index >= count) {
 						break;
@@ -66,6 +65,12 @@
 				return StringBuilder.ToString();
 			}
 			return System.String.Empty;
+		}
+		public System.String VALUES() {
+			return this.value_array(this.values());
+		}
+		public System.String PARAMETERS() {
+			return this.value_array(this.parameters());
 		}
 		private System.String LIMIT(System.UInt32? limit = null) {
 			if (limit != null) {
@@ -157,13 +162,15 @@
 			query.Append(this.TABLE());
 			query.Append(unicode.SPACE);
 			query.Append(unicode.LEFT_PARENTHESIS);
-			query.Append(this.VALUES());
+			query.Append(this.PARAMETERS());
 			query.Append(unicode.RIGHT_PARENTHESIS);
 			query.Append(unicode.SEMICOLON);
 			return this.run(query.ToString());
 		}
 		public static database get(System.Collections.Specialized.NameValueCollection NameValueCollection) {
-			switch (url.String(NameValueCollection , "table")) {
+			Databases.type.String table = new type.String();
+			table.form(NameValueCollection , nameof(table));
+			switch (table.value) {
 				case "name_basics":
 					return new memdixyp_imdb.name_basics();
 				case "title_akas":

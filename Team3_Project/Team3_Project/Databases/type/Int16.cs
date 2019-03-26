@@ -1,6 +1,6 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Int16 : abstraction {
-		private System.Int16 value;
+		public System.Int16 value;
 		public Int16() {
 			this.value = 0;
 		}

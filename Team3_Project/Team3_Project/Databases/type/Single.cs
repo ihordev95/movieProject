@@ -1,6 +1,6 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Single : abstraction {
-		private System.Single value;
+		public System.Single value;
 		public Single() {
 			this.value = 0;
 		}
