@@ -45,14 +45,13 @@
 			return System.String.Empty;
 		}
 		public System.String VALUES() {
-			System.Object[] values = this.values();
+			type.abstraction[] values = this.values();
 			System.Int32 index = 0;
 			System.Int32 count = values.Length;
 			if (count > 0) {
 				System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
 				do {
-					System.Object value = values[index] ?? "\0";
-					StringBuilder.Append(this.STRING_LITERAL(value.ToString()));
+					StringBuilder.Append(this.STRING_LITERAL(values[index].ToString()));
 					index += 1;
 					if (index >= count) {
 						break;
