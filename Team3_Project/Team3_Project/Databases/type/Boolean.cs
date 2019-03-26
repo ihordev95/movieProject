@@ -4,6 +4,9 @@
 		public Boolean() {
 			this.value = false;
 		}
+		public Boolean(System.Boolean value) {
+			this.value = value;
+		}
 		public override System.Boolean Equals(System.Object Object) {
 			return this.value.Equals(Object);
 		}

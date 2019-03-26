@@ -4,6 +4,9 @@
 		public String() {
 			this.value = System.String.Empty;
 		}
+		public String(System.String value) {
+			this.value = value;
+		}
 		public override System.Boolean Equals(System.Object Object) {
 			return this.value.Equals(Object);
 		}

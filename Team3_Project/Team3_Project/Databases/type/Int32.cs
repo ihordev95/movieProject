@@ -4,6 +4,9 @@
 		public Int32() {
 			this.value = 0;
 		}
+		public Int32(System.Int32 value) {
+			this.value = value;
+		}
 		public override System.Boolean Equals(System.Object Object) {
 			return this.value.Equals(Object);
 		}

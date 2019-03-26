@@ -1,9 +1,14 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
-	public class list_movie :  database {
+	public class list_movie : database {
 		public type.Int32 list;
 		public type.Int32 movie;
 		public type.Boolean archive;
-		public list_movie(System.Collections.Specialized.NameValueCollection NameValueCollection) {
+		public list_movie() {
+			this.list = new type.Int32();
+			this.movie = new type.Int32();
+			this.archive = new type.Boolean();
+		}
+		public list_movie(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
 			this.list.form(NameValueCollection , nameof(this.list));
 			this.movie.form(NameValueCollection , nameof(this.movie));
 			this.archive.form(NameValueCollection , nameof(this.archive));

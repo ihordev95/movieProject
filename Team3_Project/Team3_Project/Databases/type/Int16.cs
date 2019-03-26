@@ -4,6 +4,9 @@
 		public Int16() {
 			this.value = 0;
 		}
+		public Int16(System.Int16 value) {
+			this.value = value;
+		}
 		public override System.Boolean Equals(System.Object Object) {
 			return this.value.Equals(Object);
 		}

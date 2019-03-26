@@ -4,6 +4,10 @@
 		public abstract System.String table();
 		public abstract System.String[] columns();
 		public abstract type.abstraction[] values();
+		public virtual type.abstraction[] parameters() {
+			return new type.abstraction[] {
+			};
+		}
 		public System.String log = System.String.Empty;
 		public System.String error = System.String.Empty;
 		private System.String QUOTE_IDENTIFIER(System.String IDENTIFIER) {

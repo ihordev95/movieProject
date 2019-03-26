@@ -1,8 +1,12 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
-	public class list_follow :  database {
+	public class list_follow : database {
 		public type.Int32 user;
 		public type.Int32 list;
-		public list_follow(System.Collections.Specialized.NameValueCollection NameValueCollection) {
+		public list_follow() {
+			this.user = new type.Int32();
+			this.list = new type.Int32();
+		}
+		public list_follow(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
 			this.user.form(NameValueCollection , nameof(this.user));
 			this.list.form(NameValueCollection , nameof(this.list));
 		}

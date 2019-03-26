@@ -17,6 +17,7 @@
 			//
 			Databases.memdixyp_film.view_list view_list = new Databases.memdixyp_film.view_list(identifier);
 			result = view_list.CALL();
+			this.ViewBag.list = view_list;
 			return this.View(result);
 		}
 	}
