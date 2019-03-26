@@ -1,14 +1,14 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class user : database {
-		public System.Int32 identifier;
-		public System.String name;
-		public System.String password;
-		public System.String email;
+		public type.Int32 identifier;
+		public type.String name;
+		public type.String password;
+		public type.String email;
 		public user (System.Collections.Specialized.NameValueCollection NameValueCollection) {
-			this.identifier = url.Int32(NameValueCollection , "identifier");
-			this.name = url.String(NameValueCollection , "name");
-			this.password = url.String(NameValueCollection , "password");
-			this.email = url.String(NameValueCollection , "email");
+			this.identifier.form(NameValueCollection , nameof(this.identifier));
+			this.name.form(NameValueCollection , nameof(this.name));
+			this.password.form(NameValueCollection , nameof(this.password));
+			this.email.form(NameValueCollection , nameof(this.email));
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
@@ -24,8 +24,8 @@
 				nameof(this.email)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.identifier,
 				this.name,
 				this.password,

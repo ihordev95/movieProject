@@ -1,8 +1,8 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_ratings : database {
-		public System.String tconst;
-		public System.Single averageRating;
-		public System.Int32 numVotes;
+		public type.String tconst;
+		public type.Single averageRating;
+		public type.Int32 numVotes;
 		public override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
@@ -16,8 +16,8 @@
 				nameof(this.numVotes)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.tconst,
 				this.averageRating,
 				this.numVotes

@@ -221,7 +221,13 @@
     <Compile Include="Databases\memdixyp_imdb\title_ratings.cs" />
     <Compile Include="Databases\memdixyp_film\view_list.cs" />
     <Compile Include="Databases\parse.cs" />
-    <Compile Include="Databases\procedure.cs" />
+    <Compile Include="Databases\type\abstraction.cs" />
+    <Compile Include="Databases\type\Boolean.cs" />
+    <Compile Include="Databases\type\Byte.cs" />
+    <Compile Include="Databases\type\Single.cs" />
+    <Compile Include="Databases\type\Int32.cs" />
+    <Compile Include="Databases\type\Int16.cs" />
+    <Compile Include="Databases\type\String.cs" />
     <Compile Include="Databases\unicode.cs" />
     <Compile Include="Databases\url.cs" />
     <Compile Include="Global.asax.cs">

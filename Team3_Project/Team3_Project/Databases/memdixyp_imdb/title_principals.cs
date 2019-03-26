@@ -1,11 +1,11 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_principals : database {
-		public System.String tconst;
-		public System.Int16 ordering;
-		public System.String nconst;
-		public System.String category;
-		public System.String job;
-		public System.String characters;
+		public type.String tconst;
+		public type.Int16 ordering;
+		public type.String nconst;
+		public type.String category;
+		public type.String job;
+		public type.String characters;
 		public override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
@@ -22,8 +22,8 @@
 				nameof(this.characters)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.tconst,
 				this.ordering,
 				this.nconst,

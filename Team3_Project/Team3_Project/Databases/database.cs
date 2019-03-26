@@ -3,7 +3,7 @@
 		public abstract System.String schema();
 		public abstract System.String table();
 		public abstract System.String[] columns();
-		public abstract System.Object[] values();
+		public abstract type.abstraction[] values();
 		public System.String log = System.String.Empty;
 		public System.String error = System.String.Empty;
 		private System.String QUOTE_IDENTIFIER(System.String IDENTIFIER) {
@@ -147,7 +147,18 @@
 			}
 			return DataSet;
 		}
-
+		public System.Data.DataSet CALL() {
+			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
+			query.Append(keyword.CALL);
+			query.Append(unicode.SPACE);
+			query.Append(this.TABLE());
+			query.Append(unicode.SPACE);
+			query.Append(unicode.LEFT_PARENTHESIS);
+			query.Append(this.VALUES());
+			query.Append(unicode.RIGHT_PARENTHESIS);
+			query.Append(unicode.SEMICOLON);
+			return this.run(query.ToString());
+		}
 		public static database get(System.Collections.Specialized.NameValueCollection NameValueCollection) {
 			switch (url.String(NameValueCollection , "table")) {
 				case "name_basics":

@@ -1,12 +1,12 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list_movie :  database {
-		public System.Int32 list;
-		public System.Int32 movie;
-		public System.Boolean archive;
+		public type.Int32 list;
+		public type.Int32 movie;
+		public type.Boolean archive;
 		public list_movie(System.Collections.Specialized.NameValueCollection NameValueCollection) {
-			this.list = url.Int32(NameValueCollection , nameof(this.list));
-			this.movie = url.Int32(NameValueCollection , nameof(this.movie));
-			this.archive = url.Boolean(NameValueCollection , nameof(this.archive));
+			this.list.form(NameValueCollection , nameof(this.list));
+			this.movie.form(NameValueCollection , nameof(this.movie));
+			this.archive.form(NameValueCollection , nameof(this.archive));
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
@@ -21,8 +21,8 @@
 				nameof(this.archive)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.list,
 				this.movie,
 				this.archive

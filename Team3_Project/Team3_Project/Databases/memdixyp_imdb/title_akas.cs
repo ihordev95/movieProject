@@ -1,13 +1,13 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_akas : database {
-		public System.String titleId;
-		public System.Byte ordering;
-		public System.String title;
-		public System.String region;
-		public System.String language;
-		public System.String types;
-		public System.String attributes;
-		public System.Boolean isOriginalTitle;
+		public type.String titleId;
+		public type.Byte ordering;
+		public type.String title;
+		public type.String region;
+		public type.String language;
+		public type.String types;
+		public type.String attributes;
+		public type.Boolean isOriginalTitle;
 		public override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
@@ -26,8 +26,8 @@
 				nameof(this.isOriginalTitle)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.titleId,
 				this.ordering,
 				this.title,

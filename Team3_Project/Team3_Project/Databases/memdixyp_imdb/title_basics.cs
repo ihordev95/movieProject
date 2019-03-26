@@ -1,14 +1,14 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_basics : database {
-		public System.String tconst;
-		public System.String titleType;
-		public System.String primaryTitle;
-		public System.String originalTitle;
-		public System.Boolean isAdult;
-		public System.Int16? startYear;
-		public System.Int16? endYear;
-		public System.Int32? runtimeMinutes;
-		public System.String genres;
+		public type.String tconst;
+		public type.String titleType;
+		public type.String primaryTitle;
+		public type.String originalTitle;
+		public type.Boolean isAdult;
+		public type.Int16 startYear;
+		public type.Int16 endYear;
+		public type.Int32 runtimeMinutes;
+		public type.String genres;
 		public override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
@@ -28,8 +28,8 @@
 				nameof(this.genres)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.tconst,
 				this.titleType,
 				this.primaryTitle,

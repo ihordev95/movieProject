@@ -1,8 +1,8 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_crew : database {
-		public System.String tconst;
-		public System.String directors;
-		public System.String writers;
+		public type.String tconst;
+		public type.String directors;
+		public type.String writers;
 		public override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
@@ -16,8 +16,8 @@
 				nameof(this.writers)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.tconst,
 				this.directors,
 				this.writers
