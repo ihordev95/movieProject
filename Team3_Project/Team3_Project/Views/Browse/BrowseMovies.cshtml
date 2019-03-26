@@ -18,10 +18,11 @@
 <div class="textSearch">
     <p>Please enter the start of the movie name or the entire movie name and click search</p>
 
-    @using (Html.BeginForm("SearchMovies", "Browse", FormMethod.Post))
+    @using (Html.BeginForm("SearchMovies", "Browse", FormMethod.Get))
     {
-        <input type="text" name="Title" id="titleBox" />
+        <input type="text" name="title" id="title" />
         <button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit">Search</button>
+        
     }
 </div>
 
