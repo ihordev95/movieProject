@@ -4,6 +4,7 @@
 		public abstract System.String table();
 		public abstract System.String[] columns();
 		public abstract type.abstraction[] values();
+		public abstract database result(System.Data.DataRow DataRow);
 		public virtual type.abstraction[] parameters() {
 			return new type.abstraction[] {
 			};
@@ -196,7 +197,6 @@
 				default:
 					return new memdixyp_imdb.title_basics();
 			}
-
 		}
 	}
 }

@@ -3,7 +3,7 @@
 		public static view_list make(System.Data.DataRow DataRow) {
 			return new view_list(DataRow);
 		}
-		private readonly type.Int32 identifier;
+		public type.Int32 identifier;
 		public type.String tconst;
 		public type.String primaryTitle;
 		public type.Int16 startYear;
@@ -17,6 +17,7 @@
 			this.identifier = new type.Int32(identifier);
 		}
 		public view_list(System.Data.DataRow DataRow) : this() {
+			// this.identifier.load(DataRow , 0);
 			this.tconst.load(DataRow , 0);
 			this.primaryTitle.load(DataRow , 1);
 			this.startYear.load(DataRow , 2);
@@ -29,6 +30,7 @@
 		}
 		public override System.String[] columns() {
 			return new System.String[] {
+				nameof(this.identifier),
 				nameof(this.tconst),
 				nameof(this.primaryTitle),
 				nameof(this.startYear)
@@ -36,6 +38,7 @@
 		}
 		public override type.abstraction[] values() {
 			return new type.abstraction[] {
+				this.identifier,
 				this.tconst,
 				this.primaryTitle,
 				this.startYear
@@ -45,6 +48,18 @@
 			return new type.abstraction[] {
 				this.identifier
 			};
+		}
+		public override database result(System.Data.DataRow DataRow) {
+			/*
+			this.identifier.load(DataRow , 0);
+			this.tconst.load(DataRow , 1);
+			this.primaryTitle.load(DataRow , 2);
+			this.identifier.load(DataRow , 3);
+			*/
+			this.tconst.load(DataRow , 0);
+			this.primaryTitle.load(DataRow , 1);
+			this.identifier.load(DataRow , 2);
+			return this;
 		}
 	}
 }

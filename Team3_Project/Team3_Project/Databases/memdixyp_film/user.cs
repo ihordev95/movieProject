@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class user : database {
+		public static user select(System.String where = "" , System.UInt32? limit = null) {
+			user user = new user();
+			System.Data.DataSet data = user.SELECT(where , limit);
+			System.Data.DataRow DataRow = data.Tables[0].Rows[0];
+			return (user) user.result(DataRow);
+		}
 		public type.Int32 identifier;
 		public type.String name;
 		public type.String password;
@@ -37,6 +43,13 @@
 				this.password,
 				this.email
 			};
+		}
+		public override database result(System.Data.DataRow DataRow) {
+			this.identifier.load(DataRow , 0);
+			this.name.load(DataRow , 1);
+			this.password.load(DataRow , 2);
+			this.email.load(DataRow , 3);
+			return this;
 		}
 	}
 }
