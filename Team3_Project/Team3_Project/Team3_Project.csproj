@@ -242,6 +242,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\190324.jpg" />
     <Content Include="Images\2019-03-23_9-37-31.jpg" />
     <Content Include="Images\8858392d9845b33.jpg" />
     <Content Include="Images\connect_opt.jpg" />
@@ -272,6 +273,7 @@
     <Content Include="Scripts\_references.js" />
     <Content Include="Styles\bootstrap.css" />
     <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\BrowseSearchMovies.css" />
     <Content Include="Styles\dynamicmovie-page.css" />
     <Content Include="Styles\landing-page.css" />
     <Content Include="Styles\register-login.css" />
