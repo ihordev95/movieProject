@@ -3,7 +3,12 @@
 		public abstract System.String schema();
 		public abstract System.String table();
 		public abstract System.String[] columns();
-		public abstract System.Object[] values();
+		public abstract type.abstraction[] values();
+		public abstract database result(System.Data.DataRow DataRow);
+		public virtual type.abstraction[] parameters() {
+			return new type.abstraction[] {
+			};
+		}
 		public System.String log = System.String.Empty;
 		public System.String error = System.String.Empty;
 		private System.String QUOTE_IDENTIFIER(System.String IDENTIFIER) {
@@ -44,15 +49,13 @@
 			}
 			return System.String.Empty;
 		}
-		public System.String VALUES() {
-			System.Object[] values = this.values();
+		private System.String value_array(type.abstraction[] array) {
 			System.Int32 index = 0;
-			System.Int32 count = values.Length;
+			System.Int32 count = array.Length;
 			if (count > 0) {
 				System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
 				do {
-					System.Object value = values[index] ?? "\0";
-					StringBuilder.Append(this.STRING_LITERAL(value.ToString()));
+					StringBuilder.Append(this.STRING_LITERAL(array[index].ToString()));
 					index += 1;
 					if (index >= count) {
 						break;
@@ -63,6 +66,12 @@
 				return StringBuilder.ToString();
 			}
 			return System.String.Empty;
+		}
+		public System.String VALUES() {
+			return this.value_array(this.values());
+		}
+		public System.String PARAMETERS() {
+			return this.value_array(this.parameters());
 		}
 		private System.String LIMIT(System.UInt32? limit = null) {
 			if (limit != null) {
@@ -123,10 +132,10 @@
 		private static readonly System.String connection_string;
 		static database() {
 			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {
-				Server = "memdixyp.mysql.db.hostpoint.ch" ,
-				UserID = "memdixyp_user" ,
 				Password = "rmpvzSp4BsNm" ,
-				SslMode = MySql.Data.MySqlClient.MySqlSslMode.None
+				Server = "memdixyp.mysql.db.hostpoint.ch" ,
+				SslMode = MySql.Data.MySqlClient.MySqlSslMode.None,
+				UserID = "memdixyp_user" 
 			};
 			connection_string = MySqlConnectionStringBuilder.ToString();
 		}
@@ -147,9 +156,22 @@
 			}
 			return DataSet;
 		}
-
+		public System.Data.DataSet CALL() {
+			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
+			query.Append(keyword.CALL);
+			query.Append(unicode.SPACE);
+			query.Append(this.TABLE());
+			query.Append(unicode.SPACE);
+			query.Append(unicode.LEFT_PARENTHESIS);
+			query.Append(this.PARAMETERS());
+			query.Append(unicode.RIGHT_PARENTHESIS);
+			query.Append(unicode.SEMICOLON);
+			return this.run(query.ToString());
+		}
 		public static database get(System.Collections.Specialized.NameValueCollection NameValueCollection) {
-			switch (url.String(NameValueCollection , "table")) {
+			Databases.type.String table = new type.String();
+			table.form(NameValueCollection , nameof(table));
+			switch (table.value) {
 				case "name_basics":
 					return new memdixyp_imdb.name_basics();
 				case "title_akas":
@@ -175,7 +197,6 @@
 				default:
 					return new memdixyp_imdb.title_basics();
 			}
-
 		}
 	}
 }

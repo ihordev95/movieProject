@@ -1,14 +1,26 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class user : database {
-		public System.Int32 identifier;
-		public System.String name;
-		public System.String password;
-		public System.String email;
-		public user (System.Collections.Specialized.NameValueCollection NameValueCollection) {
-			this.identifier = url.Int32(NameValueCollection , "identifier");
-			this.name = url.String(NameValueCollection , "name");
-			this.password = url.String(NameValueCollection , "password");
-			this.email = url.String(NameValueCollection , "email");
+		public static user select(System.String where = "" , System.UInt32? limit = null) {
+			user user = new user();
+			System.Data.DataSet data = user.SELECT(where , limit);
+			System.Data.DataRow DataRow = data.Tables[0].Rows[0];
+			return (user) user.result(DataRow);
+		}
+		public type.Int32 identifier;
+		public type.String name;
+		public type.String password;
+		public type.String email;
+		public user() {
+			this.identifier = new type.Int32();
+			this.name = new type.String();
+			this.password = new type.String();
+			this.email = new type.String();
+		}
+		public user(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
+			this.identifier.form(NameValueCollection , nameof(this.identifier));
+			this.name.form(NameValueCollection , nameof(this.name));
+			this.password.form(NameValueCollection , nameof(this.password));
+			this.email.form(NameValueCollection , nameof(this.email));
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
@@ -24,13 +36,20 @@
 				nameof(this.email)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.identifier,
 				this.name,
 				this.password,
 				this.email
 			};
+		}
+		public override database result(System.Data.DataRow DataRow) {
+			this.identifier.load(DataRow , 0);
+			this.name.load(DataRow , 1);
+			this.password.load(DataRow , 2);
+			this.email.load(DataRow , 3);
+			return this;
 		}
 	}
 }

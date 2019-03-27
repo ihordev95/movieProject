@@ -1,9 +1,8 @@
 ﻿@model System.Data.DataSet
 @{
-    ViewBag.Title = "MoviePage";
-    ViewBag.css0 = "<link href=\"/Styles/w3.css\" rel=\"stylesheet\" />";
-    ViewBag.css1 = "<link href=\"/Styles/dynamicmovie-page.css\" rel=\"stylesheet\" />";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	Layout = "/Views/Shared/_Layout.cshtml";
+	this.ViewBag.Title = "MoviePage";
+	this.ViewBag.css = new System.String[] { "w3" , "dynamicmovie-page" };
 }<div class="dynamicmovieload w3-mobile">
     <div class="test1">
         <img src=@ViewBag.json.poster alt="A picture of the movie poster" class="movieposter w3-third" />

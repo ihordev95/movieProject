@@ -1,9 +1,9 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_episode : database {
-		public System.String tconst;
-		public System.String parentTconst;
-		public System.Int16? seasonNumber;
-		public System.Int32? episodeNumber;
+		public type.String tconst;
+		public type.String parentTconst;
+		public type.Int16 seasonNumber;
+		public type.Int32 episodeNumber;
 		public override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
@@ -18,13 +18,16 @@
 				nameof(this.episodeNumber)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.tconst,
 				this.parentTconst,
 				this.seasonNumber,
 				this.episodeNumber
 			};
+		}
+		public override database result(System.Data.DataRow DataRow) {
+			return this;
 		}
 	}
 }

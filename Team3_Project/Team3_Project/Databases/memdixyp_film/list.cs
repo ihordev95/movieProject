@@ -1,16 +1,26 @@
-﻿	namespace Team3_Project.Databases.memdixyp_film {
+﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list : database {
-		public System.Int32 identifier;
-		public System.Int32 user;
-		public System.String name;
-		public System.Boolean hidden;
-		public System.DateTime modified;
-		public list(System.Collections.Specialized.NameValueCollection NameValueCollection) {
-			this.identifier = url.Int32(NameValueCollection , "identifier");
-			this.user = url.Int32(NameValueCollection , "user");
-			this.name = url.String(NameValueCollection , "name");
-			this.hidden = url.Boolean(NameValueCollection , "hidden");
-			//this.modified = url.DateTime("modified")
+		public static list select(System.String where = "" , System.UInt32? limit = null) {
+			list list = new list();
+			System.Data.DataSet data = list.SELECT(where , limit);
+			System.Data.DataRow DataRow = data.Tables[0].Rows[0];
+			return (list) list.result(DataRow);
+		}
+		public type.Int32 identifier;
+		public type.Int32 user;
+		public type.String name;
+		public type.Boolean hidden;
+		public list() {
+			this.identifier = new type.Int32();
+			this.user = new type.Int32();
+			this.name = new type.String();
+			this.hidden = new type.Boolean();
+		}
+		public list(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
+			this.identifier.form(NameValueCollection , nameof(this.identifier));
+			this.user.form(NameValueCollection , nameof(this.user));
+			this.name.form(NameValueCollection , nameof(this.name));
+			this.hidden.form(NameValueCollection , nameof(this.hidden));
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
@@ -26,13 +36,20 @@
 				nameof(this.hidden)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.identifier,
 				this.user,
 				this.name,
 				this.hidden
 			};
+		}
+		public override database result(System.Data.DataRow DataRow) {
+			this.identifier.load(DataRow , 0);
+			this.user.load(DataRow , 1);
+			this.name.load(DataRow , 2);
+			this.hidden.load(DataRow , 3);
+			return this;
 		}
 	}
 }

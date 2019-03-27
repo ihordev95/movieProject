@@ -221,10 +221,15 @@
     <Compile Include="Databases\memdixyp_imdb\title_principals.cs" />
     <Compile Include="Databases\memdixyp_imdb\title_ratings.cs" />
     <Compile Include="Databases\memdixyp_film\view_list.cs" />
-    <Compile Include="Databases\parse.cs" />
-    <Compile Include="Databases\procedure.cs" />
+    <Compile Include="Databases\type\abstraction.cs" />
+    <Compile Include="Databases\type\DateTime.cs" />
+    <Compile Include="Databases\type\Boolean.cs" />
+    <Compile Include="Databases\type\Byte.cs" />
+    <Compile Include="Databases\type\Single.cs" />
+    <Compile Include="Databases\type\Int32.cs" />
+    <Compile Include="Databases\type\Int16.cs" />
+    <Compile Include="Databases\type\String.cs" />
     <Compile Include="Databases\unicode.cs" />
-    <Compile Include="Databases\url.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -254,24 +259,17 @@
     <Content Include="Images\testimonials-2.jpg" />
     <Content Include="Images\testimonials-3.jpg" />
     <Content Include="Images\theater-names_opt.jpg" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Fonts\glyphicons-halflings-regular.woff" />
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\ajax.js" />
+    <Content Include="Scripts\add_list.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\event.js" />
+    <Content Include="Scripts\head.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
-    <Content Include="Scripts\jquery-1.10.2.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\head.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Styles\bootstrap.css" />
     <Content Include="Styles\bootstrap.min.css" />
     <Content Include="Styles\BrowseSearchMovies.css" />
@@ -327,7 +325,6 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-    <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
