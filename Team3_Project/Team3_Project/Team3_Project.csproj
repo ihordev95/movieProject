@@ -200,6 +200,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BrowseController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LandingController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -320,6 +321,7 @@
     <Content Include="Views\Movie\MoviePage.cshtml" />
     <Content Include="Views\ViewList\ViewList.cshtml" />
     <Content Include="Views\Browse\SearchMovies.cshtml" />
+    <Content Include="Views\ErrorPage\ErrorPage.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
