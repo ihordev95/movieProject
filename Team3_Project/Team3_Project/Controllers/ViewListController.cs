@@ -9,5 +9,10 @@
 			System.Data.DataSet result = view_list.CALL();
 			return this.View(result);
 		}
+		public System.String AddList() {
+			Databases.memdixyp_film.list_movie list_movie = new Databases.memdixyp_film.list_movie(this.Request.QueryString);
+			list_movie.INSERT();
+			return "bobo";
+		}
 	}
 }

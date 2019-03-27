@@ -132,10 +132,10 @@
 		private static readonly System.String connection_string;
 		static database() {
 			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {
-				Server = "memdixyp.mysql.db.hostpoint.ch" ,
-				UserID = "memdixyp_user" ,
 				Password = "rmpvzSp4BsNm" ,
-				SslMode = MySql.Data.MySqlClient.MySqlSslMode.None
+				Server = "memdixyp.mysql.db.hostpoint.ch" ,
+				SslMode = MySql.Data.MySqlClient.MySqlSslMode.None,
+				UserID = "memdixyp_user" 
 			};
 			connection_string = MySqlConnectionStringBuilder.ToString();
 		}

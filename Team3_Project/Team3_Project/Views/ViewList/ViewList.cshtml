@@ -4,6 +4,17 @@
 }			<h2>
 				ViewList
 			</h2>
+		<script src="/Scripts/ajax.js"></script>
+		<script src="/Scripts/event.js"></script>
+		<script src="/Scripts/add_list.js"></script>
+		<button id="dog">push</button>
+<script>
+	function work() {
+		var form = document.getElementById("dog");
+		ajax_send("/ViewList/AddList", form);
+	}
+	event_click_one_now("#dog", work);
+</script>
 			<p>
 				This is the page that would show a list selected by the user.
 			</p>

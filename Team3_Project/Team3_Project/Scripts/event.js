@@ -1,6 +1,6 @@
 /* JSLint edition 2019-01-31 */
 /*jslint
-    browser:true, devel:true, long:false
+    browser:true
 */
 /*global
     document, event, event_blur, event_blur_all_now, event_blur_all_run,

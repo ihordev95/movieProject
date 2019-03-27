@@ -8,16 +8,16 @@
 		}
 		public type.Int32 list;
 		public type.Int32 movie;
-		public type.Boolean archive;
+		public type.DateTime added;
 		public list_movie() {
 			this.list = new type.Int32();
 			this.movie = new type.Int32();
-			this.archive = new type.Boolean();
+			this.added = new type.DateTime();
 		}
 		public list_movie(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
 			this.list.form(NameValueCollection , nameof(this.list));
 			this.movie.form(NameValueCollection , nameof(this.movie));
-			this.archive.form(NameValueCollection , nameof(this.archive));
+			this.added.form(NameValueCollection , nameof(this.added));
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
@@ -29,20 +29,20 @@
 			return new System.String[] {
 				nameof(this.list),
 				nameof(this.movie),
-				nameof(this.archive)
+				nameof(this.added)
 			};
 		}
 		public override type.abstraction[] values() {
 			return new type.abstraction[] {
 				this.list,
 				this.movie,
-				this.archive
+				this.added
 			};
 		}
 		public override database result(System.Data.DataRow DataRow) {
 			this.list.load(DataRow , 0);
 			this.movie.load(DataRow , 1);
-			this.archive.load(DataRow , 2);
+			this.added.load(DataRow , 2);
 			return this;
 		}
 	}
