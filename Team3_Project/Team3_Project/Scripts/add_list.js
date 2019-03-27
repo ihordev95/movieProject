@@ -10,14 +10,10 @@
 */
 function ajax_prepare(ignore) {
     "use strict";
-    /*
-    var id = parent.getAttribute("data-id");
-    var item = json[id];
-    */
     var parameter = [];
-    parameter = ajax_join(parameter, "activity_id", 27);
-    parameter = ajax_join(parameter, "detail_date", "fish");
-    parameter = ajax_join(parameter, "employee_id", 0.23);
+    parameter = ajax_join(parameter, "list");
+    parameter = ajax_join(parameter, "movie");
+    parameter = ajax_join(parameter, "added");
     return parameter;
 }
 function ajax_succeed(data) {
@@ -36,7 +32,7 @@ function ajax_failure(code, text) {
     "use strict";
     alert(code + " : " + text);
 }
-event_click_one_run("#dog", function (ignore) {
+event_click_one_run("#send", function (ignore) {
     var form = document.getElementById("dog");
-    ajax_send("/ViewList/AddList", form);
+    ajax_get("/ViewList/AddList", form);
 });
