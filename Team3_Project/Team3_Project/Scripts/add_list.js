@@ -1,12 +1,12 @@
 /* JSLint edition 2019-01-31 */
 /*jslint
-    browser:true, devel:true, long:false
+    browser:true, devel:true, long:true
 */
 /*global
-    ajax_prepare, ajax_join, ajax_succeed, date_prepare, date_succeed, document
+    ajax_failure, ajax_join, ajax_prepare, ajax_send, ajax_succeed, alert, document, event_click_one_run
 */
 /*property
-    elements, end_date, getElementById, is_active, start_date, value
+    getElementById
 */
 function ajax_prepare(ignore) {
     "use strict";
@@ -36,3 +36,7 @@ function ajax_failure(code, text) {
     "use strict";
     alert(code + " : " + text);
 }
+event_click_one_run("#dog", function (ignore) {
+    var form = document.getElementById("dog");
+    ajax_send("/ViewList/AddList", form);
+});
