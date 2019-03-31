@@ -22,6 +22,12 @@
 			this.password.form(NameValueCollection , nameof(this.password));
 			this.email.form(NameValueCollection , nameof(this.email));
 		}
+		public user(System.String name , System.String password , System.String email) {
+			this.identifier = new type.Int32();
+			this.name = new type.String(name);
+			this.password = new type.String(password);
+			this.email = new type.String(email);
+		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
 		}
