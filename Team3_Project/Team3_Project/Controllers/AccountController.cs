@@ -127,18 +127,18 @@ namespace Team3_Project.Controllers {
 		[ValidateAntiForgeryToken]
 		public async Task<ActionResult> Register(RegisterViewModel model) {
 			if (this.ModelState.IsValid) {
-				ApplicationUser user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
-                IdentityResult result = await this.UserManager.CreateAsync(user, model.Password);
-                if(result.Succeeded) {
-                    // Todo: Code to place user into database
-
-
-                    await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                    return this.RedirectToAction("Index", "Landing");
-                }
-                this.AddErrors(result);
+				ApplicationUser user = new ApplicationUser { UserName = model.UserName , Email = model.Email };
+				IdentityResult result = await this.UserManager.CreateAsync(user , model.Password);
+				if (result.Succeeded) {
+					// Code to place user into database.
+					Databases.memdixyp_film.user film_user = new Databases.memdixyp_film.user(user.UserName, user.PasswordHash, user.Email);
+					film_user.INSERT();
+					//
+					await this.SignInManager.SignInAsync(user , isPersistent: false , rememberBrowser: false);
+					return this.RedirectToAction("Index" , "Landing");
+				}
+				this.AddErrors(result);
 			}
-
 			// If we got this far, something failed, redisplay form
 			return this.View(model);
 		}
