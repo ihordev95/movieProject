@@ -1,15 +1,5 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list_movie : database {
-		public static readonly list_movie self;
-		static list_movie() {
-			self = new list_movie();
-		}
-		public static list_movie[] collection(System.String where = "" , System.UInt32? limit = null) {
-			return System.Array.ConvertAll<database , list_movie>(self.COLLECTION(self.SELECT(where , limit)) , item => (list_movie) item);
-		}
-		public static list_movie individual(System.String where = "" , System.UInt32? limit = null) {
-			return (list_movie) self.INDIVIDUAL(self.SELECT(where , limit));
-		}
 		public type.Int32 list;
 		public type.String movie;
 		public type.DateTime added;

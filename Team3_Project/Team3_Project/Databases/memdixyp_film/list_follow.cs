@@ -1,15 +1,5 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list_follow : database {
-		public static readonly list_follow self;
-		static list_follow() {
-			self = new list_follow();
-		}
-		public static list_follow[] collection(System.String where = "" , System.UInt32? limit = null) {
-			return System.Array.ConvertAll<database , list_follow>(self.COLLECTION(self.SELECT(where , limit)) , item => (list_follow) item);
-		}
-		public static list_follow individual(System.String where = "" , System.UInt32? limit = null) {
-			return (list_follow) self.INDIVIDUAL(self.SELECT(where , limit));
-		}
 		public type.Int32 user;
 		public type.Int32 list;
 		public list_follow() {

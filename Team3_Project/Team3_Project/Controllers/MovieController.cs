@@ -7,7 +7,7 @@
 			Helpers.Watchable watchable = Newtonsoft.Json.JsonConvert.DeserializeObject<Helpers.Watchable>(response);
 			this.ViewBag.json = watchable;
 			System.Int32 identifier = 1; // PLACEHOLDER
-			this.ViewBag.list = Databases.memdixyp_film.list.collection(System.String.Format("`user`='{0}'" , identifier));
+			this.ViewBag.list = Databases.memdixyp_film.head.collection.list(System.String.Format("`user`='{0}'" , identifier));
 			return this.View();
 		}
 	}

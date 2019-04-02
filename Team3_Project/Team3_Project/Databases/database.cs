@@ -182,18 +182,18 @@
 			}
 			return DataSet.Tables.Count > 0 ? DataSet.Tables[0] : new System.Data.DataTable();
 		}
-		public database[] COLLECTION(System.String query) {
+		public type[] collection<type>(System.String query , System.Converter<database , type> converter) {
 			System.Collections.Generic.List<database> list = new System.Collections.Generic.List<database>();
 			System.Data.DataTable DataTable = this.run(query);
 			foreach (System.Data.DataRow DataRow in DataTable.Rows) {
 				database item = this.constructor(DataRow);
 				list.Add(item);
 			}
-			return list.ToArray();
+			return System.Array.ConvertAll(list.ToArray() , converter);
 		}
-		public database INDIVIDUAL(System.String query) {
-			database[] list = this.COLLECTION(query);
-			return list != null && list.Length >= 1 ? list[0] : this.constructor();
+		public type individual<type>(System.String query , System.Converter<database , type> converter) {
+			type[] list = this.collection(query, converter);
+			return list[0];
 		}
 		public static database get(System.Collections.Specialized.NameValueCollection NameValueCollection) {
 			Databases.type.String table = new type.String();

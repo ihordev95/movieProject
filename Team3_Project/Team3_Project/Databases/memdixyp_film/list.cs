@@ -1,15 +1,5 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list : database {
-		public static readonly list self;
-		static list() {
-			self = new list();
-		}
-		public static list[] collection(System.String where = "" , System.UInt32? limit = null) {
-			return System.Array.ConvertAll<database , list>(self.COLLECTION(self.SELECT(where , limit)) , item => (list) item);
-		}
-		public static list individual(System.String where = "" , System.UInt32? limit = null) {
-			return (list) self.INDIVIDUAL(self.SELECT(where , limit));
-		}
 		public type.Int32 identifier;
 		public type.Int32 user;
 		public type.String name;
