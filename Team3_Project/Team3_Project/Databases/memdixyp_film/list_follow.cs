@@ -1,5 +1,9 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list_follow : database {
+		public static readonly list_follow self;
+		static list_follow() {
+			self = new list_follow();
+		}
 		public static list_follow select(System.String where = "" , System.UInt32? limit = null) {
 			list_follow list_follow = new list_follow();
 			System.Data.DataSet data = list_follow.SELECT(where , limit);
@@ -15,6 +19,9 @@
 		public list_follow(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
 			this.user.form(NameValueCollection , nameof(this.user));
 			this.list.form(NameValueCollection , nameof(this.list));
+		}
+		public override database constructor() {
+			return new list_follow();
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);

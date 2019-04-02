@@ -1,5 +1,9 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class user : database {
+		public static readonly user self;
+		static user() {
+			self = new user();
+		}
 		public static user select(System.String where = "" , System.UInt32? limit = null) {
 			user user = new user();
 			System.Data.DataSet data = user.SELECT(where , limit);
@@ -27,6 +31,9 @@
 			this.name = new type.String(name);
 			this.password = new type.String(password);
 			this.email = new type.String(email);
+		}
+		public override database constructor() {
+			return new user();
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);

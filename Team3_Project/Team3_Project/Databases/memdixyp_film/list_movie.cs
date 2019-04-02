@@ -1,5 +1,9 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list_movie : database {
+		public static readonly list_movie self;
+		static list_movie() {
+			self = new list_movie();
+		}
 		public static list_movie select(System.String where = "" , System.UInt32? limit = null) {
 			list_movie list_movie = new list_movie();
 			System.Data.DataSet data = list_movie.SELECT(where , limit);
@@ -18,6 +22,9 @@
 			this.list.form(NameValueCollection , nameof(this.list));
 			this.movie.form(NameValueCollection , nameof(this.movie));
 			this.added.form(NameValueCollection , nameof(this.added));
+		}
+		public override database constructor() {
+			return new list_movie();
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);

@@ -1,5 +1,9 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_basics : database {
+		public static readonly title_basics self;
+		static title_basics() {
+			self = new title_basics();
+		}
 		public type.String tconst;
 		public type.String titleType;
 		public type.String primaryTitle;
@@ -9,6 +13,20 @@
 		public type.Int16 endYear;
 		public type.Int32 runtimeMinutes;
 		public type.String genres;
+		public title_basics() {
+			this.tconst = new type.String();
+			this.titleType = new type.String();
+			this.primaryTitle = new type.String();
+			this.originalTitle = new type.String();
+			this.isAdult = new type.Boolean();
+			this.startYear = new type.Int16();
+			this.endYear = new type.Int16();
+			this.runtimeMinutes = new type.Int32();
+			this.genres = new type.String();
+		}
+		public override database constructor() {
+			return new title_basics();
+		}
 		public override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}

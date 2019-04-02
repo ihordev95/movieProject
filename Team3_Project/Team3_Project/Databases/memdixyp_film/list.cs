@@ -1,5 +1,9 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list : database {
+		public static readonly list self;
+		static list() {
+			self = new list();
+		}
 		public static list select(System.String where = "" , System.UInt32? limit = null) {
 			list list = new list();
 			System.Data.DataSet data = list.SELECT(where , limit);

@@ -1,5 +1,6 @@
 ﻿namespace Team3_Project.Databases {
 	public abstract class database {
+		public abstract database constructor();
 		public abstract System.String schema();
 		public abstract System.String table();
 		public abstract System.String[] columns();

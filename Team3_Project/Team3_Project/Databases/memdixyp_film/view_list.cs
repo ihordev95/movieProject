@@ -1,7 +1,8 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class view_list : database {
-		public static view_list make(System.Data.DataRow DataRow) {
-			return new view_list(DataRow);
+		public static readonly view_list self;
+		static view_list() {
+			self = new view_list();
 		}
 		public type.Int32 identifier;
 		public type.String tconst;
@@ -16,11 +17,8 @@
 		public view_list(System.Int32 identifier) : this() {
 			this.identifier = new type.Int32(identifier);
 		}
-		public view_list(System.Data.DataRow DataRow) : this() {
-			// this.identifier.load(DataRow , 0);
-			this.tconst.load(DataRow , 0);
-			this.primaryTitle.load(DataRow , 1);
-			this.startYear.load(DataRow , 2);
+		public override database constructor() {
+			return new view_list();
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
