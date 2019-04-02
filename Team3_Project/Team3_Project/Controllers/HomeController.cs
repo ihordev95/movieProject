@@ -14,23 +14,38 @@
 		public System.Web.Mvc.ActionResult Contact() {
 			this.ViewBag.Message = "Your contact page.";
 			System.Collections.Specialized.NameValueCollection QueryString = this.Request.QueryString;
-			//
-			if (Databases.url.Boolean(QueryString , "insert_list")) {
-				new Databases.memdixyp_film.list(QueryString).INSERT();
+			{
+				Databases.type.Boolean insert_list = new Databases.type.Boolean();
+				insert_list.form(QueryString , nameof(insert_list));
+				if (insert_list.value) {
+					new Databases.memdixyp_film.list(QueryString).INSERT();
+				}
 			}
-			if (Databases.url.Boolean(QueryString , "insert_list_follow")) {
-				new Databases.memdixyp_film.list_follow(QueryString).INSERT();
+			{
+				Databases.type.Boolean insert_list_follow = new Databases.type.Boolean();
+				insert_list_follow.form(QueryString , nameof(insert_list_follow));
+				if (insert_list_follow.value) {
+					new Databases.memdixyp_film.list_follow(QueryString).INSERT();
+				}
 			}
-			if (Databases.url.Boolean(QueryString , "insert_list_movie")) {
-				new Databases.memdixyp_film.list_movie(QueryString).INSERT();
+			{
+				Databases.type.Boolean insert_list_movie = new Databases.type.Boolean();
+				insert_list_movie.form(QueryString , nameof(insert_list_movie));
+				if (insert_list_movie.value) {
+					new Databases.memdixyp_film.list_movie(QueryString).INSERT();
+				}
 			}
-			if (Databases.url.Boolean(QueryString , "insert_user")) {
-				new Databases.memdixyp_film.user(QueryString).INSERT();
+			{
+				Databases.type.Boolean insert_user = new Databases.type.Boolean();
+				insert_user.form(QueryString , nameof(insert_user));
+				if (insert_user.value) {
+					new Databases.memdixyp_film.user(QueryString).INSERT();
+				}
 			}
-			//
 			Databases.database movie = Databases.database.get(QueryString);
-			System.String where = Databases.url.String(QueryString , "where");
-			System.Data.DataSet results = movie.SELECT(where , 50);
+			Databases.type.String where = new Databases.type.String();
+			where.form(QueryString , "where");
+			System.Data.DataSet results = movie.SELECT(where.value , 50);
 			return this.View(results);
 		}
 	}

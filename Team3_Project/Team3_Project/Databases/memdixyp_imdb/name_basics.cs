@@ -1,11 +1,11 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class name_basics : database {
-		public System.String nconst;
-		public System.String primaryName;
-		public System.Int16? birthYear;
-		public System.Int16? deathYear;
-		public System.String primaryProfession;
-		public System.String knownForTitles;
+		public type.String nconst;
+		public type.String primaryName;
+		public type.Int16 birthYear;
+		public type.Int16 deathYear;
+		public type.String primaryProfession;
+		public type.String knownForTitles;
 		public override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
@@ -22,8 +22,8 @@
 				nameof(this.knownForTitles)
 			};
 		}
-		public override System.Object[] values() {
-			return new System.Object[] {
+		public override type.abstraction[] values() {
+			return new type.abstraction[] {
 				this.nconst,
 				this.primaryName,
 				this.birthYear,
@@ -31,6 +31,9 @@
 				this.primaryProfession,
 				this.knownForTitles
 			};
+		}
+		public override database result(System.Data.DataRow DataRow) {
+			return this;
 		}
 	}
 }
