@@ -4,18 +4,18 @@
 		static view_list() {
 			self = new view_list();
 		}
-		public type.Int32 identifier;
+		public type.Int32 list;
 		public type.String tconst;
 		public type.String primaryTitle;
 		public type.Int16 startYear;
 		public view_list() {
-			this.identifier = new type.Int32();
+			this.list = new type.Int32();
 			this.tconst = new type.String();
 			this.primaryTitle = new type.String();
 			this.startYear = new type.Int16();
 		}
-		public view_list(System.Int32 identifier) : this() {
-			this.identifier = new type.Int32(identifier);
+		public view_list(System.Int32 list) : this() {
+			this.list = new type.Int32(list);
 		}
 		public override database constructor() {
 			return new view_list();
@@ -28,7 +28,7 @@
 		}
 		public override System.String[] columns() {
 			return new System.String[] {
-				nameof(this.identifier),
+				nameof(this.list),
 				nameof(this.tconst),
 				nameof(this.primaryTitle),
 				nameof(this.startYear)
@@ -36,7 +36,7 @@
 		}
 		public override type.abstraction[] values() {
 			return new type.abstraction[] {
-				this.identifier,
+				this.list,
 				this.tconst,
 				this.primaryTitle,
 				this.startYear
@@ -44,20 +44,8 @@
 		}
 		public override type.abstraction[] parameters() {
 			return new type.abstraction[] {
-				this.identifier
+				this.list
 			};
-		}
-		public override database result(System.Data.DataRow DataRow) {
-			/*
-			this.identifier.load(DataRow , 0);
-			this.tconst.load(DataRow , 1);
-			this.primaryTitle.load(DataRow , 2);
-			this.identifier.load(DataRow , 3);
-			*/
-			this.tconst.load(DataRow , 0);
-			this.primaryTitle.load(DataRow , 1);
-			this.identifier.load(DataRow , 2);
-			return this;
 		}
 	}
 }

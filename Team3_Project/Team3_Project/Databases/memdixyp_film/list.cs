@@ -26,6 +26,9 @@
 			this.name.form(NameValueCollection , nameof(this.name));
 			this.hidden.form(NameValueCollection , nameof(this.hidden));
 		}
+		public override database constructor() {
+			return new list();
+		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
 		}
@@ -47,13 +50,6 @@
 				this.name,
 				this.hidden
 			};
-		}
-		public override database result(System.Data.DataRow DataRow) {
-			this.identifier.load(DataRow , 0);
-			this.user.load(DataRow , 1);
-			this.name.load(DataRow , 2);
-			this.hidden.load(DataRow , 3);
-			return this;
 		}
 	}
 }

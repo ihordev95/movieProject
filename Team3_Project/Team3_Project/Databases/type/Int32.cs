@@ -13,8 +13,8 @@
 		public override System.Int32 GetHashCode() {
 			return this.value.GetHashCode();
 		}
-		public override void load(System.Data.DataRow DataRow , System.Int32 index) {
-			this.value = (System.Int32) DataRow[index];
+		public override void cast(System.Object Object) {
+			this.value = (System.Int32) Object;
 		}
 		public override System.Boolean parse(System.String text) {
 			return System.Int32.TryParse(text , out this.value);

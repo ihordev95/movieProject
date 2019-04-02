@@ -46,11 +46,5 @@
 				this.added
 			};
 		}
-		public override database result(System.Data.DataRow DataRow) {
-			this.list.load(DataRow , 0);
-			this.movie.load(DataRow , 1);
-			this.added.load(DataRow , 2);
-			return this;
-		}
 	}
 }

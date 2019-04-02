@@ -41,10 +41,5 @@
 				this.list
 			};
 		}
-		public override database result(System.Data.DataRow DataRow) {
-			this.user.load(DataRow , 0);
-			this.list.load(DataRow , 1);
-			return this;
-		}
 	}
 }

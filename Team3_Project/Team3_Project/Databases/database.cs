@@ -5,7 +5,6 @@
 		public abstract System.String table();
 		public abstract System.String[] columns();
 		public abstract type.abstraction[] values();
-		public abstract database result(System.Data.DataRow DataRow);
 		public virtual type.abstraction[] parameters() {
 			return new type.abstraction[] {
 			};
@@ -110,6 +109,32 @@
 			query.Append(unicode.SEMICOLON);
 			return this.run(query.ToString());
 		}
+		private System.Data.DataTable hold (System.Data.DataSet DataSet) {
+			return DataSet.Tables[0];
+		}
+		private database constructor(System.Data.DataRow DataRow) {
+			database item = this.constructor();
+			type.abstraction[] values = item.values();
+			System.Int32 index = values.Length;
+			while (index > 0) {
+				index -= 1;
+				System.Object Object = DataRow[index];
+				values[index].cast(Object);
+			}
+			return item;
+		}
+		public database[] collection(System.Data.DataTable table) {
+			System.Collections.Generic.List<database> list = new System.Collections.Generic.List<database>();
+			foreach (System.Data.DataRow DataRow in table.Rows) {
+				database item = this.constructor(DataRow);
+				list.Add(item);
+			}
+			return list.ToArray();
+		}
+		public database individual(System.Data.DataTable table) {
+			database[] list = this.collection(table);
+			return list != null && list.Length >= 1 ? list[0] : this.constructor();
+		}
 		public System.Data.DataSet INSERT() {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
 			query.Append(keyword.INSERT);
@@ -135,8 +160,8 @@
 			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {
 				Password = "rmpvzSp4BsNm" ,
 				Server = "memdixyp.mysql.db.hostpoint.ch" ,
-				SslMode = MySql.Data.MySqlClient.MySqlSslMode.None,
-				UserID = "memdixyp_user" 
+				SslMode = MySql.Data.MySqlClient.MySqlSslMode.None ,
+				UserID = "memdixyp_user"
 			};
 			connection_string = MySqlConnectionStringBuilder.ToString();
 		}

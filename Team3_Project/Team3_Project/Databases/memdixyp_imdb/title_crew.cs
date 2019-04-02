@@ -35,8 +35,5 @@
 				this.writers
 			};
 		}
-		public override database result(System.Data.DataRow DataRow) {
-			return this;
-		}
 	}
 }

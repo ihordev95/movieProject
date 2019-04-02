@@ -57,12 +57,5 @@
 				this.email
 			};
 		}
-		public override database result(System.Data.DataRow DataRow) {
-			this.identifier.load(DataRow , 0);
-			this.name.load(DataRow , 1);
-			this.password.load(DataRow , 2);
-			this.email.load(DataRow , 3);
-			return this;
-		}
 	}
 }
