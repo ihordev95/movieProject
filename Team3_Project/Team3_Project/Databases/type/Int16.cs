@@ -14,7 +14,7 @@
 			return this.value.GetHashCode();
 		}
 		public override void cast(System.Object Object) {
-			this.value = (System.Int16) Object;
+			this.value = System.Convert.ToInt16(Object);
 		}
 		public override System.Boolean parse(System.String text) {
 			return System.Int16.TryParse(text , out this.value);

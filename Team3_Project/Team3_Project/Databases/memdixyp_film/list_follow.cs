@@ -4,11 +4,11 @@
 		static list_follow() {
 			self = new list_follow();
 		}
-		public static list_follow select(System.String where = "" , System.UInt32? limit = null) {
-			list_follow list_follow = new list_follow();
-			System.Data.DataSet data = list_follow.SELECT(where , limit);
-			System.Data.DataRow DataRow = data.Tables[0].Rows[0];
-			return (list_follow) list_follow.result(DataRow);
+		public static list_follow[] collection(System.String where = "" , System.UInt32? limit = null) {
+			return System.Array.ConvertAll<database , list_follow>(self.COLLECTION(self.SELECT(where , limit)) , item => (list_follow) item);
+		}
+		public static list_follow individual(System.String where = "" , System.UInt32? limit = null) {
+			return (list_follow) self.INDIVIDUAL(self.SELECT(where , limit));
 		}
 		public type.Int32 user;
 		public type.Int32 list;

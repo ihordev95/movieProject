@@ -4,11 +4,11 @@
 		static user() {
 			self = new user();
 		}
-		public static user select(System.String where = "" , System.UInt32? limit = null) {
-			user user = new user();
-			System.Data.DataSet data = user.SELECT(where , limit);
-			System.Data.DataRow DataRow = data.Tables[0].Rows[0];
-			return (user) user.result(DataRow);
+		public static user[] collection(System.String where = "" , System.UInt32? limit = null) {
+			return System.Array.ConvertAll<database , user>(self.COLLECTION(self.SELECT(where , limit)) , item => (user) item);
+		}
+		public static user individual(System.String where = "" , System.UInt32? limit = null) {
+			return (user) self.INDIVIDUAL(self.SELECT(where , limit));
 		}
 		public type.Int32 identifier;
 		public type.String name;

@@ -4,6 +4,14 @@
 		static view_list() {
 			self = new view_list();
 		}
+		public static view_list[] collection(System.Int32 list) {
+			view_list view_list = new view_list(list);
+			return System.Array.ConvertAll<database , view_list>(view_list.COLLECTION(view_list.CALL()) , item => (view_list) item);
+		}
+		public static view_list individual(System.Int32 list) {
+			view_list view_list = new view_list(list);
+			return (view_list) view_list.INDIVIDUAL(view_list.CALL());
+		}
 		public type.Int32 list;
 		public type.String tconst;
 		public type.String primaryTitle;

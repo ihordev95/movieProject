@@ -4,11 +4,11 @@
 		static list() {
 			self = new list();
 		}
-		public static list select(System.String where = "" , System.UInt32? limit = null) {
-			list list = new list();
-			System.Data.DataSet data = list.SELECT(where , limit);
-			System.Data.DataRow DataRow = data.Tables[0].Rows[0];
-			return (list) list.result(DataRow);
+		public static list[] collection(System.String where = "" , System.UInt32? limit = null) {
+			return System.Array.ConvertAll<database , list>(self.COLLECTION(self.SELECT(where , limit)) , item => (list) item);
+		}
+		public static list individual(System.String where = "" , System.UInt32? limit = null) {
+			return (list) self.INDIVIDUAL(self.SELECT(where , limit));
 		}
 		public type.Int32 identifier;
 		public type.Int32 user;

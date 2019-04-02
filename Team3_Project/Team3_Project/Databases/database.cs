@@ -1,5 +1,15 @@
 ﻿namespace Team3_Project.Databases {
 	public abstract class database {
+		private static readonly System.String connection_string;
+		static database() {
+			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {
+				Password = "rmpvzSp4BsNm" ,
+				Server = "memdixyp.mysql.db.hostpoint.ch" ,
+				SslMode = MySql.Data.MySqlClient.MySqlSslMode.None ,
+				UserID = "memdixyp_user"
+			};
+			connection_string = MySqlConnectionStringBuilder.ToString();
+		}
 		public abstract database constructor();
 		public abstract System.String schema();
 		public abstract System.String table();
@@ -95,7 +105,7 @@
 			}
 			return System.String.Empty;
 		}
-		public System.Data.DataSet SELECT(System.String where = "" , System.UInt32? limit = null) {
+		public System.String SELECT(System.String where = "" , System.UInt32? limit = null) {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
 			query.Append(keyword.SELECT);
 			query.Append(unicode.SPACE);
@@ -107,7 +117,7 @@
 			query.Append(this.WHERE(where));
 			query.Append(this.LIMIT(limit));
 			query.Append(unicode.SEMICOLON);
-			return this.run(query.ToString());
+			return query.ToString();
 		}
 		private System.Data.DataTable hold (System.Data.DataSet DataSet) {
 			return DataSet.Tables[0];
@@ -123,19 +133,7 @@
 			}
 			return item;
 		}
-		public database[] collection(System.Data.DataTable table) {
-			System.Collections.Generic.List<database> list = new System.Collections.Generic.List<database>();
-			foreach (System.Data.DataRow DataRow in table.Rows) {
-				database item = this.constructor(DataRow);
-				list.Add(item);
-			}
-			return list.ToArray();
-		}
-		public database individual(System.Data.DataTable table) {
-			database[] list = this.collection(table);
-			return list != null && list.Length >= 1 ? list[0] : this.constructor();
-		}
-		public System.Data.DataSet INSERT() {
+		public System.String INSERT() {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
 			query.Append(keyword.INSERT);
 			query.Append(unicode.SPACE);
@@ -153,19 +151,21 @@
 			query.Append(this.VALUES());
 			query.Append(unicode.RIGHT_PARENTHESIS);
 			query.Append(unicode.SEMICOLON);
-			return this.run(query.ToString());
+			return query.ToString();
 		}
-		private static readonly System.String connection_string;
-		static database() {
-			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {
-				Password = "rmpvzSp4BsNm" ,
-				Server = "memdixyp.mysql.db.hostpoint.ch" ,
-				SslMode = MySql.Data.MySqlClient.MySqlSslMode.None ,
-				UserID = "memdixyp_user"
-			};
-			connection_string = MySqlConnectionStringBuilder.ToString();
+		public System.String CALL() {
+			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
+			query.Append(keyword.CALL);
+			query.Append(unicode.SPACE);
+			query.Append(this.TABLE());
+			query.Append(unicode.SPACE);
+			query.Append(unicode.LEFT_PARENTHESIS);
+			query.Append(this.PARAMETERS());
+			query.Append(unicode.RIGHT_PARENTHESIS);
+			query.Append(unicode.SEMICOLON);
+			return query.ToString();
 		}
-		protected System.Data.DataSet run(System.String query) {
+		private System.Data.DataTable run(System.String query) {
 			this.log = query;
 			System.Data.DataSet DataSet = new System.Data.DataSet();
 			using (MySql.Data.MySqlClient.MySqlConnection MySqlConnection = new MySql.Data.MySqlClient.MySqlConnection(connection_string)) {
@@ -180,19 +180,20 @@
 					}
 				}
 			}
-			return DataSet;
+			return DataSet.Tables.Count > 0 ? DataSet.Tables[0] : new System.Data.DataTable();
 		}
-		public System.Data.DataSet CALL() {
-			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
-			query.Append(keyword.CALL);
-			query.Append(unicode.SPACE);
-			query.Append(this.TABLE());
-			query.Append(unicode.SPACE);
-			query.Append(unicode.LEFT_PARENTHESIS);
-			query.Append(this.PARAMETERS());
-			query.Append(unicode.RIGHT_PARENTHESIS);
-			query.Append(unicode.SEMICOLON);
-			return this.run(query.ToString());
+		public database[] COLLECTION(System.String query) {
+			System.Collections.Generic.List<database> list = new System.Collections.Generic.List<database>();
+			System.Data.DataTable DataTable = this.run(query);
+			foreach (System.Data.DataRow DataRow in DataTable.Rows) {
+				database item = this.constructor(DataRow);
+				list.Add(item);
+			}
+			return list.ToArray();
+		}
+		public database INDIVIDUAL(System.String query) {
+			database[] list = this.COLLECTION(query);
+			return list != null && list.Length >= 1 ? list[0] : this.constructor();
 		}
 		public static database get(System.Collections.Specialized.NameValueCollection NameValueCollection) {
 			Databases.type.String table = new type.String();

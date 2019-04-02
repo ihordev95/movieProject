@@ -14,7 +14,7 @@
 			return this.value.GetHashCode();
 		}
 		public override void cast(System.Object Object) {
-			this.value = (System.DateTime) Object;
+			this.value = System.Convert.ToDateTime(Object);
 		}
 		public override System.Boolean parse(System.String text) {
 			return System.DateTime.TryParse(text , out this.value);

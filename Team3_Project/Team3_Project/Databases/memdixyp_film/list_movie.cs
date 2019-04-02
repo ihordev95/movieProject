@@ -4,11 +4,11 @@
 		static list_movie() {
 			self = new list_movie();
 		}
-		public static list_movie select(System.String where = "" , System.UInt32? limit = null) {
-			list_movie list_movie = new list_movie();
-			System.Data.DataSet data = list_movie.SELECT(where , limit);
-			System.Data.DataRow DataRow = data.Tables[0].Rows[0];
-			return (list_movie) list_movie.result(DataRow);
+		public static list_movie[] collection(System.String where = "" , System.UInt32? limit = null) {
+			return System.Array.ConvertAll<database , list_movie>(self.COLLECTION(self.SELECT(where , limit)) , item => (list_movie) item);
+		}
+		public static list_movie individual(System.String where = "" , System.UInt32? limit = null) {
+			return (list_movie) self.INDIVIDUAL(self.SELECT(where , limit));
 		}
 		public type.Int32 list;
 		public type.String movie;

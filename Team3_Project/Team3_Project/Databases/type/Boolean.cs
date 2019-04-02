@@ -14,7 +14,7 @@
 			return this.value.GetHashCode();
 		}
 		public override void cast(System.Object Object) {
-			this.value = (System.Boolean) Object;
+			this.value = System.Convert.ToBoolean(Object);
 		}
 		public override System.Boolean parse(System.String text) {
 			return System.Boolean.TryParse(text , out this.value);
