@@ -28,16 +28,16 @@
 			this.password = new type.String(password);
 			this.email = new type.String(email);
 		}
-		public override database constructor() {
+		protected override database constructor() {
 			return new user();
 		}
-		public override System.String schema() {
+		protected override System.String schema() {
 			return nameof(memdixyp_film);
 		}
-		public override System.String table() {
+		protected override System.String table() {
 			return nameof(user);
 		}
-		public override System.String[] columns() {
+		protected override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.identifier),
 				nameof(this.name),
@@ -45,7 +45,7 @@
 				nameof(this.email)
 			};
 		}
-		public override type.abstraction[] values() {
+		protected override type.abstraction[] values() {
 			return new type.abstraction[] {
 				this.identifier,
 				this.name,

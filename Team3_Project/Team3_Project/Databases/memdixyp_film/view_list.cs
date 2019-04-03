@@ -19,16 +19,16 @@
 		public view_list(System.Int32 list) : this() {
 			this.list = new type.Int32(list);
 		}
-		public override database constructor() {
+		protected override database constructor() {
 			return new view_list();
 		}
-		public override System.String schema() {
+		protected override System.String schema() {
 			return nameof(memdixyp_film);
 		}
-		public override System.String table() {
+		protected override System.String table() {
 			return nameof(view_list);
 		}
-		public override System.String[] columns() {
+		protected override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.list),
 				nameof(this.tconst),
@@ -36,7 +36,7 @@
 				nameof(this.startYear)
 			};
 		}
-		public override type.abstraction[] values() {
+		protected override type.abstraction[] values() {
 			return new type.abstraction[] {
 				this.list,
 				this.tconst,
@@ -44,7 +44,7 @@
 				this.startYear
 			};
 		}
-		public override type.abstraction[] parameters() {
+		protected override type.abstraction[] parameters() {
 			return new type.abstraction[] {
 				this.list
 			};

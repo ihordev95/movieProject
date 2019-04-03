@@ -1,8 +1,10 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_basics : database {
 		public static readonly title_basics self;
+		private static readonly System.Converter<database , title_basics> converter;
 		static title_basics() {
 			self = new title_basics();
+			converter = (database item) => (title_basics) item;
 		}
 		public type.String tconst;
 		public type.String titleType;
@@ -24,16 +26,16 @@
 			this.runtimeMinutes = new type.Int32();
 			this.genres = new type.String();
 		}
-		public override database constructor() {
+		protected override database constructor() {
 			return new title_basics();
 		}
-		public override System.String schema() {
+		protected override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
-		public override System.String table() {
+		protected override System.String table() {
 			return nameof(title_basics);
 		}
-		public override System.String[] columns() {
+		protected override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.tconst),
 				nameof(this.titleType),
@@ -46,7 +48,7 @@
 				nameof(this.genres)
 			};
 		}
-		public override type.abstraction[] values() {
+		protected override type.abstraction[] values() {
 			return new type.abstraction[] {
 				this.tconst,
 				this.titleType,

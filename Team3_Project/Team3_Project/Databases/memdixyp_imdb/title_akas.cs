@@ -1,8 +1,10 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_akas : database {
 		public static readonly title_akas self;
+		private static readonly System.Converter<database , title_akas> converter;
 		static title_akas() {
 			self = new title_akas();
+			converter = (database item) => (title_akas) item;
 		}
 		public type.String titleId;
 		public type.Byte ordering;
@@ -22,16 +24,16 @@
 			this.attributes = new type.String();
 			this.isOriginalTitle = new type.Boolean();
 		}
-		public override database constructor() {
+		protected override database constructor() {
 			return new title_akas();
 		}
-		public override System.String schema() {
+		protected override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
-		public override System.String table() {
+		protected override System.String table() {
 			return nameof(title_akas);
 		}
-		public override System.String[] columns() {
+		protected override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.titleId),
 				nameof(this.ordering),
@@ -43,7 +45,7 @@
 				nameof(this.isOriginalTitle)
 			};
 		}
-		public override type.abstraction[] values() {
+		protected override type.abstraction[] values() {
 			return new type.abstraction[] {
 				this.titleId,
 				this.ordering,

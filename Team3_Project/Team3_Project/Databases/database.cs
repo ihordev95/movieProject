@@ -12,12 +12,12 @@
 			};
 			connection_string = MySqlConnectionStringBuilder.ToString();
 		}
-		public abstract database constructor();
-		public abstract System.String schema();
-		public abstract System.String table();
-		public abstract System.String[] columns();
-		public abstract type.abstraction[] values();
-		public virtual type.abstraction[] parameters() {
+		protected abstract database constructor();
+		protected abstract System.String schema();
+		protected abstract System.String table();
+		protected abstract System.String[] columns();
+		protected abstract type.abstraction[] values();
+		protected virtual type.abstraction[] parameters() {
 			return new type.abstraction[] {
 			};
 		}

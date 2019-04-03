@@ -19,23 +19,23 @@
 			this.movie.form(NameValueCollection , nameof(this.movie));
 			this.added.form(NameValueCollection , nameof(this.added));
 		}
-		public override database constructor() {
+		protected override database constructor() {
 			return new list_movie();
 		}
-		public override System.String schema() {
+		protected override System.String schema() {
 			return nameof(memdixyp_film);
 		}
-		public override System.String table() {
+		protected override System.String table() {
 			return nameof(list_movie);
 		}
-		public override System.String[] columns() {
+		protected override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.list),
 				nameof(this.movie),
 				nameof(this.added)
 			};
 		}
-		public override type.abstraction[] values() {
+		protected override type.abstraction[] values() {
 			return new type.abstraction[] {
 				this.list,
 				this.movie,

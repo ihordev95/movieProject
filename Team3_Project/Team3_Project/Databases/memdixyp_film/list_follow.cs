@@ -16,22 +16,22 @@
 			this.user.form(NameValueCollection , nameof(this.user));
 			this.list.form(NameValueCollection , nameof(this.list));
 		}
-		public override database constructor() {
+		protected override database constructor() {
 			return new list_follow();
 		}
-		public override System.String schema() {
+		protected override System.String schema() {
 			return nameof(memdixyp_film);
 		}
-		public override System.String table() {
+		protected override System.String table() {
 			return nameof(list_follow);
 		}
-		public override System.String[] columns() {
+		protected override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.user),
 				nameof(this.list)
 			};
 		}
-		public override type.abstraction[] values() {
+		protected override type.abstraction[] values() {
 			return new type.abstraction[] {
 				this.user,
 				this.list
