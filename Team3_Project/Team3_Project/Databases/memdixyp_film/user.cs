@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
-	public partial class user : database {
+	public class user : database {
+		public static readonly user self;
+		private static readonly System.Converter<database , user> converter;
+		static user() {
+			self = new user();
+			converter = (database item) => (user) item;
+		}
 		public type.Int32 identifier;
 		public type.String name;
 		public type.String password;
@@ -46,6 +52,12 @@
 				this.password,
 				this.email
 			};
+		}
+		public static user[] select_collection(System.String where = "" , System.UInt32? limit = null) {
+			return self.select_collection(self.SELECT(where , limit) , converter);
+		}
+		public static user select_individual(System.String where = "" , System.UInt32? limit = null) {
+			return self.select_individual(self.SELECT(where , limit) , converter);
 		}
 	}
 }

@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
-	public partial class view_list : database {
+	public class view_list : database {
+		public static readonly view_list self;
+		private static readonly System.Converter<database , view_list> converter;
+		static view_list() {
+			self = new view_list();
+			converter = (database item) => (view_list) item;
+		}
 		public type.Int32 list;
 		public type.String tconst;
 		public type.String primaryTitle;
@@ -42,6 +48,14 @@
 			return new type.abstraction[] {
 				this.list
 			};
+		}
+		public static view_list[] call_collection(System.Int32 value) {
+			view_list view_List = new view_list(value);
+			return self.select_collection(view_List.CALL() , (database item) => (view_list) item);
+		}
+		public static view_list call_individual(System.Int32 value) {
+			view_list view_List = new view_list(value);
+			return self.select_individual(view_List.CALL() , (database item) => (view_list) item);
 		}
 	}
 }

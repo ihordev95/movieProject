@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
-	public partial class list_follow : database {
+	public class list_follow : database {
+		public static readonly list_follow self;
+		private static readonly System.Converter<database , list_follow> converter;
+		static list_follow() {
+			self = new list_follow();
+			converter = (database item) => (list_follow) item;
+		}
 		public type.Int32 user;
 		public type.Int32 list;
 		public list_follow() {
@@ -30,6 +36,12 @@
 				this.user,
 				this.list
 			};
+		}
+		public static list_follow[] select_collection(System.String where = "" , System.UInt32? limit = null) {
+			return self.select_collection(self.SELECT(where , limit) , converter);
+		}
+		public static list_follow select_individual(System.String where = "" , System.UInt32? limit = null) {
+			return self.select_individual(self.SELECT(where , limit) , converter);
 		}
 	}
 }

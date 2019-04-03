@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
-	public partial class list_movie : database {
+	public class list_movie : database {
+		public static readonly list_movie self;
+		private static readonly System.Converter<database , list_movie> converter;
+		static list_movie() {
+			self = new list_movie();
+			converter = (database item) => (list_movie) item;
+		}
 		public type.Int32 list;
 		public type.String movie;
 		public type.DateTime added;
@@ -35,6 +41,12 @@
 				this.movie,
 				this.added
 			};
+		}
+		public static list_movie[] select_collection(System.String where = "" , System.UInt32? limit = null) {
+			return self.select_collection(self.SELECT(where , limit) , converter);
+		}
+		public static list_movie select_individual(System.String where = "" , System.UInt32? limit = null) {
+			return self.select_individual(self.SELECT(where , limit) , converter);
 		}
 	}
 }
