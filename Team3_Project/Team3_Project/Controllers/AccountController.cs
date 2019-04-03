@@ -59,22 +59,22 @@ namespace Team3_Project.Controllers {
 				return this.View(model);
 			}
 
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
-            SignInStatus result = await this.SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result) {
-                case SignInStatus.Success:
-                    return this.RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return this.View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return this.RedirectToAction("SendCode", new { ReturnUrl = returnUrl, model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    this.ModelState.AddModelError("", "Invalid login attempt.");
-                    return this.View(model);
-            }
-        }
+			// This doesn't count login failures towards account lockout
+			// To enable password failures to trigger account lockout, change to shouldLockout: true
+			SignInStatus result = await this.SignInManager.PasswordSignInAsync(model.Email , model.Password , model.RememberMe , shouldLockout: false);
+			switch (result) {
+				case SignInStatus.Success:
+					return this.RedirectToLocal(returnUrl);
+				case SignInStatus.LockedOut:
+					return this.View("Lockout");
+				case SignInStatus.RequiresVerification:
+					return this.RedirectToAction("SendCode" , new { ReturnUrl = returnUrl , model.RememberMe });
+				case SignInStatus.Failure:
+				default:
+					this.ModelState.AddModelError("" , "Invalid login attempt.");
+					return this.View(model);
+			}
+		}
 
 		//
 		// GET: /Account/VerifyCode
@@ -127,18 +127,17 @@ namespace Team3_Project.Controllers {
 		[ValidateAntiForgeryToken]
 		public async Task<ActionResult> Register(RegisterViewModel model) {
 			if (this.ModelState.IsValid) {
-				ApplicationUser user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
-                IdentityResult result = await this.UserManager.CreateAsync(user, model.Password);
-                if(result.Succeeded) {
-                    // Code to place user into database
-					Databases.memdixyp_film.user film_user = new Databases.memdixyp_film.user(user.UserName, user.PasswordHash, user.Email);
-					film_user.INSERT();
+				ApplicationUser user = new ApplicationUser { UserName = model.UserName , Email = model.Email };
+				IdentityResult result = await this.UserManager.CreateAsync(user , model.Password);
+				if (result.Succeeded) {
+					// Code to place user into database
+					Databases.memdixyp_film.user.insert_individual(user.UserName , user.PasswordHash , user.Email);
 
 
-                    await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
-                    return this.RedirectToAction("Index", "Landing");
-                }
-                this.AddErrors(result);
+					await this.SignInManager.SignInAsync(user , isPersistent: false , rememberBrowser: false);
+					return this.RedirectToAction("Index" , "Landing");
+				}
+				this.AddErrors(result);
 			}
 
 			// If we got this far, something failed, redisplay form

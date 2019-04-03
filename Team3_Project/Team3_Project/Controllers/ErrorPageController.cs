@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Team3_Project.Controllers
-{
-    public class ErrorPageController : Controller
-    {
-        // GET: ErrorPage
-        public ActionResult ErrorPage()
-        {
-            return View();
-        }
-    }
+﻿namespace Team3_Project.Controllers {
+	public class ErrorPageController : System.Web.Mvc.Controller {
+		// GET: ErrorPage
+		public System.Web.Mvc.ActionResult ErrorPage() {
+			return this.View();
+		}
+	}
 }

@@ -1,34 +1,31 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list : database {
-		public static list select(System.String where = "" , System.UInt32? limit = null) {
-			list list = new list();
-			System.Data.DataSet data = list.SELECT(where , limit);
-			System.Data.DataRow DataRow = data.Tables[0].Rows[0];
-			return (list) list.result(DataRow);
+		private static readonly System.Converter<database , list> converter;
+		public static readonly list self;
+		static list() {
+			converter = (database item) => (list) item;
+			self = new list();
 		}
 		public type.Int32 identifier;
 		public type.Int32 user;
 		public type.String name;
 		public type.Boolean hidden;
-		public list() {
+		private list() {
 			this.identifier = new type.Int32();
 			this.user = new type.Int32();
 			this.name = new type.String();
 			this.hidden = new type.Boolean();
 		}
-		public list(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
-			this.identifier.form(NameValueCollection , nameof(this.identifier));
-			this.user.form(NameValueCollection , nameof(this.user));
-			this.name.form(NameValueCollection , nameof(this.name));
-			this.hidden.form(NameValueCollection , nameof(this.hidden));
+		protected override database constructor() {
+			return new list();
 		}
-		public override System.String schema() {
+		protected override System.String schema() {
 			return nameof(memdixyp_film);
 		}
-		public override System.String table() {
+		protected override System.String table() {
 			return nameof(list);
 		}
-		public override System.String[] columns() {
+		protected override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.identifier),
 				nameof(this.user),
@@ -36,7 +33,7 @@
 				nameof(this.hidden)
 			};
 		}
-		public override type.abstraction[] values() {
+		protected override type.abstraction[] values() {
 			return new type.abstraction[] {
 				this.identifier,
 				this.user,
@@ -44,12 +41,27 @@
 				this.hidden
 			};
 		}
-		public override database result(System.Data.DataRow DataRow) {
-			this.identifier.load(DataRow , 0);
-			this.user.load(DataRow , 1);
-			this.name.load(DataRow , 2);
-			this.hidden.load(DataRow , 3);
-			return this;
+		public static list get_list_by_id(System.Int32 identifier) {
+			System.String[] columns = new System.String[] {
+				nameof(identifier)
+			};
+			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
+			StringBuilder.Append(self.COLUMN(columns));
+			StringBuilder.Append(unicode.EQUALS_SIGN);
+			StringBuilder.Append(self.STRING_LITERAL(identifier.ToString()));
+			System.String where = StringBuilder.ToString();
+			return self.select_individual(self.SELECT(where , null) , converter);
+		}
+		public static list[] list_by_user(System.Int32 user) {
+			System.String[] columns = new System.String[] {
+				nameof(user)
+			};
+			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
+			StringBuilder.Append(self.COLUMN(columns));
+			StringBuilder.Append(unicode.EQUALS_SIGN);
+			StringBuilder.Append(self.STRING_LITERAL(user.ToString()));
+			System.String where = StringBuilder.ToString();
+			return self.select_collection(self.SELECT(where , null) , converter);
 		}
 	}
 }

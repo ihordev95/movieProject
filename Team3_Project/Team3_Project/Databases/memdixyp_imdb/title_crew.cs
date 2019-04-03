@@ -1,30 +1,41 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_crew : database {
+		private static readonly System.Converter<database , title_crew> converter;
+		public static readonly title_crew self;
+		static title_crew() {
+			converter = (database item) => (title_crew) item;
+			self = new title_crew();
+		}
 		public type.String tconst;
 		public type.String directors;
 		public type.String writers;
-		public override System.String schema() {
+		private title_crew() {
+			this.tconst = new type.String();
+			this.directors = new type.String();
+			this.writers = new type.String();
+		}
+		protected override database constructor() {
+			return new title_crew();
+		}
+		protected override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
-		public override System.String table() {
+		protected override System.String table() {
 			return nameof(title_crew);
 		}
-		public override System.String[] columns() {
+		protected override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.tconst),
 				nameof(this.directors),
 				nameof(this.writers)
 			};
 		}
-		public override type.abstraction[] values() {
+		protected override type.abstraction[] values() {
 			return new type.abstraction[] {
 				this.tconst,
 				this.directors,
 				this.writers
 			};
-		}
-		public override database result(System.Data.DataRow DataRow) {
-			return this;
 		}
 	}
 }

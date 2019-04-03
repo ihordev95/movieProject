@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_basics : database {
+		private static readonly System.Converter<database , title_basics> converter;
+		public static readonly title_basics self;
+		static title_basics() {
+			converter = (database item) => (title_basics) item;
+			self = new title_basics();
+		}
 		public type.String tconst;
 		public type.String titleType;
 		public type.String primaryTitle;
@@ -9,13 +15,27 @@
 		public type.Int16 endYear;
 		public type.Int32 runtimeMinutes;
 		public type.String genres;
-		public override System.String schema() {
+		private title_basics() {
+			this.tconst = new type.String();
+			this.titleType = new type.String();
+			this.primaryTitle = new type.String();
+			this.originalTitle = new type.String();
+			this.isAdult = new type.Boolean();
+			this.startYear = new type.Int16();
+			this.endYear = new type.Int16();
+			this.runtimeMinutes = new type.Int32();
+			this.genres = new type.String();
+		}
+		protected override database constructor() {
+			return new title_basics();
+		}
+		protected override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}
-		public override System.String table() {
+		protected override System.String table() {
 			return nameof(title_basics);
 		}
-		public override System.String[] columns() {
+		protected override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.tconst),
 				nameof(this.titleType),
@@ -28,7 +48,7 @@
 				nameof(this.genres)
 			};
 		}
-		public override type.abstraction[] values() {
+		protected override type.abstraction[] values() {
 			return new type.abstraction[] {
 				this.tconst,
 				this.titleType,
@@ -40,9 +60,6 @@
 				this.runtimeMinutes,
 				this.genres
 			};
-		}
-		public override database result(System.Data.DataRow DataRow) {
-			return this;
 		}
 	}
 }

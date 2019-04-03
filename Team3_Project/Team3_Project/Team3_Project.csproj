@@ -216,6 +216,7 @@
     <Compile Include="Databases\memdixyp_film\list_follow.cs" />
     <Compile Include="Databases\memdixyp_film\list_movie.cs" />
     <Compile Include="Databases\memdixyp_film\user.cs" />
+    <Compile Include="Databases\memdixyp_film\view_list.cs" />
     <Compile Include="Databases\memdixyp_imdb\name_basics.cs" />
     <Compile Include="Databases\memdixyp_imdb\title_akas.cs" />
     <Compile Include="Databases\memdixyp_imdb\title_basics.cs" />
@@ -223,7 +224,6 @@
     <Compile Include="Databases\memdixyp_imdb\title_episode.cs" />
     <Compile Include="Databases\memdixyp_imdb\title_principals.cs" />
     <Compile Include="Databases\memdixyp_imdb\title_ratings.cs" />
-    <Compile Include="Databases\memdixyp_film\view_list.cs" />
     <Compile Include="Databases\type\abstraction.cs" />
     <Compile Include="Databases\type\DateTime.cs" />
     <Compile Include="Databases\type\Boolean.cs" />
@@ -265,6 +265,7 @@
     <Content Include="Fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\MoviePage.js" />
     <Content Include="Scripts\ajax.js" />
     <Content Include="Scripts\add_list.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -293,7 +294,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />

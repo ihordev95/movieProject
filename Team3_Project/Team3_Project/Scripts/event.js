@@ -18,6 +18,7 @@
 */
 function event(name, do_all, do_now, selector, method, callback) {
     "use strict";
+    var item;
     var element = (
         do_all
         ? document.querySelectorAll(selector)
@@ -26,7 +27,8 @@ function event(name, do_all, do_now, selector, method, callback) {
     var index = element.length;
     while (index) {
         index -= 1;
-        if (element[index] && !element[index].classList.contains("disabled")) {
+        item = element[index];
+        if (item && !item.classList.contains("disabled")) {
             if (do_now) {
                 method(element[index]);
             }

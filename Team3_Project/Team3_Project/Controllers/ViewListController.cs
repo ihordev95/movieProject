@@ -4,15 +4,13 @@
 		public System.Web.Mvc.ActionResult ViewList(System.String id = "1") {
 			Databases.type.Int32 identifier = new Databases.type.Int32(1);
 			identifier.parse(id);
-			this.ViewBag.list = Databases.memdixyp_film.list.select(System.String.Format("identifier='{0}'" , identifier));
-			Databases.memdixyp_film.view_list view_list = new Databases.memdixyp_film.view_list(identifier.value);
-			System.Data.DataSet result = view_list.CALL();
-			return this.View(result);
+			this.ViewBag.list = Databases.memdixyp_film.list.get_list_by_id(identifier.value);
+			this.ViewBag.view_list = Databases.memdixyp_film.view_list.show_movie_list(identifier);
+			return this.View();
 		}
 		public System.String AddList() {
-			Databases.memdixyp_film.list_movie list_movie = new Databases.memdixyp_film.list_movie(this.Request.QueryString);
-			list_movie.INSERT();
-			return "alert message";
+			Databases.memdixyp_film.list_movie.insert_individual(this.Request.QueryString);
+			return "Movie probably added!";
 		}
 	}
 }
