@@ -153,7 +153,7 @@
 			query.Append(unicode.SEMICOLON);
 			return query.ToString();
 		}
-		private System.String CALL() {
+		protected System.String CALL() {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
 			query.Append(keyword.CALL);
 			query.Append(unicode.SPACE);

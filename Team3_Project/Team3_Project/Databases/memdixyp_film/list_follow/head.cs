@@ -1,14 +1,14 @@
-﻿namespace Team3_Project.Databases.memdixyp_film.list_follow {
-	public static class head {
-		public static readonly body body;
-		static head() {
-			body = new body();
+﻿namespace Team3_Project.Databases.memdixyp_film {
+	public partial class list_follow {
+		public static readonly list_follow self;
+		static list_follow() {
+			self = new list_follow();
 		}
-		public static body[] select_collection(System.String query) {
-			return body.select_collection(query , (database item) => (body) item);
+		public static list_follow[] select_collection(System.String where = "" , System.UInt32? limit = null) {
+			return self.select_collection(self.SELECT(where , limit) , (database item) => (list_follow) item);
 		}
-		public static body select_individual(System.String query) {
-			return body.select_individual(query , (database item) => (body) item);
+		public static list_follow select_individual(System.String where = "" , System.UInt32? limit = null) {
+			return self.select_individual(self.SELECT(where , limit) , (database item) => (list_follow) item);
 		}
 	}
 }

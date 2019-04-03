@@ -1,26 +1,26 @@
-﻿namespace Team3_Project.Databases.memdixyp_film.view_list {
-	public class body : database {
+﻿namespace Team3_Project.Databases.memdixyp_film {
+	public partial class view_list : database {
 		public type.Int32 list;
 		public type.String tconst;
 		public type.String primaryTitle;
 		public type.Int16 startYear;
-		public body() {
+		public view_list() {
 			this.list = new type.Int32();
 			this.tconst = new type.String();
 			this.primaryTitle = new type.String();
 			this.startYear = new type.Int16();
 		}
-		public body(System.Int32 list) : this() {
+		public view_list(System.Int32 list) : this() {
 			this.list = new type.Int32(list);
 		}
 		public override database constructor() {
-			return new body();
+			return new view_list();
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
 		}
 		public override System.String table() {
-			return nameof(body);
+			return nameof(view_list);
 		}
 		public override System.String[] columns() {
 			return new System.String[] {

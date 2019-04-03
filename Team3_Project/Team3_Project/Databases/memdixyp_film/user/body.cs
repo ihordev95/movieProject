@@ -1,35 +1,35 @@
-﻿namespace Team3_Project.Databases.memdixyp_film.user {
-	public class body : database {
+﻿namespace Team3_Project.Databases.memdixyp_film {
+	public partial class user : database {
 		public type.Int32 identifier;
 		public type.String name;
 		public type.String password;
 		public type.String email;
-		public body() {
+		public user() {
 			this.identifier = new type.Int32();
 			this.name = new type.String();
 			this.password = new type.String();
 			this.email = new type.String();
 		}
-		public body(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
+		public user(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
 			this.identifier.form(NameValueCollection , nameof(this.identifier));
 			this.name.form(NameValueCollection , nameof(this.name));
 			this.password.form(NameValueCollection , nameof(this.password));
 			this.email.form(NameValueCollection , nameof(this.email));
 		}
-		public body(System.String name , System.String password , System.String email) {
+		public user(System.String name , System.String password , System.String email) {
 			this.identifier = new type.Int32();
 			this.name = new type.String(name);
 			this.password = new type.String(password);
 			this.email = new type.String(email);
 		}
 		public override database constructor() {
-			return new body();
+			return new user();
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);
 		}
 		public override System.String table() {
-			return nameof(body);
+			return nameof(user);
 		}
 		public override System.String[] columns() {
 			return new System.String[] {
