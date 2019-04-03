@@ -1,10 +1,10 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_principals : database {
-		public static readonly title_principals self;
 		private static readonly System.Converter<database , title_principals> converter;
+		public static readonly title_principals self;
 		static title_principals() {
-			self = new title_principals();
 			converter = (database item) => (title_principals) item;
+			self = new title_principals();
 		}
 		public type.String tconst;
 		public type.Int16 ordering;
@@ -12,7 +12,7 @@
 		public type.String category;
 		public type.String job;
 		public type.String characters;
-		public title_principals() {
+		private title_principals() {
 			this.tconst = new type.String();
 			this.ordering = new type.Int16();
 			this.nconst = new type.String();

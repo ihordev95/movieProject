@@ -1,10 +1,10 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_basics : database {
-		public static readonly title_basics self;
 		private static readonly System.Converter<database , title_basics> converter;
+		public static readonly title_basics self;
 		static title_basics() {
-			self = new title_basics();
 			converter = (database item) => (title_basics) item;
+			self = new title_basics();
 		}
 		public type.String tconst;
 		public type.String titleType;
@@ -15,7 +15,7 @@
 		public type.Int16 endYear;
 		public type.Int32 runtimeMinutes;
 		public type.String genres;
-		public title_basics() {
+		private title_basics() {
 			this.tconst = new type.String();
 			this.titleType = new type.String();
 			this.primaryTitle = new type.String();

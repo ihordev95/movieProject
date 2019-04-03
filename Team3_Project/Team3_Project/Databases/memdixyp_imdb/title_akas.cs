@@ -1,10 +1,10 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_akas : database {
-		public static readonly title_akas self;
 		private static readonly System.Converter<database , title_akas> converter;
+		public static readonly title_akas self;
 		static title_akas() {
-			self = new title_akas();
 			converter = (database item) => (title_akas) item;
+			self = new title_akas();
 		}
 		public type.String titleId;
 		public type.Byte ordering;
@@ -14,7 +14,7 @@
 		public type.String types;
 		public type.String attributes;
 		public type.Boolean isOriginalTitle;
-		public title_akas() {
+		private title_akas() {
 			this.titleId = new type.String();
 			this.ordering = new type.Byte();
 			this.title = new type.String();

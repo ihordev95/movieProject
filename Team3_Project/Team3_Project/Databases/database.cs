@@ -1,7 +1,7 @@
 ﻿namespace Team3_Project.Databases {
 	public abstract class database {
-		public static System.String log = System.String.Empty;
-		public static System.String error = System.String.Empty;
+		private static System.String log = System.String.Empty;
+		private static System.String error = System.String.Empty;
 		private static readonly System.String connection_string;
 		static database() {
 			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {
@@ -12,15 +12,6 @@
 			};
 			connection_string = MySqlConnectionStringBuilder.ToString();
 		}
-		protected abstract database constructor();
-		protected abstract System.String schema();
-		protected abstract System.String table();
-		protected abstract System.String[] columns();
-		protected abstract type.abstraction[] values();
-		protected virtual type.abstraction[] parameters() {
-			return new type.abstraction[] {
-			};
-		}
 		private System.String QUOTE_IDENTIFIER(System.String IDENTIFIER) {
 			return System.String.Concat(unicode.GRAVE_ACCENT , IDENTIFIER , unicode.GRAVE_ACCENT);
 		}
@@ -30,16 +21,16 @@
 		private System.String QUALIFY_IDENTIFIER(System.String QUALIFIER , System.String IDENTIFIER) {
 			return System.String.Concat(QUALIFIER , unicode.FULL_STOP , IDENTIFIER);
 		}
-		public System.String SCHEMA() {
+		private System.String SCHEMA() {
 			System.String schema = this.schema();
 			return this.QUOTE_IDENTIFIER(schema);
 		}
-		public System.String TABLE() {
+		private System.String TABLE() {
 			System.String schema = this.SCHEMA();
 			System.String table = this.table();
 			return this.QUALIFY_IDENTIFIER(schema , this.QUOTE_IDENTIFIER(table));
 		}
-		public System.String COLUMN() {
+		private System.String COLUMN() {
 			System.String table = this.TABLE();
 			System.String[] columns = this.columns();
 			System.Int32 index = 0;
@@ -77,10 +68,10 @@
 			}
 			return System.String.Empty;
 		}
-		public System.String VALUES() {
+		private System.String VALUES() {
 			return this.value_array(this.values());
 		}
-		public System.String PARAMETERS() {
+		private System.String PARAMETERS() {
 			return this.value_array(this.parameters());
 		}
 		private System.String LIMIT(System.UInt32? limit = null) {
@@ -104,20 +95,6 @@
 				return StringBuilder.ToString();
 			}
 			return System.String.Empty;
-		}
-		public System.String SELECT(System.String where = "" , System.UInt32? limit = null) {
-			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
-			query.Append(keyword.SELECT);
-			query.Append(unicode.SPACE);
-			query.Append(this.COLUMN());
-			query.Append(unicode.SPACE);
-			query.Append(keyword.FROM);
-			query.Append(unicode.SPACE);
-			query.Append(this.TABLE());
-			query.Append(this.WHERE(where));
-			query.Append(this.LIMIT(limit));
-			query.Append(unicode.SEMICOLON);
-			return query.ToString();
 		}
 		private System.Data.DataTable hold(System.Data.DataSet DataSet) {
 			return DataSet.Tables[0];
@@ -153,22 +130,6 @@
 			query.Append(unicode.SEMICOLON);
 			return query.ToString();
 		}
-		protected System.String CALL() {
-			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
-			query.Append(keyword.CALL);
-			query.Append(unicode.SPACE);
-			query.Append(this.TABLE());
-			query.Append(unicode.SPACE);
-			query.Append(unicode.LEFT_PARENTHESIS);
-			query.Append(this.PARAMETERS());
-			query.Append(unicode.RIGHT_PARENTHESIS);
-			query.Append(unicode.SEMICOLON);
-			return query.ToString();
-		}
-
-
-
-
 		private static System.Data.DataTable run(System.String query) {
 			log = query;
 			System.Data.DataSet DataSet = new System.Data.DataSet();
@@ -186,8 +147,6 @@
 			}
 			return DataSet.Tables.Count > 0 ? DataSet.Tables[0] : new System.Data.DataTable();
 		}
-
-
 		private System.Collections.Generic.List<database> select(System.String query) {
 			System.Collections.Generic.List<database> list = new System.Collections.Generic.List<database>();
 			System.Data.DataTable DataTable = run(query);
@@ -197,27 +156,61 @@
 			}
 			return list;
 		}
-		public type[] select_collection<type>(System.String query , System.Converter<database , type> converter) {
+		//
+		protected abstract database constructor();
+		protected abstract System.String schema();
+		protected abstract System.String table();
+		protected abstract System.String[] columns();
+		protected abstract type.abstraction[] values();
+		protected virtual type.abstraction[] parameters() {
+			return new type.abstraction[] {
+			};
+		}
+		protected System.String SELECT(System.String where = "" , System.UInt32? limit = null) {
+			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
+			query.Append(keyword.SELECT);
+			query.Append(unicode.SPACE);
+			query.Append(this.COLUMN());
+			query.Append(unicode.SPACE);
+			query.Append(keyword.FROM);
+			query.Append(unicode.SPACE);
+			query.Append(this.TABLE());
+			query.Append(this.WHERE(where));
+			query.Append(this.LIMIT(limit));
+			query.Append(unicode.SEMICOLON);
+			return query.ToString();
+		}
+
+		protected System.String CALL() {
+			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
+			query.Append(keyword.CALL);
+			query.Append(unicode.SPACE);
+			query.Append(this.TABLE());
+			query.Append(unicode.SPACE);
+			query.Append(unicode.LEFT_PARENTHESIS);
+			query.Append(this.PARAMETERS());
+			query.Append(unicode.RIGHT_PARENTHESIS);
+			query.Append(unicode.SEMICOLON);
+			return query.ToString();
+		}
+		protected type[] select_collection<type>(System.String query , System.Converter<database , type> converter) {
 			System.Collections.Generic.List<database> list = this.select(query);
 			database[] array = list.ToArray();
 			return System.Array.ConvertAll(array , converter);
 		}
-		public type select_individual<type>(System.String query , System.Converter<database , type> converter) {
+		protected type select_individual<type>(System.String query , System.Converter<database , type> converter) {
 			System.Collections.Generic.List<database> list = this.select(query);
 			database[] array = list.Count > 0 ? list.ToArray() : new database[] { this.constructor() };
 			return System.Array.ConvertAll(array , converter)[0];
 		}
-		private static void insert(database individual) {
+		protected static void insert(database individual) {
 			System.String query = individual.INSERT();
 			run(query);
 		}
-		public static void insert_collection(database[] collection) {
+		protected static void insert(database[] collection) {
 			foreach (database individual in collection) {
 				insert(individual);
 			}
-		}
-		public static void insert_individual(database individual) {
-			insert(individual);
 		}
 	}
 }

@@ -1,15 +1,15 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class title_ratings : database {
-		public static readonly title_ratings self;
 		private static readonly System.Converter<database , title_ratings> converter;
+		public static readonly title_ratings self;
 		static title_ratings() {
-			self = new title_ratings();
 			converter = (database item) => (title_ratings) item;
+			self = new title_ratings();
 		}
 		public type.String tconst;
 		public type.Single averageRating;
 		public type.Int32 numVotes;
-		public title_ratings() {
+		private title_ratings() {
 			this.tconst = new type.String();
 			this.averageRating = new type.Single();
 			this.numVotes = new type.Int32();

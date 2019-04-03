@@ -1,10 +1,10 @@
 ﻿namespace Team3_Project.Databases.memdixyp_imdb {
 	public class name_basics : database {
-		public static readonly name_basics self;
 		private static readonly System.Converter<database , name_basics> converter;
+		public static readonly name_basics self;
 		static name_basics() {
-			self = new name_basics();
 			converter = (database item) => (name_basics) item;
+			self = new name_basics();
 		}
 		public type.String nconst;
 		public type.String primaryName;
@@ -12,7 +12,7 @@
 		public type.Int16 deathYear;
 		public type.String primaryProfession;
 		public type.String knownForTitles;
-		public name_basics() {
+		private name_basics() {
 			this.nconst = new type.String();
 			this.primaryName = new type.String();
 			this.birthYear = new type.Int16();

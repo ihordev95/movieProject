@@ -1,14 +1,14 @@
 ﻿namespace Team3_Project.Databases.memdixyp_film {
 	public class list_follow : database {
-		public static readonly list_follow self;
 		private static readonly System.Converter<database , list_follow> converter;
+		public static readonly list_follow self;
 		static list_follow() {
-			self = new list_follow();
 			converter = (database item) => (list_follow) item;
+			self = new list_follow();
 		}
 		public type.Int32 user;
 		public type.Int32 list;
-		public list_follow() {
+		private list_follow() {
 			this.user = new type.Int32();
 			this.list = new type.Int32();
 		}
@@ -36,12 +36,6 @@
 				this.user,
 				this.list
 			};
-		}
-		public static list_follow[] select_collection(System.String where = "" , System.UInt32? limit = null) {
-			return self.select_collection(self.SELECT(where , limit) , converter);
-		}
-		public static list_follow select_individual(System.String where = "" , System.UInt32? limit = null) {
-			return self.select_individual(self.SELECT(where , limit) , converter);
 		}
 	}
 }

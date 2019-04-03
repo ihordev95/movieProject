@@ -9,8 +9,7 @@
 			return this.View();
 		}
 		public System.String AddList() {
-			Databases.memdixyp_film.list_movie list_movie = new Databases.memdixyp_film.list_movie(this.Request.QueryString);
-			Databases.database.insert_individual(list_movie);
+			Databases.memdixyp_film.list_movie.insert_individual(this.Request.QueryString);
 			return "Movie probably added!";
 		}
 	}
