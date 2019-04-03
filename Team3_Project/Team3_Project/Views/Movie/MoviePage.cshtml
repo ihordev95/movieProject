@@ -2,35 +2,28 @@
 @{
 	Layout = "/Views/Shared/_Layout.cshtml";
 	this.ViewBag.Title = "MoviePage";
-	this.ViewBag.css = new System.String[] { "w3" , "dynamicmovie-page" };
-}<div class="dynamicmovieload w3-mobile">
+	this.ViewBag.css = new System.String[] { "w3" };
+}
+
+
+<div class="dynamicmovieload w3-col l12">
     <div class="test1">
         <img src=@ViewBag.json.poster alt="A picture of the movie poster" class="movieposter w3-third" />
 
         <div class="test">
-            <!--
-            <button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit" id="Save">
-                Save
-            </button>
-            -->
             <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">Save</a>
-            
-            <button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit" id="Rate">
-                Rate
-            </button>
         </div>
     </div>
 
-    <div class="moviedetails w3-mobile w3-twothird">
+    <div class="moviedetails  w3-col l9">
         <label>Title: @ViewBag.json.title</label><br />
         <label>Year: @ViewBag.json.year</label><br />
         <label>Type: @ViewBag.json.type</label><br />
         <label>Descritpion: @ViewBag.json.plot</label><br />
-
-
     </div>
 </div>
 
+<!-- This section is for the popup window-->
  <div id="light" class="white_content">
      Please select a list from the drop down:
 
@@ -38,15 +31,3 @@
      <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Cancel</a>
  </div>
  <div id="fade" class="black_overlay"></div>
-
-<!--
-<div>
-    <p>
-        This is the main content. To display a lightbox click <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">here</a>
-    </p>
-    <div id="light" class="white_content">
-        This is the lightbox content. <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a>
-    </div>
-    <div id="fade" class="black_overlay"></div>
-</div>
--->

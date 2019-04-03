@@ -1,19 +1,17 @@
 ﻿
 @{
     ViewBag.Title = "SearchMovies";
+    this.ViewBag.css = new System.String[] { "w3" };
 }
 
-<head>
-    <link href="~/Styles/BrowseSearchMovies.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
+
 
 <div class="PageHeader">
     <p>Search Results</p>
 </div>
 
-<div class="SearchResults">
-    <table class="resultTable">
+<div class="SearchResults w3-col l12">
+    <table class="resultTable w3-col l12">
         @*<tr class="tableHeader">
             <td>Title:</td>
         </tr>*@
@@ -22,12 +20,12 @@
             {
 
 
-                <td class="tableMovieTitle">
+                <td>
                     <a href="@Url.Action( "MoviePage", "Movie", new { ID = movie.imdbID })" class="elements"><img src=@movie.poster alt=@movie.title class="movieposter w3-third" /></a>                                  
                 </td>
 
 
             }
         </tr>
-        </table>
+    </table>
 </div>
