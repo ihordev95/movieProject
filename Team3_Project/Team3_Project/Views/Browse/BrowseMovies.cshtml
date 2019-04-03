@@ -2,19 +2,28 @@
 @{
     ViewBag.Title = "BrowseMovies";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    this.ViewBag.css = new System.String[] { "w3" };
 }
 
-<head>
-    <link href="~/Styles/BrowseSearchMovies.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-</head>
 
 
 
 <div class="PageHeader">
-    <p>Browse/Search for Movies</p>
+    <div class="buttonNav">
+        <p>Browse/Search for Movies</p>
+    </div>
+    
+    <div class="buttonNav buttonNav1">
+        <form action="~/Profile/Profile" method="get">
+            <div class="form-row">
+                <div>
+                    <button id="Profile" type="submit" class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large">Profile Page</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
- 
+
 <div class="textSearch">
     <p>Please enter the start of the movie name or the entire movie name and click search</p>
 
@@ -22,11 +31,11 @@
     {
         <input type="text" name="title" id="title" />
         <button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit">Search</button>
-        
+
     }
 </div>
 
-
+<!-- This section is for the curated lists -->
 <div class="newest5">
     <div class="newest5 moviescroll">
         <p>This is a section the newest 5 Action movies</p>
@@ -35,13 +44,7 @@
         <p>This is a section the newest 5 Drama movies</p>
     </div>
     <div class="newest5 moviescroll">
-        <p>This is a section the newest 5 SciFi movies</p>
-    </div>
-    <div class="newest5 moviescroll">
-        <p>This is a section the newest 5 Comedy movies</p>
-    </div>
-    <div class="newest5 moviescroll">
-        <p>This is a section the newest 5 Adventure movies</p>
+        <p>This is a section for a random list</p>
     </div>
 </div>
 
