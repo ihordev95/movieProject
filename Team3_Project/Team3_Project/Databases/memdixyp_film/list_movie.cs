@@ -14,11 +14,6 @@
 			this.movie = new type.String();
 			this.added = new type.DateTime();
 		}
-		public list_movie(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
-			this.list.form(NameValueCollection , nameof(this.list));
-			this.movie.form(NameValueCollection , nameof(this.movie));
-			this.added.form(NameValueCollection , nameof(this.added));
-		}
 		protected override database constructor() {
 			return new list_movie();
 		}
@@ -43,7 +38,10 @@
 			};
 		}
 		public static void insert_individual(System.Collections.Specialized.NameValueCollection NameValueCollection) {
-			list_movie list_movie = new list_movie(NameValueCollection);
+			list_movie list_movie = new list_movie();
+			list_movie.list.form(NameValueCollection , nameof(list_movie.list));
+			list_movie.movie.form(NameValueCollection , nameof(list_movie.movie));
+			list_movie.added.form(NameValueCollection , nameof(list_movie.added));
 			database.insert(list_movie);
 		}
 	}

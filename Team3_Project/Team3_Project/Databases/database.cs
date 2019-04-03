@@ -12,24 +12,6 @@
 			};
 			connection_string = MySqlConnectionStringBuilder.ToString();
 		}
-		private System.String QUOTE_IDENTIFIER(System.String IDENTIFIER) {
-			return System.String.Concat(unicode.GRAVE_ACCENT , IDENTIFIER , unicode.GRAVE_ACCENT);
-		}
-		private System.String STRING_LITERAL(System.String STRING) {
-			return System.String.Concat(unicode.APOSTROPHE , STRING , unicode.APOSTROPHE);
-		}
-		private System.String QUALIFY_IDENTIFIER(System.String QUALIFIER , System.String IDENTIFIER) {
-			return System.String.Concat(QUALIFIER , unicode.FULL_STOP , IDENTIFIER);
-		}
-		private System.String SCHEMA() {
-			System.String schema = this.schema();
-			return this.QUOTE_IDENTIFIER(schema);
-		}
-		private System.String TABLE() {
-			System.String schema = this.SCHEMA();
-			System.String table = this.table();
-			return this.QUALIFY_IDENTIFIER(schema , this.QUOTE_IDENTIFIER(table));
-		}
 		private System.String COLUMN() {
 			System.String table = this.TABLE();
 			System.String[] columns = this.columns();
@@ -50,30 +32,6 @@
 			}
 			return System.String.Empty;
 		}
-		private System.String value_array(type.abstraction[] array) {
-			System.Int32 index = 0;
-			System.Int32 count = array.Length;
-			if (count > 0) {
-				System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
-				do {
-					StringBuilder.Append(this.STRING_LITERAL(array[index].ToString()));
-					index += 1;
-					if (index >= count) {
-						break;
-					}
-					StringBuilder.Append(keyword.COMMA_SEPARATED);
-				}
-				while (true);
-				return StringBuilder.ToString();
-			}
-			return System.String.Empty;
-		}
-		private System.String VALUES() {
-			return this.value_array(this.values());
-		}
-		private System.String PARAMETERS() {
-			return this.value_array(this.parameters());
-		}
 		private System.String LIMIT(System.UInt32? limit = null) {
 			if (limit != null) {
 				System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
@@ -84,6 +42,30 @@
 				return StringBuilder.ToString();
 			}
 			return System.String.Empty;
+		}
+		private System.String PARAMETERS() {
+			return this.value_array(this.parameters());
+		}
+		private System.String QUALIFY_IDENTIFIER(System.String QUALIFIER , System.String IDENTIFIER) {
+			return System.String.Concat(QUALIFIER , unicode.FULL_STOP , IDENTIFIER);
+		}
+		private System.String QUOTE_IDENTIFIER(System.String IDENTIFIER) {
+			return System.String.Concat(unicode.GRAVE_ACCENT , IDENTIFIER , unicode.GRAVE_ACCENT);
+		}
+		private System.String SCHEMA() {
+			System.String schema = this.schema();
+			return this.QUOTE_IDENTIFIER(schema);
+		}
+		private System.String STRING_LITERAL(System.String STRING) {
+			return System.String.Concat(unicode.APOSTROPHE , STRING , unicode.APOSTROPHE);
+		}
+		private System.String TABLE() {
+			System.String schema = this.SCHEMA();
+			System.String table = this.table();
+			return this.QUALIFY_IDENTIFIER(schema , this.QUOTE_IDENTIFIER(table));
+		}
+		private System.String VALUES() {
+			return this.value_array(this.values());
 		}
 		private System.String WHERE(System.String where = "") {
 			if (!System.String.IsNullOrEmpty(where)) {
@@ -96,9 +78,6 @@
 			}
 			return System.String.Empty;
 		}
-		private System.Data.DataTable hold(System.Data.DataSet DataSet) {
-			return DataSet.Tables[0];
-		}
 		private database constructor(System.Data.DataRow DataRow) {
 			database item = this.constructor();
 			type.abstraction[] values = item.values();
@@ -109,26 +88,6 @@
 				values[index].cast(Object);
 			}
 			return item;
-		}
-		private System.String INSERT() {
-			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
-			query.Append(keyword.INSERT);
-			query.Append(unicode.SPACE);
-			query.Append(keyword.INTO);
-			query.Append(unicode.SPACE);
-			query.Append(this.TABLE());
-			query.Append(unicode.SPACE);
-			query.Append(unicode.LEFT_PARENTHESIS);
-			query.Append(this.COLUMN());
-			query.Append(unicode.RIGHT_PARENTHESIS);
-			query.Append(unicode.SPACE);
-			query.Append(keyword.VALUES);
-			query.Append(unicode.SPACE);
-			query.Append(unicode.LEFT_PARENTHESIS);
-			query.Append(this.VALUES());
-			query.Append(unicode.RIGHT_PARENTHESIS);
-			query.Append(unicode.SEMICOLON);
-			return query.ToString();
 		}
 		private static System.Data.DataTable run(System.String query) {
 			log = query;
@@ -156,7 +115,24 @@
 			}
 			return list;
 		}
-		//
+		private System.String value_array(type.abstraction[] array) {
+			System.Int32 index = 0;
+			System.Int32 count = array.Length;
+			if (count > 0) {
+				System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
+				do {
+					StringBuilder.Append(this.STRING_LITERAL(array[index].ToString()));
+					index += 1;
+					if (index >= count) {
+						break;
+					}
+					StringBuilder.Append(keyword.COMMA_SEPARATED);
+				}
+				while (true);
+				return StringBuilder.ToString();
+			}
+			return System.String.Empty;
+		}
 		protected abstract database constructor();
 		protected abstract System.String schema();
 		protected abstract System.String table();
@@ -165,6 +141,38 @@
 		protected virtual type.abstraction[] parameters() {
 			return new type.abstraction[] {
 			};
+		}
+		protected System.String CALL() {
+			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
+			query.Append(keyword.CALL);
+			query.Append(unicode.SPACE);
+			query.Append(this.TABLE());
+			query.Append(unicode.SPACE);
+			query.Append(unicode.LEFT_PARENTHESIS);
+			query.Append(this.PARAMETERS());
+			query.Append(unicode.RIGHT_PARENTHESIS);
+			query.Append(unicode.SEMICOLON);
+			return query.ToString();
+		}
+		protected System.String INSERT() {
+			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
+			query.Append(keyword.INSERT);
+			query.Append(unicode.SPACE);
+			query.Append(keyword.INTO);
+			query.Append(unicode.SPACE);
+			query.Append(this.TABLE());
+			query.Append(unicode.SPACE);
+			query.Append(unicode.LEFT_PARENTHESIS);
+			query.Append(this.COLUMN());
+			query.Append(unicode.RIGHT_PARENTHESIS);
+			query.Append(unicode.SPACE);
+			query.Append(keyword.VALUES);
+			query.Append(unicode.SPACE);
+			query.Append(unicode.LEFT_PARENTHESIS);
+			query.Append(this.VALUES());
+			query.Append(unicode.RIGHT_PARENTHESIS);
+			query.Append(unicode.SEMICOLON);
+			return query.ToString();
 		}
 		protected System.String SELECT(System.String where = "" , System.UInt32? limit = null) {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
@@ -180,18 +188,14 @@
 			query.Append(unicode.SEMICOLON);
 			return query.ToString();
 		}
-
-		protected System.String CALL() {
-			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
-			query.Append(keyword.CALL);
-			query.Append(unicode.SPACE);
-			query.Append(this.TABLE());
-			query.Append(unicode.SPACE);
-			query.Append(unicode.LEFT_PARENTHESIS);
-			query.Append(this.PARAMETERS());
-			query.Append(unicode.RIGHT_PARENTHESIS);
-			query.Append(unicode.SEMICOLON);
-			return query.ToString();
+		protected static void insert(database individual) {
+			System.String query = individual.INSERT();
+			run(query);
+		}
+		protected static void insert(database[] collection) {
+			foreach (database individual in collection) {
+				insert(individual);
+			}
 		}
 		protected type[] select_collection<type>(System.String query , System.Converter<database , type> converter) {
 			System.Collections.Generic.List<database> list = this.select(query);
@@ -202,15 +206,6 @@
 			System.Collections.Generic.List<database> list = this.select(query);
 			database[] array = list.Count > 0 ? list.ToArray() : new database[] { this.constructor() };
 			return System.Array.ConvertAll(array , converter)[0];
-		}
-		protected static void insert(database individual) {
-			System.String query = individual.INSERT();
-			run(query);
-		}
-		protected static void insert(database[] collection) {
-			foreach (database individual in collection) {
-				insert(individual);
-			}
 		}
 	}
 }

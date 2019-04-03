@@ -16,9 +16,6 @@
 			this.primaryTitle = new type.String();
 			this.startYear = new type.Int16();
 		}
-		public view_list(System.Int32 list) : this() {
-			this.list = new type.Int32(list);
-		}
 		protected override database constructor() {
 			return new view_list();
 		}
@@ -49,8 +46,10 @@
 				this.list
 			};
 		}
-		public static view_list[] call_collection(System.Int32 value) {
-			view_list view_List = new view_list(value);
+		public static view_list[] call_collection(System.Int32 list) {
+			view_list view_List = new view_list {
+				list = new type.Int32(list)
+			};
 			return self.select_collection(view_List.CALL() , (database item) => (view_list) item);
 		}
 	}

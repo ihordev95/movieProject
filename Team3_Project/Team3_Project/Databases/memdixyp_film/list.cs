@@ -16,12 +16,6 @@
 			this.name = new type.String();
 			this.hidden = new type.Boolean();
 		}
-		public list(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
-			this.identifier.form(NameValueCollection , nameof(this.identifier));
-			this.user.form(NameValueCollection , nameof(this.user));
-			this.name.form(NameValueCollection , nameof(this.name));
-			this.hidden.form(NameValueCollection , nameof(this.hidden));
-		}
 		protected override database constructor() {
 			return new list();
 		}

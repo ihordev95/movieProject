@@ -12,10 +12,6 @@
 			this.user = new type.Int32();
 			this.list = new type.Int32();
 		}
-		public list_follow(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
-			this.user.form(NameValueCollection , nameof(this.user));
-			this.list.form(NameValueCollection , nameof(this.list));
-		}
 		protected override database constructor() {
 			return new list_follow();
 		}

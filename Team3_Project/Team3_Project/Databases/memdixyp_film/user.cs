@@ -16,18 +16,6 @@
 			this.password = new type.String();
 			this.email = new type.String();
 		}
-		public user(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
-			this.identifier.form(NameValueCollection , nameof(this.identifier));
-			this.name.form(NameValueCollection , nameof(this.name));
-			this.password.form(NameValueCollection , nameof(this.password));
-			this.email.form(NameValueCollection , nameof(this.email));
-		}
-		public user(System.String name , System.String password , System.String email) {
-			this.identifier = new type.Int32();
-			this.name = new type.String(name);
-			this.password = new type.String(password);
-			this.email = new type.String(email);
-		}
 		protected override database constructor() {
 			return new user();
 		}
@@ -54,7 +42,11 @@
 			};
 		}
 		public static void insert_individual(System.String name , System.String password , System.String email) {
-			user user = new user(name , password , email);
+			user user = new user {
+				name = new type.String(name) ,
+				password = new type.String(password) ,
+				email = new type.String(email)
+			};
 			database.insert(user);
 		}
 	}
