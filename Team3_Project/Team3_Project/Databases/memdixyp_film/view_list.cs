@@ -41,16 +41,11 @@
 				this.startYear
 			};
 		}
-		protected override type.abstraction[] parameters() {
-			return new type.abstraction[] {
-				this.list
-			};
-		}
-		public static view_list[] call_collection(System.Int32 list) {
-			view_list view_List = new view_list {
-				list = new type.Int32(list)
-			};
-			return self.select_collection(view_List.CALL() , (database item) => (view_list) item);
+		public static view_list[] show_movie_list(type.Int32 list) {
+			System.String query = self.CALL(new type.abstraction[] {
+				list
+			});
+			return self.select_collection(query , converter);
 		}
 	}
 }

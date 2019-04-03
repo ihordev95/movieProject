@@ -42,7 +42,7 @@
 			list_movie.list.form(NameValueCollection , nameof(list_movie.list));
 			list_movie.movie.form(NameValueCollection , nameof(list_movie.movie));
 			list_movie.added.form(NameValueCollection , nameof(list_movie.added));
-			database.insert(list_movie);
+			insert(list_movie);
 		}
 	}
 }

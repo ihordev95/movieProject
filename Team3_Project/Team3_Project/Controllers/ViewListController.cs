@@ -5,7 +5,7 @@
 			Databases.type.Int32 identifier = new Databases.type.Int32(1);
 			identifier.parse(id);
 			this.ViewBag.list = Databases.memdixyp_film.list.get_list_by_id(identifier.value);
-			this.ViewBag.view_list = Databases.memdixyp_film.view_list.call_collection(identifier.value);
+			this.ViewBag.view_list = Databases.memdixyp_film.view_list.show_movie_list(identifier);
 			return this.View();
 		}
 		public System.String AddList() {

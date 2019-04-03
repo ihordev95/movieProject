@@ -42,11 +42,25 @@
 			};
 		}
 		public static list get_list_by_id(System.Int32 identifier) {
-			System.String where = System.String.Format("`identifier`='{0}'" , identifier);
+			System.String[] columns = new System.String[] {
+				nameof(identifier)
+			};
+			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
+			StringBuilder.Append(self.COLUMN(columns));
+			StringBuilder.Append(unicode.EQUALS_SIGN);
+			StringBuilder.Append(self.STRING_LITERAL(identifier.ToString()));
+			System.String where = StringBuilder.ToString();
 			return self.select_individual(self.SELECT(where , null) , converter);
 		}
 		public static list[] list_by_user(System.Int32 user) {
-			System.String where = System.String.Format("`user`='{0}'" , user);
+			System.String[] columns = new System.String[] {
+				nameof(user)
+			};
+			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
+			StringBuilder.Append(self.COLUMN(columns));
+			StringBuilder.Append(unicode.EQUALS_SIGN);
+			StringBuilder.Append(self.STRING_LITERAL(user.ToString()));
+			System.String where = StringBuilder.ToString();
 			return self.select_collection(self.SELECT(where , null) , converter);
 		}
 	}

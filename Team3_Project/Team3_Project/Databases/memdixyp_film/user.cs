@@ -47,7 +47,7 @@
 				password = new type.String(password) ,
 				email = new type.String(email)
 			};
-			database.insert(user);
+			insert(user);
 		}
 	}
 }
