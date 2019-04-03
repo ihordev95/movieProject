@@ -6,8 +6,8 @@
 			System.String response = api.GetAPIinfo("i=" + ID);
 			Helpers.Watchable watchable = Newtonsoft.Json.JsonConvert.DeserializeObject<Helpers.Watchable>(response);
 			this.ViewBag.json = watchable;
-			System.Int32 identifier = 1; // PLACEHOLDER
-			this.ViewBag.list = Databases.memdixyp_film.list.select_collection(System.String.Format("`user`='{0}'" , identifier));
+			System.Int32 user = 1; // PLACEHOLDER
+			this.ViewBag.list = Databases.memdixyp_film.list.select_collection(null , user);
 			return this.View();
 		}
 	}

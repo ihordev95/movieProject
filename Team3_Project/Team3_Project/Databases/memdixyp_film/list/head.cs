@@ -4,11 +4,21 @@
 		static list() {
 			self = new list();
 		}
-		public static list[] select_collection(System.String where = "" , System.UInt32? limit = null) {
-			return self.select_collection(self.SELECT(where , limit) , (database item) => (list) item);
+		private static System.String where(System.Int32? identifier , System.Int32? user) {
+			System.String where = System.String.Empty;
+			if (identifier != null) {
+				where = System.String.Format("`identifier`='{0}'" , identifier);
+			}
+			if (user != null) {
+				where = System.String.Format("`user`='{0}'" , user);
+			}
+			return where;
 		}
-		public static list select_individual(System.String where = "" , System.UInt32? limit = null) {
-			return self.select_individual(self.SELECT(where , limit) , (database item) => (list) item);
+		public static list[] select_collection(System.Int32? identifier , System.Int32? user) {
+			return self.select_collection(self.SELECT(where(identifier , user) , null) , (database item) => (list) item);
+		}
+		public static list select_individual(System.Int32? identifier , System.Int32? user) {
+			return self.select_individual(self.SELECT(where(identifier , user) , null) , (database item) => (list) item);
 		}
 	}
 }
