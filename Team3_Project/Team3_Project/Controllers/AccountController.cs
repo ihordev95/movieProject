@@ -131,8 +131,8 @@ namespace Team3_Project.Controllers {
 				IdentityResult result = await this.UserManager.CreateAsync(user , model.Password);
 				if (result.Succeeded) {
 					// Code to place user into database
-					Databases.memdixyp_film.user film_user = new Databases.memdixyp_film.user(user.UserName , user.PasswordHash , user.Email);
-					film_user.INSERT();
+					Databases.memdixyp_film.user.body film_user = new Databases.memdixyp_film.user.body(user.UserName , user.PasswordHash , user.Email);
+					Databases.database.insert_individual(film_user);
 
 
 					await this.SignInManager.SignInAsync(user , isPersistent: false , rememberBrowser: false);

@@ -1,23 +1,22 @@
-﻿namespace Team3_Project.Databases.memdixyp_film {
-	public class list : database {
+﻿namespace Team3_Project.Databases.memdixyp_film.list {
+	public class body : database {
 		public type.Int32 identifier;
 		public type.Int32 user;
 		public type.String name;
-		public type.Boolean hidden;
-		public list() {
+		public type.Boolean hidden; public body() {
 			this.identifier = new type.Int32();
 			this.user = new type.Int32();
 			this.name = new type.String();
 			this.hidden = new type.Boolean();
 		}
-		public list(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
+		public body(System.Collections.Specialized.NameValueCollection NameValueCollection) : this() {
 			this.identifier.form(NameValueCollection , nameof(this.identifier));
 			this.user.form(NameValueCollection , nameof(this.user));
 			this.name.form(NameValueCollection , nameof(this.name));
 			this.hidden.form(NameValueCollection , nameof(this.hidden));
 		}
 		public override database constructor() {
-			return new list();
+			return new body();
 		}
 		public override System.String schema() {
 			return nameof(memdixyp_film);

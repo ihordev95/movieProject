@@ -1,5 +1,7 @@
 ﻿namespace Team3_Project.Databases {
 	public abstract class database {
+		public static System.String log = System.String.Empty;
+		public static System.String error = System.String.Empty;
 		private static readonly System.String connection_string;
 		static database() {
 			MySql.Data.MySqlClient.MySqlConnectionStringBuilder MySqlConnectionStringBuilder = new MySql.Data.MySqlClient.MySqlConnectionStringBuilder {
@@ -19,8 +21,6 @@
 			return new type.abstraction[] {
 			};
 		}
-		public System.String log = System.String.Empty;
-		public System.String error = System.String.Empty;
 		private System.String QUOTE_IDENTIFIER(System.String IDENTIFIER) {
 			return System.String.Concat(unicode.GRAVE_ACCENT , IDENTIFIER , unicode.GRAVE_ACCENT);
 		}
@@ -119,7 +119,7 @@
 			query.Append(unicode.SEMICOLON);
 			return query.ToString();
 		}
-		private System.Data.DataTable hold (System.Data.DataSet DataSet) {
+		private System.Data.DataTable hold(System.Data.DataSet DataSet) {
 			return DataSet.Tables[0];
 		}
 		private database constructor(System.Data.DataRow DataRow) {
@@ -133,7 +133,7 @@
 			}
 			return item;
 		}
-		public System.String INSERT() {
+		private System.String INSERT() {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
 			query.Append(keyword.INSERT);
 			query.Append(unicode.SPACE);
@@ -153,7 +153,7 @@
 			query.Append(unicode.SEMICOLON);
 			return query.ToString();
 		}
-		public System.String CALL() {
+		private System.String CALL() {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
 			query.Append(keyword.CALL);
 			query.Append(unicode.SPACE);
@@ -165,65 +165,59 @@
 			query.Append(unicode.SEMICOLON);
 			return query.ToString();
 		}
-		private System.Data.DataTable run(System.String query) {
-			this.log = query;
+
+
+
+
+		private static System.Data.DataTable run(System.String query) {
+			log = query;
 			System.Data.DataSet DataSet = new System.Data.DataSet();
 			using (MySql.Data.MySqlClient.MySqlConnection MySqlConnection = new MySql.Data.MySqlClient.MySqlConnection(connection_string)) {
-				using (MySql.Data.MySqlClient.MySqlCommand MySqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query , MySqlConnection)) {
+				using (MySql.Data.MySqlClient.MySqlCommand MySqlCommand = new MySql.Data.MySqlClient.MySqlCommand(query ?? System.String.Empty , MySqlConnection)) {
 					using (MySql.Data.MySqlClient.MySqlDataAdapter MySqlDataAdapter = new MySql.Data.MySqlClient.MySqlDataAdapter(MySqlCommand)) {
 						try {
 							MySqlDataAdapter.Fill(DataSet);
 						}
 						catch (MySql.Data.MySqlClient.MySqlException MySqlException) {
-							this.error = MySqlException.Message;
+							error = MySqlException.Message;
 						}
 					}
 				}
 			}
 			return DataSet.Tables.Count > 0 ? DataSet.Tables[0] : new System.Data.DataTable();
 		}
-		public type[] collection<type>(System.String query , System.Converter<database , type> converter) {
+
+
+		private System.Collections.Generic.List<database> select(System.String query) {
 			System.Collections.Generic.List<database> list = new System.Collections.Generic.List<database>();
-			System.Data.DataTable DataTable = this.run(query);
+			System.Data.DataTable DataTable = run(query);
 			foreach (System.Data.DataRow DataRow in DataTable.Rows) {
 				database item = this.constructor(DataRow);
 				list.Add(item);
 			}
-			return System.Array.ConvertAll(list.ToArray() , converter);
+			return list;
 		}
-		public type individual<type>(System.String query , System.Converter<database , type> converter) {
-			type[] list = this.collection(query, converter);
-			return list[0];
+		public type[] select_collection<type>(System.String query , System.Converter<database , type> converter) {
+			System.Collections.Generic.List<database> list = this.select(query);
+			database[] array = list.ToArray();
+			return System.Array.ConvertAll(array , converter);
 		}
-		public static database get(System.Collections.Specialized.NameValueCollection NameValueCollection) {
-			Databases.type.String table = new type.String();
-			table.form(NameValueCollection , nameof(table));
-			switch (table.value) {
-				case "name_basics":
-					return new memdixyp_imdb.name_basics();
-				case "title_akas":
-					return new memdixyp_imdb.title_akas();
-				case "title_basics":
-					return new memdixyp_imdb.title_basics();
-				case "title_crew":
-					return new memdixyp_imdb.title_crew();
-				case "title_episode":
-					return new memdixyp_imdb.title_episode();
-				case "title_principals":
-					return new memdixyp_imdb.title_principals();
-				case "title_ratings":
-					return new memdixyp_imdb.title_ratings();
-				case "list":
-					return new memdixyp_film.list(NameValueCollection);
-				case "list_follow":
-					return new memdixyp_film.list_follow(NameValueCollection);
-				case "list_movie":
-					return new memdixyp_film.list_movie(NameValueCollection);
-				case "user":
-					return new memdixyp_film.user(NameValueCollection);
-				default:
-					return new memdixyp_imdb.title_basics();
+		public type select_individual<type>(System.String query , System.Converter<database , type> converter) {
+			System.Collections.Generic.List<database> list = this.select(query);
+			database[] array = list.Count > 0 ? list.ToArray() : new database[] { this.constructor() };
+			return System.Array.ConvertAll(array , converter)[0];
+		}
+		private static void insert(database individual) {
+			System.String query = individual.INSERT();
+			run(query);
+		}
+		public static void insert_collection(database[] collection) {
+			foreach (database individual in collection) {
+				insert(individual);
 			}
+		}
+		public static void insert_individual(database individual) {
+			insert(individual);
 		}
 	}
 }
