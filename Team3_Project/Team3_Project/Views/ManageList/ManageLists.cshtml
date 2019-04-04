@@ -2,7 +2,42 @@
 @{
     ViewBag.Title = "ManageLists";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    this.ViewBag.css = new System.String[] { "w3" };
 }
 
 <h2>ManageLists</h2>
 
+<div>
+    <p>This should be a dynamically loaded page with the list that is being passed into this page based on the "Available List Page"</p>
+
+    <!--  THIS NEEDS TO BE UPDATED TO PULL IN THE LIST DYNAMICALLY!!!!
+
+
+    <table class="resultTable w3-col l12">
+        @*<tr class="tableHeader">
+                <td>Title:</td>
+            </tr>*@
+        <tr>
+            @foreach (var movie in ViewBag.searchResults)
+            {
+
+
+                <td>
+                    <a href="@Url.Action( "MoviePage", "Movie", new { ID = movie.imdbID })" class="elements"><img src=@movie.poster alt=@movie.title class="movieposter w3-third" /></a>
+                </td>
+
+
+            }
+        </tr>
+    </table>
+    -->
+</div>
+
+<div>
+    <p>There should be a check box next to each movie and a button at the bottom that says "Remove Movie from List"</p>
+    <div>
+        <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="javascript:void(0)" onclick="document.getElementById">
+            Remove Movie From List
+        </a>
+    </div>
+</div>
