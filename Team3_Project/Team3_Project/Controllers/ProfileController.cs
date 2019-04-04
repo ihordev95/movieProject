@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Team3_Project.Controllers
-{
-    public class ProfileController : Controller
-    {
-        // GET: Profile
-        public ActionResult Profile()
-        {
-            return View();
-        }
-    }
+﻿namespace Team3_Project.Controllers {
+	public class ProfileController : System.Web.Mvc.Controller {
+		// GET: Profile
+		new public System.Web.Mvc.ActionResult Profile() {
+			return this.View();
+		}
+	}
 }
