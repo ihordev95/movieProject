@@ -1,19 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Single : abstraction {
-		private static readonly System.Converter<abstraction , Single> converter;
-		public static readonly Single self;
-		static Single() {
-			converter = (abstraction item) => (Single) item;
-			self = new Single();
-		}
 		public static Single[] collection(subroutine subroutine , System.Object[] initialise) {
-			return self.collection(converter , subroutine , initialise);
+			return collection((abstraction item) => (Single) item , () => new Single() , subroutine , initialise);
 		}
 		public static Single individual(subroutine subroutine , System.Object[] initialise) {
-			return self.individual(converter , subroutine , initialise);
-		}
-		protected override abstraction constructor() {
-			return new Single();
+			return individual((abstraction item) => (Single) item , () => new Single() , subroutine , initialise);
 		}
 		public System.Single value;
 		public Single() {

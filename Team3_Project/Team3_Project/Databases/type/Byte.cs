@@ -1,19 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Byte : abstraction {
-		private static readonly System.Converter<abstraction , Byte> converter;
-		public static readonly Byte self;
-		static Byte() {
-			converter = (abstraction item) => (Byte) item;
-			self = new Byte();
-		}
 		public static Byte[] collection(subroutine subroutine , System.Object[] initialise) {
-			return self.collection(converter , subroutine , initialise);
+			return collection((abstraction item) => (Byte) item , () => new Byte() , subroutine , initialise);
 		}
 		public static Byte individual(subroutine subroutine , System.Object[] initialise) {
-			return self.individual(converter , subroutine , initialise);
-		}
-		protected override abstraction constructor() {
-			return new Byte();
+			return individual((abstraction item) => (Byte) item , () => new Byte() , subroutine , initialise);
 		}
 		public System.Byte value;
 		public Byte() {

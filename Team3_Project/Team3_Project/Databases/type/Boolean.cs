@@ -1,19 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Boolean : abstraction {
-		private static readonly System.Converter<abstraction , Boolean> converter;
-		public static readonly Boolean self;
-		static Boolean() {
-			converter = (abstraction item) => (Boolean) item;
-			self = new Boolean();
-		}
 		public static Boolean[] collection(subroutine subroutine , System.Object[] initialise) {
-			return self.collection(converter , subroutine , initialise);
+			return collection((abstraction item) => (Boolean) item , () => new Boolean() , subroutine , initialise);
 		}
 		public static Boolean individual(subroutine subroutine , System.Object[] initialise) {
-			return self.individual(converter , subroutine , initialise);
-		}
-		protected override abstraction constructor() {
-			return new Boolean();
+			return individual((abstraction item) => (Boolean) item , () => new Boolean() , subroutine , initialise);
 		}
 		public System.Boolean value;
 		public Boolean() {

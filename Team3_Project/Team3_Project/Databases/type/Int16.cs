@@ -1,19 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Int16 : abstraction {
-		private static readonly System.Converter<abstraction , Int16> converter;
-		public static readonly Int16 self;
-		static Int16() {
-			converter = (abstraction item) => (Int16) item;
-			self = new Int16();
-		}
 		public static Int16[] collection(subroutine subroutine , System.Object[] initialise) {
-			return self.collection(converter , subroutine , initialise);
+			return collection((abstraction item) => (Int16) item , () => new Int16() , subroutine , initialise);
 		}
 		public static Int16 individual(subroutine subroutine , System.Object[] initialise) {
-			return self.individual(converter , subroutine , initialise);
-		}
-		protected override abstraction constructor() {
-			return new Int16();
+			return individual((abstraction item) => (Int16) item , () => new Int16() , subroutine , initialise);
 		}
 		public System.Int16 value;
 		public Int16() {

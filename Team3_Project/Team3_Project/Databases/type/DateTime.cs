@@ -1,19 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class DateTime : abstraction {
-		private static readonly System.Converter<abstraction , DateTime> converter;
-		public static readonly DateTime self;
-		static DateTime() {
-			converter = (abstraction item) => (DateTime) item;
-			self = new DateTime();
-		}
 		public static DateTime[] collection(subroutine subroutine , System.Object[] initialise) {
-			return self.collection(converter , subroutine , initialise);
+			return collection((abstraction item) => (DateTime) item , () => new DateTime() , subroutine , initialise);
 		}
 		public static DateTime individual(subroutine subroutine , System.Object[] initialise) {
-			return self.individual(converter , subroutine , initialise);
-		}
-		protected override abstraction constructor() {
-			return new DateTime();
+			return individual((abstraction item) => (DateTime) item , () => new DateTime() , subroutine , initialise);
 		}
 		public System.DateTime value;
 		public DateTime() {

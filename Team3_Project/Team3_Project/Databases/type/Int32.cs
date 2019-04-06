@@ -1,19 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Int32 : abstraction {
-		private static readonly System.Converter<abstraction , Int32> converter;
-		public static readonly Int32 self;
-		static Int32() {
-			converter = (abstraction item) => (Int32) item;
-			self = new Int32();
-		}
 		public static Int32[] collection(subroutine subroutine , System.Object[] initialise) {
-			return self.collection(converter , subroutine , initialise);
+			return collection((abstraction item) => (Int32) item , () => new Int32() , subroutine , initialise);
 		}
 		public static Int32 individual(subroutine subroutine , System.Object[] initialise) {
-			return self.individual(converter , subroutine , initialise);
-		}
-		protected override abstraction constructor() {
-			return new Int32();
+			return individual((abstraction item) => (Int32) item , () => new Int32() , subroutine , initialise);
 		}
 		public System.Int32 value;
 		public Int32() {

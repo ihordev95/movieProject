@@ -1,19 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class String : abstraction {
-		private static readonly System.Converter<abstraction , String> converter;
-		public static readonly String self;
-		static String() {
-			converter = (abstraction item) => (String) item;
-			self = new String();
-		}
 		public static String[] collection(subroutine subroutine , System.Object[] initialise) {
-			return self.collection(converter , subroutine , initialise);
+			return collection((abstraction item) => (String) item , () => new String() , subroutine , initialise);
 		}
 		public static String individual(subroutine subroutine , System.Object[] initialise) {
-			return self.individual(converter , subroutine , initialise);
-		}
-		protected override abstraction constructor() {
-			return new String();
+			return individual((abstraction item) => (String) item , () => new String() , subroutine , initialise);
 		}
 		public System.String value;
 		public String() {

@@ -8,9 +8,9 @@
 			return this.View();
 		}
 		public System.String RemoveMovie() {
-			Databases.type.String list = new Databases.type.String();
-			list.form(this.Request.QueryString, "list");
-			list.value.Split();
+			System.Collections.Specialized.NameValueCollection NameValueCollection = this.Request.QueryString;
+			System.String name = "list";
+			Databases.type.String[] list = Databases.type.String.collection(Databases.type.abstraction.do_work , new System.Object[] { NameValueCollection , name });
 			return "Movie probably added!";
 		}
 	}
