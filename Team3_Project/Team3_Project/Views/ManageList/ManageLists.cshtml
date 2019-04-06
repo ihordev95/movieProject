@@ -1,8 +1,8 @@
-﻿
-@{
-    ViewBag.Title = "ManageLists";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    this.ViewBag.css = new System.String[] { "w3" };
+﻿@{
+	this.Layout = "~/Views/Shared/_Layout.cshtml";
+	this.ViewBag.Title = "ManageLists";
+	this.ViewBag.css = new System.String[] { "w3" };
+	this.ViewBag.js = new System.String[] { "ajax", "event", "ManageLists" };
 }			<h2>
 				ManageLists
 			</h2>
@@ -18,7 +18,7 @@
 				<tr>
 					<td>
 						<label>
-							<input name="@view_list.tconst" type="checkbox" />
+							<input name="@view_list.tconst" type="checkbox" value="@view_list.tconst" />
 							@view_list.primaryTitle (@view_list.startYear)
 						</label>
 					</td>
@@ -27,7 +27,7 @@
 				</tr>
 }			</table>
 			<div>
-				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="javascript:void(0)" onclick="document.getElementById">
+				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="remove">
 					Remove Movie From List
 				</a>
 			</div>

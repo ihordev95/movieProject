@@ -7,5 +7,11 @@
 			this.ViewBag.view_list = Databases.memdixyp_film.view_list.show_movie_list(identifier);
 			return this.View();
 		}
+		public System.String RemoveMovie() {
+			Databases.type.String list = new Databases.type.String();
+			list.form(this.Request.QueryString, "list");
+			list.value.Split();
+			return "Movie probably added!";
+		}
 	}
 }
