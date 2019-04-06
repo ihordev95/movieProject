@@ -6,6 +6,9 @@
 			converter = (abstraction item) => (Single) item;
 			self = new Single();
 		}
+		protected override abstraction constructor() {
+			return new Single();
+		}
 		public System.Single value;
 		public Single() {
 			this.value = 0;

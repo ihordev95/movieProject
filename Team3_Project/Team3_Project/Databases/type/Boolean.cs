@@ -6,6 +6,9 @@
 			converter = (abstraction item) => (Boolean) item;
 			self = new Boolean();
 		}
+		protected override abstraction constructor() {
+			return new Boolean();
+		}
 		public System.Boolean value;
 		public Boolean() {
 			this.value = false;

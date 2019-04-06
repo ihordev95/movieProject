@@ -6,6 +6,9 @@
 			converter = (abstraction item) => (Byte) item;
 			self = new Byte();
 		}
+		protected override abstraction constructor() {
+			return new Byte();
+		}
 		public System.Byte value;
 		public Byte() {
 			this.value = 0;

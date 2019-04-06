@@ -6,6 +6,9 @@
 			converter = (abstraction item) => (Int16) item;
 			self = new Int16();
 		}
+		protected override abstraction constructor() {
+			return new Int16();
+		}
 		public System.Int16 value;
 		public Int16() {
 			this.value = 0;

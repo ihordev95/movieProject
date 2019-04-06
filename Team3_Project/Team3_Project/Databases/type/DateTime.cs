@@ -6,6 +6,9 @@
 			converter = (abstraction item) => (DateTime) item;
 			self = new DateTime();
 		}
+		protected override abstraction constructor() {
+			return new DateTime();
+		}
 		public System.DateTime value;
 		public DateTime() {
 			this.value = System.DateTime.UtcNow;
