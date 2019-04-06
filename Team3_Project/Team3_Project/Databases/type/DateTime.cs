@@ -6,6 +6,12 @@
 			converter = (abstraction item) => (DateTime) item;
 			self = new DateTime();
 		}
+		public static DateTime[] collection(subroutine subroutine , System.Object[] initialise) {
+			return self.collection(converter , subroutine , initialise);
+		}
+		public static DateTime individual(subroutine subroutine , System.Object[] initialise) {
+			return self.individual(converter , subroutine , initialise);
+		}
 		protected override abstraction constructor() {
 			return new DateTime();
 		}

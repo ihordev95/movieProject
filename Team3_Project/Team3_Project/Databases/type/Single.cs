@@ -6,6 +6,12 @@
 			converter = (abstraction item) => (Single) item;
 			self = new Single();
 		}
+		public static Single[] collection(subroutine subroutine , System.Object[] initialise) {
+			return self.collection(converter , subroutine , initialise);
+		}
+		public static Single individual(subroutine subroutine , System.Object[] initialise) {
+			return self.individual(converter , subroutine , initialise);
+		}
 		protected override abstraction constructor() {
 			return new Single();
 		}

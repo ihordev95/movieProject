@@ -6,6 +6,12 @@
 			converter = (abstraction item) => (Int16) item;
 			self = new Int16();
 		}
+		public static Int16[] collection(subroutine subroutine , System.Object[] initialise) {
+			return self.collection(converter , subroutine , initialise);
+		}
+		public static Int16 individual(subroutine subroutine , System.Object[] initialise) {
+			return self.individual(converter , subroutine , initialise);
+		}
 		protected override abstraction constructor() {
 			return new Int16();
 		}

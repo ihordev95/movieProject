@@ -6,6 +6,12 @@
 			converter = (abstraction item) => (String) item;
 			self = new String();
 		}
+		public static String[] collection(subroutine subroutine , System.Object[] initialise) {
+			return self.collection(converter , subroutine , initialise);
+		}
+		public static String individual(subroutine subroutine , System.Object[] initialise) {
+			return self.individual(converter , subroutine , initialise);
+		}
 		protected override abstraction constructor() {
 			return new String();
 		}

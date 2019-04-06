@@ -6,6 +6,12 @@
 			converter = (abstraction item) => (Byte) item;
 			self = new Byte();
 		}
+		public static Byte[] collection(subroutine subroutine , System.Object[] initialise) {
+			return self.collection(converter , subroutine , initialise);
+		}
+		public static Byte individual(subroutine subroutine , System.Object[] initialise) {
+			return self.individual(converter , subroutine , initialise);
+		}
 		protected override abstraction constructor() {
 			return new Byte();
 		}

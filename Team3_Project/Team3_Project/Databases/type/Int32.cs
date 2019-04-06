@@ -6,6 +6,12 @@
 			converter = (abstraction item) => (Int32) item;
 			self = new Int32();
 		}
+		public static Int32[] collection(subroutine subroutine , System.Object[] initialise) {
+			return self.collection(converter , subroutine , initialise);
+		}
+		public static Int32 individual(subroutine subroutine , System.Object[] initialise) {
+			return self.individual(converter , subroutine , initialise);
+		}
 		protected override abstraction constructor() {
 			return new Int32();
 		}

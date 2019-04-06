@@ -6,6 +6,12 @@
 			converter = (abstraction item) => (Boolean) item;
 			self = new Boolean();
 		}
+		public static Boolean[] collection(subroutine subroutine , System.Object[] initialise) {
+			return self.collection(converter , subroutine , initialise);
+		}
+		public static Boolean individual(subroutine subroutine , System.Object[] initialise) {
+			return self.individual(converter , subroutine , initialise);
+		}
 		protected override abstraction constructor() {
 			return new Boolean();
 		}
