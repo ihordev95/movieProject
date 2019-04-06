@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Boolean : abstraction {
+		private static readonly System.Converter<abstraction , Boolean> converter;
+		public static readonly Boolean self;
+		static Boolean() {
+			converter = (abstraction item) => (Boolean) item;
+			self = new Boolean();
+		}
 		public System.Boolean value;
 		public Boolean() {
 			this.value = false;

@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Single : abstraction {
+		private static readonly System.Converter<abstraction , Single> converter;
+		public static readonly Single self;
+		static Single() {
+			converter = (abstraction item) => (Single) item;
+			self = new Single();
+		}
 		public System.Single value;
 		public Single() {
 			this.value = 0;

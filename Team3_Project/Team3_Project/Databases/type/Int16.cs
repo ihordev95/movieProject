@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Int16 : abstraction {
+		private static readonly System.Converter<abstraction , Int16> converter;
+		public static readonly Int16 self;
+		static Int16() {
+			converter = (abstraction item) => (Int16) item;
+			self = new Int16();
+		}
 		public System.Int16 value;
 		public Int16() {
 			this.value = 0;

@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class String : abstraction {
+		private static readonly System.Converter<abstraction , String> converter;
+		public static readonly String self;
+		static String() {
+			converter = (abstraction item) => (String) item;
+			self = new String();
+		}
 		public System.String value;
 		public String() {
 			this.value = System.String.Empty;

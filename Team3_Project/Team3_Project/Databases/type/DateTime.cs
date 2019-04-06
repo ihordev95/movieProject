@@ -1,5 +1,11 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class DateTime : abstraction {
+		private static readonly System.Converter<abstraction , DateTime> converter;
+		public static readonly DateTime self;
+		static DateTime() {
+			converter = (abstraction item) => (DateTime) item;
+			self = new DateTime();
+		}
 		public System.DateTime value;
 		public DateTime() {
 			this.value = System.DateTime.UtcNow;
