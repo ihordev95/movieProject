@@ -18,19 +18,13 @@
 		public type.Int16 deathYear;
 		public type.String primaryProfession;
 		public type.String knownForTitles;
-		private name_basics() {
+		private name_basics() : base(nameof(memdixyp_imdb) , nameof(name_basics)) {
 			this.nconst = new type.String();
 			this.primaryName = new type.String();
 			this.birthYear = new type.Int16();
 			this.deathYear = new type.Int16();
 			this.primaryProfession = new type.String();
 			this.knownForTitles = new type.String();
-		}
-		protected override System.String schema() {
-			return nameof(memdixyp_imdb);
-		}
-		protected override System.String table() {
-			return nameof(name_basics);
 		}
 		protected override System.String[] columns() {
 			return new System.String[] {

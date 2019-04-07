@@ -15,16 +15,10 @@
 		public type.String tconst;
 		public type.Single averageRating;
 		public type.Int32 numVotes;
-		private title_ratings() {
+		private title_ratings() : base(nameof(memdixyp_imdb) , nameof(title_ratings)) {
 			this.tconst = new type.String();
 			this.averageRating = new type.Single();
 			this.numVotes = new type.Int32();
-		}
-		protected override System.String schema() {
-			return nameof(memdixyp_imdb);
-		}
-		protected override System.String table() {
-			return nameof(title_ratings);
 		}
 		protected override System.String[] columns() {
 			return new System.String[] {

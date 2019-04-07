@@ -12,6 +12,12 @@
 			};
 			connection_string = MySqlConnectionStringBuilder.ToString();
 		}
+		private readonly System.String schema;
+		private readonly System.String table;
+		protected database(System.String schema , System.String table) {
+			this.schema = schema;
+			this.table = table;
+		}
 		private static System.Data.DataTable run(System.String query) {
 			log = query;
 			System.Data.DataSet DataSet = new System.Data.DataSet();
@@ -29,8 +35,6 @@
 			}
 			return DataSet.Tables.Count > 0 ? DataSet.Tables[0] : new System.Data.DataTable();
 		}
-		protected abstract System.String schema();
-		protected abstract System.String table();
 		protected abstract System.String[] columns();
 		protected abstract type.abstraction[] values();
 		protected System.String CALL(type.abstraction[] parameters) {
@@ -102,7 +106,7 @@
 			return System.String.Concat(unicode.GRAVE_ACCENT , IDENTIFIER , unicode.GRAVE_ACCENT);
 		}
 		protected System.String SCHEMA() {
-			System.String schema = this.schema();
+			System.String schema = this.schema;
 			return this.QUOTE_IDENTIFIER(schema);
 		}
 		protected System.String SELECT(System.String where = "" , System.UInt32? limit = null) {
@@ -124,7 +128,7 @@
 		}
 		protected System.String TABLE() {
 			System.String schema = this.SCHEMA();
-			System.String table = this.table();
+			System.String table = this.table;
 			return this.QUALIFY_IDENTIFIER(schema , this.QUOTE_IDENTIFIER(table));
 		}
 		protected System.String VALUES() {

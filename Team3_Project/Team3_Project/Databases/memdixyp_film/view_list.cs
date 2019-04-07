@@ -16,17 +16,11 @@
 		public type.String tconst;
 		public type.String primaryTitle;
 		public type.Int16 startYear;
-		private view_list() {
+		private view_list() : base(nameof(memdixyp_film) , nameof(view_list)) {
 			this.list = new type.Int32();
 			this.tconst = new type.String();
 			this.primaryTitle = new type.String();
 			this.startYear = new type.Int16();
-		}
-		protected override System.String schema() {
-			return nameof(memdixyp_film);
-		}
-		protected override System.String table() {
-			return nameof(view_list);
 		}
 		protected override System.String[] columns() {
 			return new System.String[] {

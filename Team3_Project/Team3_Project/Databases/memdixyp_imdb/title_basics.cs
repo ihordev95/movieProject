@@ -21,7 +21,7 @@
 		public type.Int16 endYear;
 		public type.Int32 runtimeMinutes;
 		public type.String genres;
-		private title_basics() {
+		private title_basics() : base(nameof(memdixyp_imdb) , nameof(title_basics)) {
 			this.tconst = new type.String();
 			this.titleType = new type.String();
 			this.primaryTitle = new type.String();
@@ -31,12 +31,6 @@
 			this.endYear = new type.Int16();
 			this.runtimeMinutes = new type.Int32();
 			this.genres = new type.String();
-		}
-		protected override System.String schema() {
-			return nameof(memdixyp_imdb);
-		}
-		protected override System.String table() {
-			return nameof(title_basics);
 		}
 		protected override System.String[] columns() {
 			return new System.String[] {

@@ -16,17 +16,11 @@
 		public type.String parentTconst;
 		public type.Int16 seasonNumber;
 		public type.Int32 episodeNumber;
-		private title_episode() {
+		private title_episode() : base(nameof(memdixyp_imdb) , nameof(title_episode)) {
 			this.tconst = new type.String();
 			this.parentTconst = new type.String();
 			this.seasonNumber = new type.Int16();
 			this.episodeNumber = new type.Int32();
-		}
-		protected override System.String schema() {
-			return nameof(memdixyp_imdb);
-		}
-		protected override System.String table() {
-			return nameof(title_episode);
 		}
 		protected override System.String[] columns() {
 			return new System.String[] {

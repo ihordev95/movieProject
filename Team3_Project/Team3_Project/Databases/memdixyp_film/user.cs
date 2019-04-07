@@ -16,17 +16,11 @@
 		public type.String name;
 		public type.String password;
 		public type.String email;
-		private user() {
+		private user() : base(nameof(memdixyp_film) , nameof(user)) {
 			this.identifier = new type.Int32();
 			this.name = new type.String();
 			this.password = new type.String();
 			this.email = new type.String();
-		}
-		protected override System.String schema() {
-			return nameof(memdixyp_film);
-		}
-		protected override System.String table() {
-			return nameof(user);
 		}
 		protected override System.String[] columns() {
 			return new System.String[] {

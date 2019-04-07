@@ -20,7 +20,7 @@
 		public type.String types;
 		public type.String attributes;
 		public type.Boolean isOriginalTitle;
-		private title_akas() {
+		private title_akas() : base(nameof(memdixyp_imdb) , nameof(title_akas)) {
 			this.titleId = new type.String();
 			this.ordering = new type.Byte();
 			this.title = new type.String();
@@ -29,12 +29,6 @@
 			this.types = new type.String();
 			this.attributes = new type.String();
 			this.isOriginalTitle = new type.Boolean();
-		}
-		protected override System.String schema() {
-			return nameof(memdixyp_imdb);
-		}
-		protected override System.String table() {
-			return nameof(title_akas);
 		}
 		protected override System.String[] columns() {
 			return new System.String[] {

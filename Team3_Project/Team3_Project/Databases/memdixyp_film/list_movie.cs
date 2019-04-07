@@ -15,16 +15,10 @@
 		public type.Int32 list;
 		public type.String movie;
 		public type.DateTime added;
-		private list_movie() {
+		private list_movie() : base(nameof(memdixyp_film) , nameof(list_movie)) {
 			this.list = new type.Int32();
 			this.movie = new type.String();
 			this.added = new type.DateTime();
-		}
-		protected override System.String schema() {
-			return nameof(memdixyp_film);
-		}
-		protected override System.String table() {
-			return nameof(list_movie);
 		}
 		protected override System.String[] columns() {
 			return new System.String[] {
