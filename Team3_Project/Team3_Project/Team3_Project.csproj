@@ -212,6 +212,7 @@
     <Compile Include="Controllers\ViewListController.cs" />
     <Compile Include="Databases\database.cs" />
     <Compile Include="Databases\keyword.cs" />
+    <Compile Include="Databases\initiation.cs" />
     <Compile Include="Databases\memdixyp_film\list.cs" />
     <Compile Include="Databases\memdixyp_film\list_follow.cs" />
     <Compile Include="Databases\memdixyp_film\list_movie.cs" />

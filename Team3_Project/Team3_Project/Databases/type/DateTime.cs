@@ -1,10 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class DateTime : abstraction {
 		public static DateTime[] collection(subroutine subroutine , System.Object[] initialise) {
-			return collection((abstraction item) => (DateTime) item , () => new DateTime() , subroutine , initialise);
+			return collection((superclass item) => (DateTime) item , () => new DateTime() , subroutine , initialise);
 		}
 		public static DateTime individual(subroutine subroutine , System.Object[] initialise) {
-			return individual((abstraction item) => (DateTime) item , () => new DateTime() , subroutine , initialise);
+			return individual((superclass item) => (DateTime) item , () => new DateTime() , subroutine , initialise);
 		}
 		public System.DateTime value;
 		public DateTime() {

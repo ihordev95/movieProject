@@ -10,7 +10,7 @@
 		public System.String RemoveMovie() {
 			System.Collections.Specialized.NameValueCollection NameValueCollection = this.Request.QueryString;
 			System.String name = "list";
-			Databases.type.String[] list = Databases.type.String.collection(Databases.type.abstraction.do_work , new System.Object[] { NameValueCollection , name });
+			Databases.type.String[] list = Databases.type.String.collection(Databases.type.abstraction.form , new System.Object[] { NameValueCollection , name });
 			return "Movie probably added!";
 		}
 	}

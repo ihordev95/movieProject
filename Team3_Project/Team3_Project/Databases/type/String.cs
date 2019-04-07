@@ -1,10 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class String : abstraction {
 		public static String[] collection(subroutine subroutine , System.Object[] initialise) {
-			return collection((abstraction item) => (String) item , () => new String() , subroutine , initialise);
+			return collection((superclass item) => (String) item , () => new String() , subroutine , initialise);
 		}
 		public static String individual(subroutine subroutine , System.Object[] initialise) {
-			return individual((abstraction item) => (String) item , () => new String() , subroutine , initialise);
+			return individual((superclass item) => (String) item , () => new String() , subroutine , initialise);
 		}
 		public System.String value;
 		public String() {

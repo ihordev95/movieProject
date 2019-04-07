@@ -1,10 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Single : abstraction {
 		public static Single[] collection(subroutine subroutine , System.Object[] initialise) {
-			return collection((abstraction item) => (Single) item , () => new Single() , subroutine , initialise);
+			return collection((superclass item) => (Single) item , () => new Single() , subroutine , initialise);
 		}
 		public static Single individual(subroutine subroutine , System.Object[] initialise) {
-			return individual((abstraction item) => (Single) item , () => new Single() , subroutine , initialise);
+			return individual((superclass item) => (Single) item , () => new Single() , subroutine , initialise);
 		}
 		public System.Single value;
 		public Single() {

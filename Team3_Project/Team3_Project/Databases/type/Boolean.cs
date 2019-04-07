@@ -1,10 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Boolean : abstraction {
 		public static Boolean[] collection(subroutine subroutine , System.Object[] initialise) {
-			return collection((abstraction item) => (Boolean) item , () => new Boolean() , subroutine , initialise);
+			return collection((superclass item) => (Boolean) item , () => new Boolean() , subroutine , initialise);
 		}
 		public static Boolean individual(subroutine subroutine , System.Object[] initialise) {
-			return individual((abstraction item) => (Boolean) item , () => new Boolean() , subroutine , initialise);
+			return individual((superclass item) => (Boolean) item , () => new Boolean() , subroutine , initialise);
 		}
 		public System.Boolean value;
 		public Boolean() {
