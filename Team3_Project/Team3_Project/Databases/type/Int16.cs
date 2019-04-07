@@ -1,10 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Int16 : abstraction {
-		public static Int16[] collection(subroutine subroutine , System.Object[] initialise) {
-			return collection((superclass item) => (Int16) item , () => new Int16() , subroutine , initialise);
+		public static Int16[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (Int16) item , () => new Int16() , subroutine , initialize);
 		}
-		public static Int16 individual(subroutine subroutine , System.Object[] initialise) {
-			return individual((superclass item) => (Int16) item , () => new Int16() , subroutine , initialise);
+		public static Int16 individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (Int16) item , () => new Int16() , subroutine , initialize);
 		}
 		public System.Int16 value;
 		public Int16() {

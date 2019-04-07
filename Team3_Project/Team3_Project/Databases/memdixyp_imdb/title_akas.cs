@@ -24,7 +24,7 @@
 			this.attributes = new type.String();
 			this.isOriginalTitle = new type.Boolean();
 		}
-		protected override database constructor() {
+		protected override database data_fill() {
 			return new title_akas();
 		}
 		protected override System.String schema() {

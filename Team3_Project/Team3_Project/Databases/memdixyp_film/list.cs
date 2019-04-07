@@ -16,7 +16,7 @@
 			this.name = new type.String();
 			this.hidden = new type.Boolean();
 		}
-		protected override database constructor() {
+		protected override database data_fill() {
 			return new list();
 		}
 		protected override System.String schema() {

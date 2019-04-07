@@ -12,7 +12,7 @@
 			this.user = new type.Int32();
 			this.list = new type.Int32();
 		}
-		protected override database constructor() {
+		protected override database data_fill() {
 			return new list_follow();
 		}
 		protected override System.String schema() {

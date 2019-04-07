@@ -1,10 +1,10 @@
 ﻿namespace Team3_Project.Databases.type {
 	public class Byte : abstraction {
-		public static Byte[] collection(subroutine subroutine , System.Object[] initialise) {
-			return collection((superclass item) => (Byte) item , () => new Byte() , subroutine , initialise);
+		public static Byte[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (Byte) item , () => new Byte() , subroutine , initialize);
 		}
-		public static Byte individual(subroutine subroutine , System.Object[] initialise) {
-			return individual((superclass item) => (Byte) item , () => new Byte() , subroutine , initialise);
+		public static Byte individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (Byte) item , () => new Byte() , subroutine , initialize);
 		}
 		public System.Byte value;
 		public Byte() {

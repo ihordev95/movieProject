@@ -12,12 +12,12 @@
 			System.String[] GetValues = NameValueCollection.GetValues(name);
 			this.parse(GetValues != null && GetValues.Length >= 1 ? GetValues[0] : System.String.Empty);
 		}
-		public static System.Collections.Generic.List<superclass> form(constructor constructor , System.Object[] initialise) {
+		public static System.Collections.Generic.List<superclass> form(constructor constructor , System.Object[] initialize) {
 			System.Collections.Specialized.NameValueCollection NameValueCollection;
 			System.String name;
 			try {
-				NameValueCollection = (System.Collections.Specialized.NameValueCollection) initialise[0];
-				name = (System.String) initialise[1];
+				NameValueCollection = (System.Collections.Specialized.NameValueCollection) initialize[0];
+				name = (System.String) initialize[1];
 			}
 			catch {
 				throw new System.ArgumentException();

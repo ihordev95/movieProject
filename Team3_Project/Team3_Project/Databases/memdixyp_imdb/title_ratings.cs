@@ -14,7 +14,7 @@
 			this.averageRating = new type.Single();
 			this.numVotes = new type.Int32();
 		}
-		protected override database constructor() {
+		protected override database data_fill() {
 			return new title_ratings();
 		}
 		protected override System.String schema() {

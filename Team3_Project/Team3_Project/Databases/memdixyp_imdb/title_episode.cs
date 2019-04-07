@@ -16,7 +16,7 @@
 			this.seasonNumber = new type.Int16();
 			this.episodeNumber = new type.Int32();
 		}
-		protected override database constructor() {
+		protected override database data_fill() {
 			return new title_episode();
 		}
 		protected override System.String schema() {

@@ -16,7 +16,7 @@
 			this.primaryTitle = new type.String();
 			this.startYear = new type.Int16();
 		}
-		protected override database constructor() {
+		protected override database data_fill() {
 			return new view_list();
 		}
 		protected override System.String schema() {

@@ -20,7 +20,7 @@
 			this.job = new type.String();
 			this.characters = new type.String();
 		}
-		protected override database constructor() {
+		protected override database data_fill() {
 			return new title_principals();
 		}
 		protected override System.String schema() {

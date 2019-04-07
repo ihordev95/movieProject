@@ -14,7 +14,7 @@
 			this.movie = new type.String();
 			this.added = new type.DateTime();
 		}
-		protected override database constructor() {
+		protected override database data_fill() {
 			return new list_movie();
 		}
 		protected override System.String schema() {

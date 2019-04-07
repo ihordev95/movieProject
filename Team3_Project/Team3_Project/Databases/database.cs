@@ -33,12 +33,12 @@
 			System.Collections.Generic.List<database> list = new System.Collections.Generic.List<database>();
 			System.Data.DataTable DataTable = run(query);
 			foreach (System.Data.DataRow DataRow in DataTable.Rows) {
-				database item = this.constructor(DataRow);
+				database item = this.data_fill(DataRow);
 				list.Add(item);
 			}
 			return list;
 		}
-		protected abstract database constructor();
+		protected abstract database data_fill();
 		protected abstract System.String schema();
 		protected abstract System.String table();
 		protected abstract System.String[] columns();
@@ -151,8 +151,8 @@
 			}
 			return System.String.Empty;
 		}
-		protected database constructor(System.Data.DataRow DataRow) {
-			database item = this.constructor();
+		protected database data_fill(System.Data.DataRow DataRow) {
+			database item = this.data_fill();
 			type.abstraction[] values = item.values();
 			System.Int32 index = values.Length;
 			while (index > 0) {
@@ -178,7 +178,7 @@
 		}
 		protected type select_individual<type>(System.String query , System.Converter<database , type> converter) {
 			System.Collections.Generic.List<database> list = this.select(query);
-			database[] array = list.Count > 0 ? list.ToArray() : new database[] { this.constructor() };
+			database[] array = list.Count > 0 ? list.ToArray() : new database[] { this.data_fill() };
 			return System.Array.ConvertAll(array , converter)[0];
 		}
 		protected System.String value_array(type.abstraction[] array) {
