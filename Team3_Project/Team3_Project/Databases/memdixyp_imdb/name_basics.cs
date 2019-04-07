@@ -26,9 +26,6 @@
 			this.primaryProfession = new type.String();
 			this.knownForTitles = new type.String();
 		}
-		protected override database data_fill() {
-			return new name_basics();
-		}
 		protected override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}

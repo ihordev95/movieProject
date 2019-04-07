@@ -20,9 +20,6 @@
 			this.directors = new type.String();
 			this.writers = new type.String();
 		}
-		protected override database data_fill() {
-			return new title_crew();
-		}
 		protected override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}

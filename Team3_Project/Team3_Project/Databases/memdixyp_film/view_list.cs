@@ -22,9 +22,6 @@
 			this.primaryTitle = new type.String();
 			this.startYear = new type.Int16();
 		}
-		protected override database data_fill() {
-			return new view_list();
-		}
 		protected override System.String schema() {
 			return nameof(memdixyp_film);
 		}
@@ -51,7 +48,7 @@
 			System.String query = self.CALL(new type.abstraction[] {
 				list
 			});
-			return self.select_collection(query , converter);
+			return collection(select , new System.Object[] { query });
 		}
 	}
 }

@@ -22,9 +22,6 @@
 			this.seasonNumber = new type.Int16();
 			this.episodeNumber = new type.Int32();
 		}
-		protected override database data_fill() {
-			return new title_episode();
-		}
 		protected override System.String schema() {
 			return nameof(memdixyp_imdb);
 		}

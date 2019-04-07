@@ -29,16 +29,6 @@
 			}
 			return DataSet.Tables.Count > 0 ? DataSet.Tables[0] : new System.Data.DataTable();
 		}
-		private System.Collections.Generic.List<database> select(System.String query) {
-			System.Collections.Generic.List<database> list = new System.Collections.Generic.List<database>();
-			System.Data.DataTable DataTable = run(query);
-			foreach (System.Data.DataRow DataRow in DataTable.Rows) {
-				database item = this.data_fill(DataRow);
-				list.Add(item);
-			}
-			return list;
-		}
-		protected abstract database data_fill();
 		protected abstract System.String schema();
 		protected abstract System.String table();
 		protected abstract System.String[] columns();
@@ -151,17 +141,6 @@
 			}
 			return System.String.Empty;
 		}
-		protected database data_fill(System.Data.DataRow DataRow) {
-			database item = this.data_fill();
-			type.abstraction[] values = item.values();
-			System.Int32 index = values.Length;
-			while (index > 0) {
-				index -= 1;
-				System.Object Object = DataRow[index];
-				values[index].cast(Object);
-			}
-			return item;
-		}
 		protected static void insert(database individual) {
 			System.String query = individual.INSERT();
 			run(query);
@@ -170,16 +149,6 @@
 			foreach (database individual in collection) {
 				insert(individual);
 			}
-		}
-		protected type[] select_collection<type>(System.String query , System.Converter<database , type> converter) {
-			System.Collections.Generic.List<database> list = this.select(query);
-			database[] array = list.ToArray();
-			return System.Array.ConvertAll(array , converter);
-		}
-		protected type select_individual<type>(System.String query , System.Converter<database , type> converter) {
-			System.Collections.Generic.List<database> list = this.select(query);
-			database[] array = list.Count > 0 ? list.ToArray() : new database[] { this.data_fill() };
-			return System.Array.ConvertAll(array , converter)[0];
 		}
 		protected System.String value_array(type.abstraction[] array) {
 			System.Int32 index = 0;
@@ -198,6 +167,30 @@
 				return StringBuilder.ToString();
 			}
 			return System.String.Empty;
+		}
+
+		public static System.Collections.Generic.List<superclass> select(constructor constructor , System.Object[] initialize) {
+			System.String query;
+			try {
+				query = (System.String) initialize[0];
+			}
+			catch {
+				throw new System.ArgumentException();
+			}
+			System.Collections.Generic.List<superclass> list = new System.Collections.Generic.List<superclass>();
+			System.Data.DataTable DataTable = run(query);
+			foreach (System.Data.DataRow DataRow in DataTable.Rows) {
+				database item = (database) constructor.Invoke();
+				type.abstraction[] values = item.values();
+				System.Int32 index = values.Length;
+				while (index > 0) {
+					index -= 1;
+					System.Object Object = DataRow[index];
+					values[index].cast(Object);
+				}
+				list.Add(item);
+			}
+			return list;
 		}
 	}
 }

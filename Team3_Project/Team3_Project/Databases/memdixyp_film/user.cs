@@ -22,9 +22,6 @@
 			this.password = new type.String();
 			this.email = new type.String();
 		}
-		protected override database data_fill() {
-			return new user();
-		}
 		protected override System.String schema() {
 			return nameof(memdixyp_film);
 		}
