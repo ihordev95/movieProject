@@ -6,6 +6,12 @@
 			converter = (database item) => (title_episode) item;
 			self = new title_episode();
 		}
+		public static title_episode[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (title_episode) item , () => new title_episode() , subroutine , initialize);
+		}
+		public static title_episode individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (title_episode) item , () => new title_episode() , subroutine , initialize);
+		}
 		public type.String tconst;
 		public type.String parentTconst;
 		public type.Int16 seasonNumber;

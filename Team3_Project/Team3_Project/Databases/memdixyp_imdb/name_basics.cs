@@ -6,6 +6,12 @@
 			converter = (database item) => (name_basics) item;
 			self = new name_basics();
 		}
+		public static name_basics[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (name_basics) item , () => new name_basics() , subroutine , initialize);
+		}
+		public static name_basics individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (name_basics) item , () => new name_basics() , subroutine , initialize);
+		}
 		public type.String nconst;
 		public type.String primaryName;
 		public type.Int16 birthYear;

@@ -1,5 +1,5 @@
 ﻿namespace Team3_Project.Databases {
-	public abstract class database {
+	public abstract class database : superclass {
 		private static System.String log = System.String.Empty;
 		private static System.String error = System.String.Empty;
 		private static readonly System.String connection_string;

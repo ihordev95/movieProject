@@ -6,6 +6,12 @@
 			converter = (database item) => (title_crew) item;
 			self = new title_crew();
 		}
+		public static title_crew[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (title_crew) item , () => new title_crew() , subroutine , initialize);
+		}
+		public static title_crew individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (title_crew) item , () => new title_crew() , subroutine , initialize);
+		}
 		public type.String tconst;
 		public type.String directors;
 		public type.String writers;

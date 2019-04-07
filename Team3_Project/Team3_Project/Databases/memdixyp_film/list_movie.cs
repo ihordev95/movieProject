@@ -6,6 +6,12 @@
 			converter = (database item) => (list_movie) item;
 			self = new list_movie();
 		}
+		public static list_movie[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (list_movie) item , () => new list_movie() , subroutine , initialize);
+		}
+		public static list_movie individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (list_movie) item , () => new list_movie() , subroutine , initialize);
+		}
 		public type.Int32 list;
 		public type.String movie;
 		public type.DateTime added;

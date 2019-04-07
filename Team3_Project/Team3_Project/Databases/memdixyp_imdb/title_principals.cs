@@ -6,6 +6,12 @@
 			converter = (database item) => (title_principals) item;
 			self = new title_principals();
 		}
+		public static title_principals[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (title_principals) item , () => new title_principals() , subroutine , initialize);
+		}
+		public static title_principals individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (title_principals) item , () => new title_principals() , subroutine , initialize);
+		}
 		public type.String tconst;
 		public type.Int16 ordering;
 		public type.String nconst;

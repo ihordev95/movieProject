@@ -6,6 +6,12 @@
 			converter = (database item) => (user) item;
 			self = new user();
 		}
+		public static user[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (user) item , () => new user() , subroutine , initialize);
+		}
+		public static user individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (user) item , () => new user() , subroutine , initialize);
+		}
 		public type.Int32 identifier;
 		public type.String name;
 		public type.String password;

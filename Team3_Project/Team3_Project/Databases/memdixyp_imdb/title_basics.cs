@@ -6,6 +6,12 @@
 			converter = (database item) => (title_basics) item;
 			self = new title_basics();
 		}
+		public static title_basics[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (title_basics) item , () => new title_basics() , subroutine , initialize);
+		}
+		public static title_basics individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (title_basics) item , () => new title_basics() , subroutine , initialize);
+		}
 		public type.String tconst;
 		public type.String titleType;
 		public type.String primaryTitle;

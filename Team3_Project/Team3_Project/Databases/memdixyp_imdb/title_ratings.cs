@@ -6,6 +6,12 @@
 			converter = (database item) => (title_ratings) item;
 			self = new title_ratings();
 		}
+		public static title_ratings[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (title_ratings) item , () => new title_ratings() , subroutine , initialize);
+		}
+		public static title_ratings individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (title_ratings) item , () => new title_ratings() , subroutine , initialize);
+		}
 		public type.String tconst;
 		public type.Single averageRating;
 		public type.Int32 numVotes;

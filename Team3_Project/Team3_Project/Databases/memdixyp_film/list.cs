@@ -6,6 +6,12 @@
 			converter = (database item) => (list) item;
 			self = new list();
 		}
+		public static list[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (list) item , () => new list() , subroutine , initialize);
+		}
+		public static list individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (list) item , () => new list() , subroutine , initialize);
+		}
 		public type.Int32 identifier;
 		public type.Int32 user;
 		public type.String name;

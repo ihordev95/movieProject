@@ -6,6 +6,12 @@
 			converter = (database item) => (view_list) item;
 			self = new view_list();
 		}
+		public static view_list[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (view_list) item , () => new view_list() , subroutine , initialize);
+		}
+		public static view_list individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (view_list) item , () => new view_list() , subroutine , initialize);
+		}
 		public type.Int32 list;
 		public type.String tconst;
 		public type.String primaryTitle;

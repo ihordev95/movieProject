@@ -6,6 +6,12 @@
 			converter = (database item) => (title_akas) item;
 			self = new title_akas();
 		}
+		public static title_akas[] collection(subroutine subroutine , System.Object[] initialize) {
+			return collection((superclass item) => (title_akas) item , () => new title_akas() , subroutine , initialize);
+		}
+		public static title_akas individual(subroutine subroutine , System.Object[] initialize) {
+			return individual((superclass item) => (title_akas) item , () => new title_akas() , subroutine , initialize);
+		}
 		public type.String titleId;
 		public type.Byte ordering;
 		public type.String title;
