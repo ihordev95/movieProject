@@ -20,7 +20,9 @@
 			return this.value.GetHashCode();
 		}
 		public override void cast(System.Object Object) {
-			this.value = System.Convert.ToByte(Object);
+			if (Object != System.DBNull.Value) {
+				this.value = System.Convert.ToByte(Object);
+			}
 		}
 		public override System.Boolean parse(System.String text) {
 			return System.Byte.TryParse(text , out this.value);

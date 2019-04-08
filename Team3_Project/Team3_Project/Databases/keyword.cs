@@ -12,5 +12,6 @@
 		public const System.String AND = unicode.LATIN_CAPITAL_LETTER_A + unicode.LATIN_CAPITAL_LETTER_N + unicode.LATIN_CAPITAL_LETTER_D;
 		public const System.String OR = unicode.LATIN_CAPITAL_LETTER_O + unicode.LATIN_CAPITAL_LETTER_R;
 		public const System.String DELETE = unicode.LATIN_CAPITAL_LETTER_D + unicode.LATIN_CAPITAL_LETTER_E + unicode.LATIN_CAPITAL_LETTER_L + unicode.LATIN_CAPITAL_LETTER_E + unicode.LATIN_CAPITAL_LETTER_T + unicode.LATIN_CAPITAL_LETTER_E;
+		public const System.String ORDER_BY = unicode.LATIN_CAPITAL_LETTER_O + unicode.LATIN_CAPITAL_LETTER_R + unicode.LATIN_CAPITAL_LETTER_D + unicode.LATIN_CAPITAL_LETTER_E + unicode.LATIN_CAPITAL_LETTER_R + unicode.SPACE + unicode.LATIN_CAPITAL_LETTER_B + unicode.LATIN_CAPITAL_LETTER_Y;
 	}
 }
