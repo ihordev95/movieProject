@@ -3,7 +3,7 @@
 		public System.Web.Mvc.ActionResult BrowseMovies() {
 			this.ViewBag.action = Databases.memdixyp_imdb.title_basics.lastest_movie_by_genre("Action");
 			this.ViewBag.drama = Databases.memdixyp_imdb.title_basics.lastest_movie_by_genre("Drama");
-			this.ViewBag.list = Databases.memdixyp_film.list.list_by_user(1);
+			this.ViewBag.list = Databases.memdixyp_film.list.random_lists();
 			return this.View();
 		}
 		public System.Web.Mvc.ActionResult SearchMovies(System.String Title) {

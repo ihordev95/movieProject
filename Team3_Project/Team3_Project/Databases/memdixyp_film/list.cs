@@ -62,5 +62,14 @@
 			System.String query = self.SELECT(where , null);
 			return collection(select , new System.Object[] { query });
 		}
+		public static list[] random_lists() {
+			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
+			StringBuilder.AppendFormat("`memdixyp_film`.`list`.`hidden` = '{0}'" , 0);
+			StringBuilder.Append(unicode.SPACE);
+			StringBuilder.Append("ORDER BY RAND()");
+			System.String where = StringBuilder.ToString();
+			System.String query = self.SELECT(where , 5);
+			return collection(select , new System.Object[] { query });
+		}
 	}
 }
