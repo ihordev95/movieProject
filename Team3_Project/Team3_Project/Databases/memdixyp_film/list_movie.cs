@@ -41,5 +41,24 @@
 			list_movie.added.form(NameValueCollection , nameof(list_movie.added));
 			insert(list_movie);
 		}
+		public static void delete_collection(type.Int32 list, type.String[] movie) {
+			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
+			StringBuilder.Append(self.COLUMN(new System.String[] {nameof(list)}));
+			StringBuilder.Append(unicode.EQUALS_SIGN);
+			StringBuilder.Append(self.STRING_LITERAL(list.ToString()));
+			StringBuilder.Append(unicode.SPACE);
+			StringBuilder.Append(keyword.AND);
+			StringBuilder.Append(unicode.SPACE);
+			System.String where = StringBuilder.ToString();
+			foreach (type.String item in movie) {
+				StringBuilder.Clear();
+				StringBuilder.Append(where);
+				StringBuilder.Append(self.COLUMN(new System.String[] { nameof(movie) }));
+				StringBuilder.Append(unicode.EQUALS_SIGN);
+				StringBuilder.Append(self.STRING_LITERAL(item.ToString()));
+				System.String query = self.DELETE(StringBuilder.ToString());
+				delete_collection(query);
+			}
+		}
 	}
 }

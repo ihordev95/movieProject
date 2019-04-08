@@ -68,6 +68,19 @@
 			}
 			return System.String.Empty;
 		}
+
+		protected System.String DELETE(System.String where = "") {
+			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
+			query.Append(keyword.DELETE);
+			query.Append(unicode.SPACE);
+			query.Append(keyword.FROM);
+			query.Append(this.TABLE());
+			query.Append(unicode.SPACE);
+			query.Append(this.WHERE(where));
+			query.Append(unicode.SEMICOLON);
+			return query.ToString();
+		}
+
 		protected System.String INSERT() {
 			System.Text.StringBuilder query = new System.Text.StringBuilder(255);
 			query.Append(keyword.INSERT);
