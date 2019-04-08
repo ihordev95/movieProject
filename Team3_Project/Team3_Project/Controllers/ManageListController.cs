@@ -13,7 +13,12 @@
 			Databases.type.Int32  list = Databases.type.Int32.individual(Databases.type.abstraction.form , new System.Object[] { NameValueCollection , "list" });
 			Databases.type.String[] movie = Databases.type.String.collection(Databases.type.abstraction.form , new System.Object[] { NameValueCollection , "movie" });
 			Databases.memdixyp_film.list_movie.delete_collection(list , movie);
-			return "Movie probably deleted!";
+			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
+			foreach (Databases.type.String item in movie) {
+				StringBuilder.Append(item.value);
+				StringBuilder.Append(",");
+			}
+			return StringBuilder.ToString();
 		}
 	}
 }

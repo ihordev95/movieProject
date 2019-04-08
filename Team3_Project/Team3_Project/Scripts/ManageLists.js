@@ -28,7 +28,21 @@ function ajax_prepare(ignore) {
 }
 function ajax_succeed(data) {
     "use strict";
-    alert(data);
+    var array = data.split(",");
+    var index = array.length;
+    var item;
+    var element;
+    var parent;
+    index -= 1; // last item is null because return string has extra comma (bug)
+    while (index > 0) {
+        index -= 1;
+        item = array[index];
+        element = document.getElementById(item);
+        parent = element.parentElement; // label
+        parent = parent.parentElement; // td
+        parent = parent.parentElement; // tr
+        parent.remove();
+    }
 }
 function ajax_failure(code, text) {
     "use strict";
