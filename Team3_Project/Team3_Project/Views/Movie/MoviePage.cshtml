@@ -1,64 +1,55 @@
-﻿@model System.Data.DataSet
+﻿@{
+	this.Layout = "/Views/Shared/_Layout.cshtml";
+	this.ViewBag.Title = "MoviePage";
+	this.ViewBag.css = new System.String[] { "w3"};
+	this.ViewBag.js = new System.String[] { "ajax", "event", "MoviePage" };
+}			<div class="buttonNav buttonNav1">
+				<form action="~/Profile/Profile" method="get">
+					<div class="form-row">
+						<div>
+							<button id="Profile" type="submit" class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large">Profile Page</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="dynamicmovieload w3-col l12">
+				<div class="test1">
+					<img src=@ViewBag.json.poster alt="A picture of the movie poster" class="movieposter w3-third" />
+					<div class="test">
+						<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="test1_save">
+							Save
+						</a>
+<!--
+						<button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit" id="Rate">
+							Rate
+						</button>
+-->
+					</div>
+				</div>
+				<div class="moviedetails w3-col l9">
+					<label>Title: @ViewBag.json.title</label><br />
+					<label>Year: @ViewBag.json.year</label><br />
+					<label>Type: @ViewBag.json.type</label><br />
+					<label>Descritpion: @ViewBag.json.plot</label><br />
+				</div>
+			</div>
+			<div id="light" class="white_content">
+				Please select a list from the drop down:
+				<select id="list">
 @{
-    Layout = "/Views/Shared/_Layout.cshtml";
-    this.ViewBag.Title = "MoviePage";
-    this.ViewBag.css = new System.String[] { "w3"};
-    this.ViewBag.js = new System.String[] { "ajax", "event", "MoviePage" };
-}
-
-<div class="buttonNav buttonNav1">
-    <form action="~/Profile/Profile" method="get">
-        <div class="form-row">
-            <div>
-                <button id="Profile" type="submit" class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large">Profile Page</button>
-            </div>
-        </div>
-    </form>
-</div>
-
-
-<div class="dynamicmovieload w3-col l12">
-    <div class="test1">
-        <img src=@ViewBag.json.poster alt="A picture of the movie poster" class="movieposter w3-third" />
-        <div class="test">
-            <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
-                Save
-            </a>
-            <!--
-            <button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit" id="Rate">
-                Rate
-            </button>
-                -->
-        </div>
-    </div>
-    <div class="moviedetails w3-col l9">
-        <label>Title: @ViewBag.json.title</label><br />
-        <label>Year: @ViewBag.json.year</label><br />
-        <label>Type: @ViewBag.json.type</label><br />
-        <label>Descritpion: @ViewBag.json.plot</label><br />
-    </div>
-</div>
-
-
-
-<div id="light" class="white_content">
-    Please select a list from the drop down:
-    <select id="list">
-        @{
-            foreach (Team3_Project.Databases.memdixyp_film.list list in this.ViewBag.list)
-            {
-                <option value="@list.identifier">@list.name</option>
-            }
-        }
-    </select>
-    <input id="movie" type="hidden" value="@ViewBag.json.imdbID" />
-    <input id="poster" type="hidden" value="@ViewBag.json.poster" />
-    <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="save">
-        Save to List
-    </a>
-    <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="cancel">
-        Cancel
-    </a>
-</div>
-<div id="fade" class="black_overlay">
-</div>
+	foreach (Team3_Project.Databases.memdixyp_film.list list in this.ViewBag.list)
+	{
+					<option value="@list.identifier">@list.name</option>
+	}
+}				</select>
+				<input id="movie" type="hidden" value="@ViewBag.json.imdbID" />
+				<input id="poster" type="hidden" value="@ViewBag.json.poster" />
+				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="save">
+					Save to List
+				</a>
+				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="cancel">
+					Cancel
+				</a>
+			</div>
+			<div id="fade" class="black_overlay">
+			</div>
