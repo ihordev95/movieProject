@@ -22,7 +22,8 @@ function prepare_list() {
 function ajax_prepare(ignore) {
     "use strict";
     var parameter = [];
-    parameter = ajax_join(parameter, "list", prepare_list());
+    parameter = ajax_join(parameter, "list");
+    parameter = ajax_join(parameter, "movie", prepare_list());
     return parameter;
 }
 function ajax_succeed(data) {

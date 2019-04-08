@@ -74,8 +74,8 @@
 			query.Append(keyword.DELETE);
 			query.Append(unicode.SPACE);
 			query.Append(keyword.FROM);
-			query.Append(this.TABLE());
 			query.Append(unicode.SPACE);
+			query.Append(this.TABLE());
 			query.Append(this.WHERE(where));
 			query.Append(unicode.SEMICOLON);
 			return query.ToString();
@@ -158,15 +158,6 @@
 			}
 			return System.String.Empty;
 		}
-		protected static void insert(database individual) {
-			System.String query = individual.INSERT();
-			run(query);
-		}
-		protected static void insert(database[] collection) {
-			foreach (database individual in collection) {
-				insert(individual);
-			}
-		}
 		protected System.String value_array(type.abstraction[] array) {
 			System.Int32 index = 0;
 			System.Int32 count = array.Length;
@@ -185,8 +176,35 @@
 			}
 			return System.String.Empty;
 		}
-
-		public static System.Collections.Generic.List<superclass> select(constructor constructor , System.Object[] initialize) {
+		protected static System.Collections.Generic.List<superclass> delete(constructor constructor , System.Object[] initialize) {
+			System.String query;
+			try {
+				query = (System.String) initialize[0];
+			}
+			catch {
+				throw new System.ArgumentException();
+			}
+			run(query);
+			return new System.Collections.Generic.List<superclass>();
+		}
+		protected static System.Collections.Generic.List<superclass> insert(constructor constructor , System.Object[] initialize) {
+			System.Collections.Generic.List<superclass> list = new System.Collections.Generic.List<superclass>();
+			try {
+				foreach (System.Object Object in initialize) {
+					database database = (database) Object;
+					list.Add(database);
+				}
+			}
+			catch {
+				throw new System.ArgumentException();
+			}
+			foreach (database item in list) {
+				System.String query = item.INSERT();
+				run(query);
+			}
+			return list;
+		}
+		protected static System.Collections.Generic.List<superclass> select(constructor constructor , System.Object[] initialize) {
 			System.String query;
 			try {
 				query = (System.String) initialize[0];

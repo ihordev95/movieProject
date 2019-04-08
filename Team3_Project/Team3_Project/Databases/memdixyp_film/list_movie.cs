@@ -39,7 +39,7 @@
 			list_movie.list.form(NameValueCollection , nameof(list_movie.list));
 			list_movie.movie.form(NameValueCollection , nameof(list_movie.movie));
 			list_movie.added.form(NameValueCollection , nameof(list_movie.added));
-			insert(list_movie);
+			individual(insert , new System.Object[] { list_movie });
 		}
 		public static void delete_collection(type.Int32 list, type.String[] movie) {
 			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
@@ -57,7 +57,7 @@
 				StringBuilder.Append(unicode.EQUALS_SIGN);
 				StringBuilder.Append(self.STRING_LITERAL(item.ToString()));
 				System.String query = self.DELETE(StringBuilder.ToString());
-				delete_collection(query);
+				individual(delete , new System.Object[] { query });
 			}
 		}
 	}

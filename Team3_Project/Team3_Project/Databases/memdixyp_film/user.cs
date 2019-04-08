@@ -44,7 +44,7 @@
 				password = new type.String(password) ,
 				email = new type.String(email)
 			};
-			insert(user);
+			individual(insert , new System.Object[] { user });
 		}
 	}
 }

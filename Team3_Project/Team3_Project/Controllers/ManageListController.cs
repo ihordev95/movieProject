@@ -4,14 +4,16 @@
 		public System.Web.Mvc.ActionResult ManageLists(System.String id = "1") {
 			Databases.type.Int32 identifier = new Databases.type.Int32(1);
 			identifier.parse(id);
+			this.ViewBag.identifier = identifier.value;
 			this.ViewBag.view_list = Databases.memdixyp_film.view_list.show_movie_list(identifier);
 			return this.View();
 		}
 		public System.String RemoveMovie() {
 			System.Collections.Specialized.NameValueCollection NameValueCollection = this.Request.QueryString;
-			System.String name = "list";
-			Databases.type.String[] list = Databases.type.String.collection(Databases.type.abstraction.form , new System.Object[] { NameValueCollection , name });
-			return "Movie probably added!";
+			Databases.type.Int32  list = Databases.type.Int32.individual(Databases.type.abstraction.form , new System.Object[] { NameValueCollection , "list" });
+			Databases.type.String[] movie = Databases.type.String.collection(Databases.type.abstraction.form , new System.Object[] { NameValueCollection , "movie" });
+			Databases.memdixyp_film.list_movie.delete_collection(list , movie);
+			return "Movie probably deleted!";
 		}
 	}
 }
