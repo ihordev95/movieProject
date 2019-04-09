@@ -18,7 +18,11 @@
         <tr>
             @foreach (var movie in ViewBag.searchResults)
             {
-
+                if (movie.poster == "N/A")
+                {
+                    movie.poster = "https://images-na.ssl-images-amazon.com/images/I/51poKKV63GL.jpg";
+                }
+                    
 
                 <td>
                     <a href="@Url.Action( "MoviePage", "Movie", new { ID = movie.imdbID.Trim() })" class="elements"><img src=@movie.poster alt=@movie.title class="movieposter w3-third" /></a>                                  
