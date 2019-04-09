@@ -1,8 +1,8 @@
 ﻿namespace Team3_Project.Controllers {
 	public class BrowseController : System.Web.Mvc.Controller {
 		public System.Web.Mvc.ActionResult BrowseMovies() {
-			this.ViewBag.action = Databases.memdixyp_imdb.title_basics.lastest_movie_by_genre("Action");
-			this.ViewBag.drama = Databases.memdixyp_imdb.title_basics.lastest_movie_by_genre("Drama");
+			this.ViewBag.action = Databases.memdixyp_film.newest_movies_by_genre.Action(5);
+			this.ViewBag.drama = Databases.memdixyp_film.newest_movies_by_genre.Drama(5);
 			this.ViewBag.list = Databases.memdixyp_film.list.random_lists();
 			return this.View();
 		}
