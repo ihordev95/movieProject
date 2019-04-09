@@ -26,7 +26,64 @@
 
 				}
 			</div>
+
+
+<div>
+    <table>
+        <tr>
+            <p>5 Newest Action Movies</p>
+        </tr>
+        <tr>
+            @foreach (Team3_Project.Databases.memdixyp_imdb.title_basics title_basics in this.ViewBag.action)
+            {
+                if (title_basics.poster == "N/A")
+                {
+                    title_basics.poster = "../Images/noimageavailable.png";
+                }
+
+                <a href="/Movie/MoviePage/@title_basics.tconst" class="elements">
+                    @title_basics.primaryTitle (@title_basics.startYear)<img src=@title_basics.poster alt=@title_basics.primaryTitle class="movieposter w3-third" />
+                </a>
+            }
+            </tr>
+        <tr>
+            <p>5 Newest Drama Movies</p>
+        </tr>
+        <tr>
+            @foreach (Team3_Project.Databases.memdixyp_imdb.title_basics title_basics in this.ViewBag.drama)
+            {
+                if (title_basics.poster == "N/A")
+                {
+                    title_basics.poster = "../Images/noimageavailable.png";
+                }
+
+                <a href="/Movie/MoviePage/@title_basics.tconst" class="elements">
+                    @title_basics.primaryTitle (@title_basics.startYear)<img src=@title_basics.poster alt=@title_basics.primaryTitle class="movieposter w3-third" />
+                </a>
+            }
+            </tr>
+        <tr>
+            <p>5 Movies from a Random List</p>
+        </tr>
+        <tr>
+
+        </tr>
+        <tr>
+            <p>5 Random Movie Lists</p>
+        </tr>
+        <tr>
+            @foreach (Team3_Project.Databases.memdixyp_film.list list in this.ViewBag.list)
+            {
+                <a href="/ViewList/ViewList/@list.identifier" class="elements">
+                    @list.name
+                </a>
+            }
+            </tr>
+    </table>
+</div>
+
 			<!-- This section is for the curated lists -->
+<!--
 			<div class="newest5">
 				<div class="newest5 moviescroll">
 					<p>This is a section the newest 5 Action movies</p>
@@ -68,3 +125,5 @@
 }					</table>
 				</div>
 			</div>
+
+    -->
