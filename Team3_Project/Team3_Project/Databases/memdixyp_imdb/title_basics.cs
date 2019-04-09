@@ -58,37 +58,5 @@
 				this.genres
 			};
 		}
-		public static title_basics[] lastest_movie_by_genre(System.String genre) {
-			System.DateTime time = System.DateTime.UtcNow;
-			System.Int32 year = time.Year;
-			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
-			StringBuilder.Append(unicode.LEFT_PARENTHESIS);
-			StringBuilder.Append(unicode.LEFT_PARENTHESIS);
-			StringBuilder.AppendFormat("`memdixyp_imdb`.`title_basics`.`startYear` >= '{0}'" , year - 1);
-			StringBuilder.Append(unicode.RIGHT_PARENTHESIS);
-			StringBuilder.Append(unicode.SPACE);
-			StringBuilder.Append(keyword.AND);
-			StringBuilder.Append(unicode.SPACE);
-			StringBuilder.Append(unicode.LEFT_PARENTHESIS);
-			StringBuilder.AppendFormat("`memdixyp_imdb`.`title_basics`.`startYear` <= '{0}'" , year);
-			StringBuilder.Append(unicode.RIGHT_PARENTHESIS);
-			StringBuilder.Append(unicode.SPACE);
-			StringBuilder.Append(keyword.AND);
-			StringBuilder.Append(unicode.SPACE);
-			StringBuilder.Append(unicode.LEFT_PARENTHESIS);
-			StringBuilder.AppendFormat("`memdixyp_imdb`.`title_basics`.`genres` LIKE '%{0}%'" , genre);
-			StringBuilder.Append(unicode.RIGHT_PARENTHESIS);
-			StringBuilder.Append(unicode.RIGHT_PARENTHESIS);
-			StringBuilder.Append(unicode.SPACE);
-			StringBuilder.Append(keyword.ORDER_BY);
-			StringBuilder.Append(unicode.SPACE);
-			StringBuilder.Append("`memdixyp_imdb`.`title_basics`.`startYear` DESC");
-			StringBuilder.Append(unicode.COMMA);
-			StringBuilder.Append(unicode.SPACE);
-			StringBuilder.Append("`memdixyp_imdb`.`title_basics`.`tconst` DESC");
-			System.String where = StringBuilder.ToString();
-			System.String query = self.SELECT(where , 5);
-			return collection(select , new System.Object[] { query });
-		}
 	}
 }

@@ -31,12 +31,13 @@
 				<div class="newest5 moviescroll">
 					<p>This is a section the newest 5 Action movies</p>
 					<table>
-@foreach (Team3_Project.Databases.memdixyp_imdb.title_basics title_basics in this.ViewBag.action) {
+@foreach (Team3_Project.Databases.memdixyp_film.newest_movies_by_genre newest_movies_by_genre in this.ViewBag.action) {
 						<tr>
 							<td>
-								<a href="/Movie/MoviePage/@title_basics.tconst" class="elements">
-									@title_basics.primaryTitle (@title_basics.startYear)
+								<a href="/Movie/MoviePage/@newest_movies_by_genre.tconst" class="elements">
+									@newest_movies_by_genre.primaryTitle (@newest_movies_by_genre.startYear)
 								</a>
+								<img alt="@newest_movies_by_genre.primaryTitle" src="@newest_movies_by_genre.poster" />
 							</td>
 						</tr>
 }					</table>
@@ -44,12 +45,13 @@
 				<div class="newest5 moviescroll">
 					<p>This is a section the newest 5 Drama movies</p>
 					<table>
-@foreach (Team3_Project.Databases.memdixyp_imdb.title_basics title_basics in this.ViewBag.drama) {
+@foreach (Team3_Project.Databases.memdixyp_film.newest_movies_by_genre newest_movies_by_genre in this.ViewBag.drama) {
 						<tr>
 							<td>
-								<a href="/Movie/MoviePage/@title_basics.tconst" class="elements">
-									@title_basics.primaryTitle (@title_basics.startYear)
+								<a href="/Movie/MoviePage/@newest_movies_by_genre.tconst" class="elements">
+									@newest_movies_by_genre.primaryTitle (@newest_movies_by_genre.startYear)
 								</a>
+								<img alt="@newest_movies_by_genre.primaryTitle" src="@newest_movies_by_genre.poster" />
 							</td>
 						</tr>
 }					</table>
