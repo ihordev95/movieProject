@@ -16,18 +16,21 @@
 		public type.String tconst;
 		public type.String primaryTitle;
 		public type.Int16 startYear;
+		public type.String poster;
 		private view_list() : base(nameof(memdixyp_film) , nameof(view_list)) {
 			this.list = new type.Int32();
 			this.tconst = new type.String();
 			this.primaryTitle = new type.String();
 			this.startYear = new type.Int16();
+			this.poster = new type.String();
 		}
 		protected override System.String[] columns() {
 			return new System.String[] {
 				nameof(this.list),
 				nameof(this.tconst),
 				nameof(this.primaryTitle),
-				nameof(this.startYear)
+				nameof(this.startYear),
+				nameof(this.poster)
 			};
 		}
 		protected override type.abstraction[] values() {
@@ -35,7 +38,8 @@
 				this.list,
 				this.tconst,
 				this.primaryTitle,
-				this.startYear
+				this.startYear,
+				this.poster
 			};
 		}
 		public static view_list[] show_movie_list(type.Int32 list) {
