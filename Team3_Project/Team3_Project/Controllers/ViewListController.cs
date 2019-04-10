@@ -10,6 +10,7 @@
 		}
 		public System.String AddList() {
 			Databases.memdixyp_film.list_movie.insert_individual(this.Request.QueryString);
+			Databases.memdixyp_film.posters.insert_MoviePage(this.Request.QueryString);
 			return "Movie probably added!";
 		}
 	}
