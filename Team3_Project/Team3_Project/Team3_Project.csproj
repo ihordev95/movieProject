@@ -215,6 +215,7 @@
     <Compile Include="Databases\memdixyp_film\list.cs" />
     <Compile Include="Databases\memdixyp_film\list_follow.cs" />
     <Compile Include="Databases\memdixyp_film\list_movie.cs" />
+    <Compile Include="Databases\memdixyp_film\posters.cs" />
     <Compile Include="Databases\memdixyp_film\newest_movies_by_genre.cs" />
     <Compile Include="Databases\memdixyp_film\user.cs" />
     <Compile Include="Databases\memdixyp_film\view_list.cs" />

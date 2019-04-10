@@ -13,6 +13,7 @@ function ajax_prepare(ignore) {
     var parameter = [];
     parameter = ajax_join(parameter, "list");
     parameter = ajax_join(parameter, "movie");
+    parameter = ajax_join(parameter, "poster");
     return parameter;
 }
 function ajax_succeed(data) {
