@@ -29,57 +29,53 @@
 			<div class="CurratedListsTable">
 				<table class="resultTable1 w3-col l12">
 					<tr class="listTitle">
-                        <td >
-                            5 Newest Action Movies
-                        </td>
+						<td >
+							5 Newest Action Movies
+						</td>
 					</tr>
 					<tr class="listMovies">
-                        <td>
-                            @foreach (Team3_Project.Databases.memdixyp_film.newest_movies_by_genre newest_movies_by_genre in this.ViewBag.action)
-                            {
-                            <a href="/Movie/MoviePage/@newest_movies_by_genre.tconst" class="elements">
-                                <img alt=@newest_movies_by_genre.primaryTitle class="movieposter1 w3-third" src=@newest_movies_by_genre.poster />
-                            </a>
-                            }
-                        </td>
-                    </tr>
+						<td>
+							@foreach (Team3_Project.Databases.memdixyp_film.newest_movies_by_genre newest_movies_by_genre in this.ViewBag.action)
+							{
+							<a href="/Movie/MoviePage/@newest_movies_by_genre.tconst" class="elements">
+								<img alt="@newest_movies_by_genre.primaryTitle" class="movieposter1 w3-third" src="@newest_movies_by_genre.poster" />
+							</a>
+							}
+						</td>
+					</tr>
 					<tr class="listTitle">
-                        <td>
-                            5 Newest Drama Movies
-                        </td>
+						<td>
+							5 Newest Drama Movies
+						</td>
 					</tr>
 					<tr class="listMovies">
-                        <td>
-                            @foreach (Team3_Project.Databases.memdixyp_film.newest_movies_by_genre newest_movies_by_genre in this.ViewBag.drama)
-                            {
-                            <a href="/Movie/MoviePage/@newest_movies_by_genre.tconst" class="elements">
-                                <img alt=@newest_movies_by_genre.primaryTitle class="movieposter1 w3-third" src=@newest_movies_by_genre.poster />
-                            </a>
-                            }
-                        </td>
-                    </tr>
+						<td>
+@foreach (Team3_Project.Databases.memdixyp_film.newest_movies_by_genre newest_movies_by_genre in this.ViewBag.drama) {
+							<a href="/Movie/MoviePage/@newest_movies_by_genre.tconst" class="elements">
+								<img alt="@newest_movies_by_genre.primaryTitle" class="movieposter1 w3-third" src="@newest_movies_by_genre.poster" />
+							</a>
+}						</td>
+					</tr>
 					<tr class="listTitle">
-                        <td>
-                            5 Movies from a Random List
-                        </td>
+						<td>
+							5 Movies from a Random List
+						</td>
 					</tr>
 					<tr class="listMovies">
-                        <td></td>
+						<td></td>
 					</tr>
 					<tr class="listTitle">
-                        <td>
-                            5 Random Movie Lists
-                        </td>
+						<td>
+							5 Random Movie Lists
+						</td>
 					</tr>
 					<tr class="Lists">
-                        <td>
-                            @foreach (Team3_Project.Databases.memdixyp_film.list list in this.ViewBag.list)
-                            {
-                                <a href="/ViewList/ViewList/@list.identifier" class="elements Lists">
-                                    @list.name
-                                </a>
-                            }
-                        </td>
-                    </tr>
+						<td>
+@foreach (Team3_Project.Databases.memdixyp_film.list list in this.ViewBag.list) {
+								<a href="/ViewList/ViewList/@list.identifier" class="elements Lists">
+									@list.name
+								</a>
+}						</td>
+					</tr>
 				</table>
 			</div>

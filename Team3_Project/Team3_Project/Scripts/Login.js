@@ -1,12 +1,13 @@
 /* JSLint edition 2019-01-31 */
 /*jslint
-    browser:true, devel:true, long:true
+    browser:true, devel:true
 */
 /*global
-    ajax_failure, ajax_get, ajax_join, ajax_prepare, ajax_succeed, alert, document, event_click_one_run
+    ajax_failure, ajax_get, ajax_join, ajax_prepare, ajax_succeed, alert,
+    event_click_one_run, window
 */
 /*property
-    getElementById, value
+    location
 */
 function ajax_prepare(ignore) {
     "use strict";
@@ -18,7 +19,8 @@ function ajax_prepare(ignore) {
 function ajax_succeed(data) {
     "use strict";
     if (data === "Y") {
-        alert("Passwords Match!");
+        alert("You are being signed in...");
+        window.location = "/Landing/Index";
     } else {
         alert("Login Failure!");
     }

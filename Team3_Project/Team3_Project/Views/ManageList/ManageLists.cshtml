@@ -55,7 +55,7 @@
 				<tr>
 					<td>
 						<span>
-							<a class="w3-btn w3-black w3-hover-blue w3-round-xxlarge w3-tiny" href="/Movie/MoviePage/@view_list.tconst" class="elements">
+							<a class="elements w3-btn w3-black w3-hover-blue w3-round-xxlarge w3-tiny" href="/Movie/MoviePage/@view_list.tconst">
 								View Movie
 							</a>
 						</span>
@@ -66,18 +66,17 @@
 					</td>
 				</tr>
 }			</table>
-            <hr />
+			<hr />
 			<div>
 				<input id="list" type="hidden" value="@this.ViewBag.identifier" />
 				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="remove">
 					Remove Movie From List
 				</a>
 			</div>
-
-            <div>
-                <!--NEEDS THE .JS AND CONNECTION TO THE DATABASE TO REMOVE ENTIRE LIST-->
-                <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="remove">
-                    Delete Entire List
-                </a>
-                <!--AFTER LIST IS DELETED, IT NEEDS TO ROUTE USER BACK TO THE PROFILE PAGE-->
-            </div>
+			<div>
+				<!--NEEDS THE .JS AND CONNECTION TO THE DATABASE TO REMOVE ENTIRE LIST-->
+				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="delete">
+					Delete Entire List
+				</a>
+				<!--AFTER LIST IS DELETED, IT NEEDS TO ROUTE USER BACK TO THE PROFILE PAGE-->
+			</div>

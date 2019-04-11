@@ -1,45 +1,37 @@
 ﻿
 @{
-    ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    this.ViewBag.css = new System.String[] { "w3" };
+	this.Layout = "~/Views/Shared/_Layout.cshtml";
+	this.ViewBag.Title = "Register";
+	this.ViewBag.css = new System.String[] { "w3" };
 	this.ViewBag.js = new System.String[] { "ajax", "event", "Register" };
-}
-
-<!--<h2>@ViewBag.Title.</h2>-->
-
-    
-    <h2>Create a new account</h2>
-    <hr />
-    
-    <div class="form-group">
-        <label>Email</label>
-        <div class="col-md-10">
-            <input type="text" name="email" class="form-control" id="email" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Display Name</label>
-        <div class="col-md-10">
-            <input type="text" name="displayname" class="form-control" id="displayname" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <div class="col-md-10">
-            <input type="text" name="password" class="form-control" id="password"/>
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Confirm Password</label>
-        <div class="col-md-10">
-            <input type="text" name="confirmpassword" class="form-control" id="confirmpassword"/>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="register" value="Register" />
-        </div>
-    </div>
-
-
+}			<h2>Create a new account</h2>
+			<hr />
+			<div class="form-group">
+				<label>Email</label>
+				<div class="col-md-10">
+					<input type="text" name="email" class="form-control" id="email" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Display Name</label>
+				<div class="col-md-10">
+					<input type="text" name="displayname" class="form-control" id="displayname" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Password</label>
+				<div class="col-md-10">
+					<input type="text" name="password" class="form-control" id="password"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Confirm Password</label>
+				<div class="col-md-10">
+					<input type="text" name="confirmpassword" class="form-control" id="confirmpassword"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="register" value="Register" />
+				</div>
+			</div>
