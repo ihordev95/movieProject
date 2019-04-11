@@ -40,6 +40,11 @@
 					</td>
 				</tr>
 			</table>
+			<hr />
+			<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="/ViewList/ViewList/@ViewBag.list.identifier">
+				View List Page
+			</a>
+			<hr />
 			<table>
 				<tr>
 					<th>
@@ -49,6 +54,11 @@
 @foreach (Team3_Project.Databases.memdixyp_film.view_list view_list in this.ViewBag.view_list) {
 				<tr>
 					<td>
+						<span>
+							<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="/Movie/MoviePage/@view_list.tconst" class="elements">
+								View Movie
+							</a>
+						</span>
 						<label>
 							<input id="@view_list.tconst" type="checkbox" value="@view_list.tconst" />
 							@view_list.primaryTitle (@view_list.startYear)
