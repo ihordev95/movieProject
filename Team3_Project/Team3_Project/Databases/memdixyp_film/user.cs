@@ -46,5 +46,18 @@
 			};
 			individual(insert , new System.Object[] { user });
 		}
+		public static System.String get_password_by_email(System.String email) {
+			System.String[] columns = new System.String[] {
+				nameof(email)
+			};
+			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
+			StringBuilder.Append(self.COLUMN(columns));
+			StringBuilder.Append(unicode.EQUALS_SIGN);
+			StringBuilder.Append(self.STRING_LITERAL(email.ToString()));
+			System.String where = StringBuilder.ToString();
+			System.String query = self.SELECT(where , null);
+			user user = individual(select , new System.Object[] { query });
+			return user.password.ToString();
+		}
 	}
 }

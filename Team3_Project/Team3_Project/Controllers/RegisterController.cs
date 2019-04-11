@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace Team3_Project.Controllers
-{
-    public class RegisterController : Controller
-    {
-        // GET: Register
-        public ActionResult Register()
-        {
-            return View();
-        }
-    }
+﻿namespace Team3_Project.Controllers {
+	public class RegisterController : System.Web.Mvc.Controller {
+		// GET: Register
+		public System.Web.Mvc.ActionResult Register() {
+			return this.View();
+		}
+	}
 }

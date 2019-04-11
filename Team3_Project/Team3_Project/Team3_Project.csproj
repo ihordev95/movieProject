@@ -272,6 +272,7 @@
     <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Scripts\ManageLists.js" />
+    <Content Include="Scripts\Login.js" />
     <Content Include="Scripts\ProfilePage.js" />
     <Content Include="Scripts\MoviePage.js" />
     <Content Include="Scripts\ajax.js" />
