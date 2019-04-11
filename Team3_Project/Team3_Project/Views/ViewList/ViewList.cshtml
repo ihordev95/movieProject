@@ -3,20 +3,22 @@
 	this.ViewBag.Title = "ViewList";
 	this.ViewBag.css = new System.String[] { "w3" };
 }			<h2>
-				ViewList
-			</h2>
+                @ViewBag.list.name
+            </h2>
 			<table>
+                <!--
 				<tr>
 					<td>
-						Identifier
+						List Name: 
 					</td>
 					<td>
 						@ViewBag.list.identifier
 					</td>
 				</tr>
+                    -->
 				<tr>
 					<td>
-						User
+						List Owner:
 					</td>
 					<td>
 						@ViewBag.list.user
@@ -24,28 +26,24 @@
 				</tr>
 				<tr>
 					<td>
-						Name
-					</td>
-					<td>
-						@ViewBag.list.name
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Hidden
+						Private:
 					</td>
 					<td>
 						@ViewBag.list.hidden
 					</td>
 				</tr>
 			</table>
-			<table>
-@foreach (Team3_Project.Databases.memdixyp_film.view_list view_list in this.ViewBag.view_list) {
-				<tr>
-					<td>
-						<a href="/Movie/MoviePage/@view_list.tconst" class="elements">
-							<img alt="@view_list.primaryTitle (@view_list.startYear)" src="@view_list.poster" title="@view_list.primaryTitle (@view_list.startYear)" />
-						</a>
-					</td>
-				</tr>
-}			</table>
+            <div class="CurratedListsTable1">
+                <table class="resultTable2 w3-col l12">
+                    <tr class="listMovies1">
+                        <td>
+                            @foreach (Team3_Project.Databases.memdixyp_film.view_list view_list in this.ViewBag.view_list)
+                            {
+                                <a href="/Movie/MoviePage/@view_list.tconst" class="elements">
+                                    <img alt="@view_list.primaryTitle (@view_list.startYear)" class="movieposter2 w3-third" src="@view_list.poster" title="@view_list.primaryTitle (@view_list.startYear)" />
+                                </a>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </div>
