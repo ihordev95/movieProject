@@ -46,7 +46,7 @@
 			};
 			individual(insert , new System.Object[] { user });
 		}
-		public static System.String get_password_by_email(System.String email) {
+		public static user get_user_by_email(System.String email) {
 			System.String[] columns = new System.String[] {
 				nameof(email)
 			};
@@ -57,7 +57,7 @@
 			System.String where = StringBuilder.ToString();
 			System.String query = self.SELECT(where , null);
 			user user = individual(select , new System.Object[] { query });
-			return user.password.ToString();
+			return user;
 		}
 	}
 }
