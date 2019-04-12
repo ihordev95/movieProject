@@ -11,7 +11,19 @@
 			password.form(this.Request.QueryString , "password");
 			System.String hash = new DatabaseAccess().getHash(password.value).ToString();
 			System.String value = Databases.memdixyp_film.user.get_password_by_email(email.value);
-			return hash == value ? "Y" : "N";
-		}
+            if (hash == value)
+            {
+                Session["UserID"] = 1;
+
+            }
+            else
+            {
+                ViewBag.error = "Error password was incorrect or account does not exist! Please check your information and try again.";
+                ViewBag.user = email.value;
+            }
+
+            //return View("Login");
+            return hash == value ? "Y" : "N";
+        }
 	}
 }

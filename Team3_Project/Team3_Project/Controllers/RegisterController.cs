@@ -14,9 +14,10 @@
 			password.form(this.Request.QueryString , "password");
 			confirmpassword.form(this.Request.QueryString , "confirmpassword");
 			System.String result = "N";
-			if (password.value == confirmpassword.value) {
+			if (password.value == confirmpassword.value && displayname.ToString() != System.String.Empty && email.value != System.String.Empty) {
 				Databases.memdixyp_film.user.insert_individual(displayname.value , new DatabaseAccess().getHash(password.value).ToString() , email.value);
 				result = "Y";
+                ViewBag.registered = true;
 			}
 			return result;
 		}
