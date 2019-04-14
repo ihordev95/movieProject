@@ -20,7 +20,7 @@ function ajax_succeed(data) {
     "use strict";
     if (data === "Y") {
         alert("You are being signed in...");
-        window.location = "/Landing/Index";
+        window.location = "/Profile/Profile";
     } else {
         alert("Login Failure!");
     }

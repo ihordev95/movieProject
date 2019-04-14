@@ -1,42 +1,52 @@
-﻿
-@{
-    ViewBag.Title = "Profile";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    this.ViewBag.css = new System.String[] { "w3" };
-    this.ViewBag.js = new System.String[] { "ajax", "event", "ProfilePage" };
-}
-
-<h2>Profile</h2>
-<p>@Session["UserId"]</p>
-<div>
-    <div class="test1">
-        <div>
-            <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="test1_create">
-                Create New List
-            </a>
-        </div>
-    </div>
-    <div>
-        <p>Delete List</p>
-    </div>
-    <div>
-        <p>Watch List</p>
-    </div>
-</div>
-
-<div id="light" class="white_content">
-    Please enter the name of the new list:
-
-    <!--NEED TO ADD SOME LOGIC FOR DATABASE TO CREATE A NEW LIST!!!!!!!!!!!!!!!!-->
-        <input type="text" name="newlistname" id="newlistname" />
-
-    <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="saveNewList">
-        Save New List
-    </a>
-    <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="cancel">
-        Cancel
-    </a>
-</div>
-
-<div id="fade" class="black_overlay">
-</div>
+﻿@{
+	this.Layout = "~/Views/Shared/_Layout.cshtml";
+	this.ViewBag.Title = "Profile";
+	this.ViewBag.css = new System.String[] { "w3" };
+	this.ViewBag.js = new System.String[] { "ajax", "event", "ProfilePage" };
+}			<h2>
+				Profile
+			</h2>
+			<p>
+				@Session["UserId"]
+			</p>
+			<div>
+				<div class="test1">
+					<div>
+						<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="test1_create">
+							Create New List
+						</a>
+					</div>
+				</div>
+				<div>
+@foreach (Team3_Project.Databases.memdixyp_film.list list in this.ViewBag.list) {
+					<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="/ViewList/ViewList/@list.identifier">
+						@list.name
+					</a>
+					<br />
+}					<p>
+						Delete List
+					</p>
+				</div>
+				<div>
+					<p>
+						Watch List
+					</p>
+				</div>
+			</div>
+			<div id="light" class="white_content">
+				Please enter the name of the new list:
+				<input type="hidden" name="user" id="user" value="@Session["UserId"]" />
+				<input type="text" name="name" id="name" />
+				<label>
+					<input id="hidden" type="checkbox" value="0" />
+					Is hidden?
+				</label>
+				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="save_new_list">
+					Save New List
+				</a>
+				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="cancel">
+					Cancel
+				</a>
+			</div>
+			<div id="fade" class="black_overlay">
+			</div>

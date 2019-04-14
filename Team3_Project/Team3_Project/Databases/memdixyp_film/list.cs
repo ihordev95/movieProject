@@ -71,5 +71,12 @@
 			System.String query = self.SELECT(where , 5);
 			return collection(select , new System.Object[] { query });
 		}
+		public static void insert_individual(System.Collections.Specialized.NameValueCollection NameValueCollection) {
+			list list = new list();
+			list.user.form(NameValueCollection , nameof(list.user));
+			list.name.form(NameValueCollection , nameof(list.name));
+			list.hidden.form(NameValueCollection , nameof(list.hidden));
+			individual(insert , new System.Object[] { list });
+		}
 	}
 }
