@@ -1,9 +1,15 @@
 ﻿namespace Team3_Project.Controllers {
 	public class BrowseController : System.Web.Mvc.Controller {
 		public System.Web.Mvc.ActionResult BrowseMovies() {
-			this.ViewBag.action = Databases.memdixyp_film.newest_movies_by_genre.Action(5);
-			this.ViewBag.drama = Databases.memdixyp_film.newest_movies_by_genre.Drama(5);
-			this.ViewBag.list = Databases.memdixyp_film.list.random_lists();
+			Databases.memdixyp_film.list[] list = Databases.memdixyp_film.list.random_lists();
+			System.Int32 index = list.Length;
+			Databases.memdixyp_film.view_list[][] view_list = new Databases.memdixyp_film.view_list[index][];
+			while (index > 0) {
+				index -= 1;
+				view_list[index] = Databases.memdixyp_film.view_list.show_movie_list(list[index].identifier);
+			}
+			this.ViewBag.list = list;
+			this.ViewBag.view_list = view_list;
 			return this.View();
 		}
 		public System.Web.Mvc.ActionResult SearchMovies(System.String Title) {

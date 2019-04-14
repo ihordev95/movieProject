@@ -6,8 +6,7 @@
 			System.String response = api.GetAPIinfo("i=" + ID);
 			Helpers.Watchable watchable = Newtonsoft.Json.JsonConvert.DeserializeObject<Helpers.Watchable>(response);
 			this.ViewBag.json = watchable;
-			System.Int32 user = 1; // PLACEHOLDER
-			this.ViewBag.list = Databases.memdixyp_film.list.list_by_user(user);
+			this.ViewBag.list = Databases.memdixyp_film.list.list_by_user(System.Convert.ToInt32(this.Session["UserId"]));
 			return this.View();
 		}
 	}
