@@ -3,7 +3,6 @@
 		public System.Web.Mvc.ActionResult Index() {
 			return this.View();
 		}
-
 		public System.Web.Mvc.ActionResult About() {
 			DatabaseAccess db = new DatabaseAccess();
 			this.ViewBag.Message = "Your application description page." + db.getHash("TestHash2").ToString();
