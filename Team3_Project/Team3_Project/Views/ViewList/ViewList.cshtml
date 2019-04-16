@@ -24,10 +24,12 @@
 				</tr>
 			</table>
 			<hr />
-			<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="/ManageList/ManageLists/@ViewBag.list.identifier">
+@if (this.ViewBag.can_manage) {
+			<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="/ManageList/ManageLists/@this.ViewBag.list.identifier">
 				Manage List
 			</a>
-			<div class="CurratedListsTable1">
+			<hr />
+}			<div class="CurratedListsTable1">
 				<table class="resultTable2 w3-col l12">
 					<tr class="listMovies1">
 						<td>

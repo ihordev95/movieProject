@@ -207,7 +207,6 @@
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
-    <Compile Include="Controllers\UserHomePageController.cs" />
     <Compile Include="Controllers\ViewListController.cs" />
     <Compile Include="Databases\database.cs" />
     <Compile Include="Databases\keyword.cs" />
