@@ -19,11 +19,6 @@
 						<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="test1_save">
 							Save
 						</a>
-<!--
-						<button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit" id="Rate">
-							Rate
-						</button>
--->
 					</div>
 				</div>
 				<div class="moviedetails w3-col l9">
@@ -36,11 +31,8 @@
 			<div id="light" class="white_content">
 				Please select a list from the drop down:
 				<select id="list">
-@{
-	foreach (Team3_Project.Databases.memdixyp_film.list list in this.ViewBag.list)
-	{
+@foreach (Team3_Project.Databases.memdixyp_film.list list in this.ViewBag.list) {
 					<option value="@list.identifier">@list.name</option>
-	}
 }				</select>
 				<input id="movie" type="hidden" value="@ViewBag.json.imdbID" />
 				<input id="poster" type="hidden" value="@ViewBag.json.poster" />

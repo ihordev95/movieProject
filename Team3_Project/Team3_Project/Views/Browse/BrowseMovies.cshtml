@@ -1,5 +1,5 @@
 ﻿@{
-	this.Layout = "~/Views/Shared/_Layout.cshtml";
+	this.Layout = "/Views/Shared/_Layout.cshtml";
 	this.ViewBag.Title = "BrowseMovies";
 	this.ViewBag.css = new System.String[] { "w3" };
 }			<div class="PageHeader">
@@ -18,14 +18,10 @@
 			</div>
 			<div class="textSearch">
 				<p>Please enter the start of the movie name or the entire movie name and click search</p>
-
-				@using (Html.BeginForm("SearchMovies", "Browse", FormMethod.Get))
-				{
+@using (Html.BeginForm("SearchMovies", "Browse", FormMethod.Get)) {
 					<input type="text" name="title" id="title" />
 					<button class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" type="submit">Search</button>
-
-				}
-			</div>
+}			</div>
 			<div class="CurratedListsTable">
 				<table class="resultTable1 w3-col l12">
 @for (System.Int32 index_a = 0; index_a < this.ViewBag.list.Length; index_a += 1) {

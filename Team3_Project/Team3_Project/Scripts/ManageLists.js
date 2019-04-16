@@ -1,12 +1,14 @@
 /* JSLint edition 2019-01-31 */
 /*jslint
-    browser:true, devel:true, long:true
+    browser:true
 */
 /*global
-    ajax_failure, ajax_get, ajax_join, ajax_prepare, ajax_succeed, alert, document, event_click_one_run, prepare_list
+    ajax_failure, ajax_get, ajax_join, ajax_prepare, ajax_succeed, alert,
+    document, event_click_one_run, prepare_list
 */
 /*property
-    join, length, push, querySelectorAll, value
+    getElementById, join, length, parentElement, push, querySelectorAll, remove,
+    split, value
 */
 function prepare_list() {
     "use strict";

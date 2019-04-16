@@ -6,16 +6,6 @@
 				@ViewBag.list.name
 			</h2>
 			<table>
-				<!--
-				<tr>
-					<td>
-						List Name:
-					</td>
-					<td>
-						@ViewBag.list.identifier
-					</td>
-				</tr>
-				-->
 				<tr>
 					<td>
 						List Owner:
@@ -41,13 +31,11 @@
 				<table class="resultTable2 w3-col l12">
 					<tr class="listMovies1">
 						<td>
-							@foreach (Team3_Project.Databases.memdixyp_film.view_list view_list in this.ViewBag.view_list)
-							{
+@foreach (Team3_Project.Databases.memdixyp_film.view_list view_list in this.ViewBag.view_list) {
 								<a href="/Movie/MoviePage/@view_list.tconst" class="elements">
 									<img alt="@view_list.primaryTitle (@view_list.startYear)" class="movieposter2 w3-third" src="@view_list.poster" title="@view_list.primaryTitle (@view_list.startYear)" />
 								</a>
-							}
-						</td>
+}						</td>
 					</tr>
 				</table>
 			</div>

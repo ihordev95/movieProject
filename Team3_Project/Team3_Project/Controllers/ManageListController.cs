@@ -11,7 +11,7 @@
 		}
 		public System.String RemoveMovie() {
 			System.Collections.Specialized.NameValueCollection NameValueCollection = this.Request.QueryString;
-			Databases.type.Int32  list = Databases.type.Int32.individual(Databases.type.abstraction.form , new System.Object[] { NameValueCollection , "list" });
+			Databases.type.Int32 list = Databases.type.Int32.individual(Databases.type.abstraction.form , new System.Object[] { NameValueCollection , "list" });
 			Databases.type.String[] movie = Databases.type.String.collection(Databases.type.abstraction.form , new System.Object[] { NameValueCollection , "movie" });
 			Databases.memdixyp_film.list_movie.delete_collection(list , movie);
 			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();

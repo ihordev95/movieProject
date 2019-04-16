@@ -1,35 +1,19 @@
-﻿
-@{
-    ViewBag.Title = "SearchMovies";
-    this.ViewBag.css = new System.String[] { "w3" };
-}
-
-
-
-<div class="PageHeader">
-    <p>Search Results</p>
-</div>
-
-<div class="SearchResults w3-col l12">
-    <table class="resultTable w3-col l12">
-        @*<tr class="tableHeader">
-            <td>Title:</td>
-        </tr>*@
-        <tr>
-            @foreach (var movie in ViewBag.searchResults)
-            {
-                if (movie.poster == "N/A")
-                {
-                    movie.poster = "../Images/noimageavailable.png";
-                }
-                    
-
-                <td>
-                    <a href="@Url.Action( "MoviePage", "Movie", new { ID = movie.imdbID.Trim() })" class="elements"><img src=@movie.poster alt=@movie.title class="movieposter w3-third" /></a>                                  
-                </td>
-
-
-            }
-        </tr>
-    </table>
-</div>
+﻿@{
+	this.Layout = "/Views/Shared/_Layout.cshtml";
+	this.ViewBag.Title = "SearchMovies";
+	this.ViewBag.css = new System.String[] { "w3" };
+}			<div class="PageHeader">
+				<p>Search Results</p>
+			</div>
+			<div class="SearchResults w3-col l12">
+				<table class="resultTable w3-col l12">
+					<tr>
+@foreach (var movie in ViewBag.searchResults) {
+	if (movie.poster == "N/A") {
+							movie.poster = "../Images/noimageavailable.png";
+}						<td>
+							<a href="@Url.Action( "MoviePage", "Movie", new { ID = movie.imdbID.Trim() })" class="elements"><img src=@movie.poster alt=@movie.title class="movieposter w3-third" /></a>								  
+						</td>
+}					</tr>
+				</table>
+			</div>

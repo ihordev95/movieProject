@@ -1,9 +1,10 @@
 /* JSLint edition 2019-01-31 */
 /*jslint
-    browser:true, devel:true, long:true
+    browser:true
 */
 /*global
-    ajax_failure, ajax_get, ajax_join, ajax_prepare, ajax_succeed, alert, document, event_click_one_run
+    ajax_failure, ajax_get, ajax_join, ajax_prepare, ajax_succeed, alert,
+    document, event_click_one_run
 */
 /*property
     display, getElementById, style

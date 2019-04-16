@@ -41,9 +41,9 @@
 			list_movie.added.form(NameValueCollection , nameof(list_movie.added));
 			individual(insert , new System.Object[] { list_movie });
 		}
-		public static void delete_collection(type.Int32 list, type.String[] movie) {
+		public static void delete_collection(type.Int32 list , type.String[] movie) {
 			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
-			StringBuilder.Append(self.COLUMN(new System.String[] {nameof(list)}));
+			StringBuilder.Append(self.COLUMN(new System.String[] { nameof(list) }));
 			StringBuilder.Append(unicode.EQUALS_SIGN);
 			StringBuilder.Append(self.STRING_LITERAL(list.ToString()));
 			StringBuilder.Append(unicode.SPACE);

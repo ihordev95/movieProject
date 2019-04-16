@@ -1,9 +1,10 @@
 /* JSLint edition 2019-01-31 */
 /*jslint
-    browser:true, devel:true, long:true
+    browser:true
 */
 /*global
-    ajax_failure, ajax_join, ajax_prepare, ajax_send, ajax_succeed, alert, document, event_click_one_run
+    ajax_failure, ajax_get, ajax_join, ajax_prepare, ajax_succeed, alert,
+    document, event_click_one_run
 */
 /*property
     getElementById
@@ -16,17 +17,9 @@ function ajax_prepare(ignore) {
     parameter = ajax_join(parameter, "added");
     return parameter;
 }
-function ajax_succeed(data) {
+function ajax_succeed(ignore) {
     "use strict";
-    alert(data);
-    /*
-    var form = document.getElementById(data[0]);
-    var list = form.elements;
-    list.is_active.value = data[1];
-    date_succeed(list.start_date, data[2]);
-    date_succeed(list.end_date, data[3]);
-    return form;
-    */
+    return null;
 }
 function ajax_failure(code, text) {
     "use strict";

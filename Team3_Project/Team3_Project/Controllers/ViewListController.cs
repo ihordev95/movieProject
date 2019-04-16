@@ -16,17 +16,6 @@
 		public System.String MakeList() {
 			System.Collections.Specialized.NameValueCollection NameValueCollection = this.Request.QueryString;
 			Databases.memdixyp_film.list.insert_individual(NameValueCollection);
-			/*
-			Databases.type.Int32 UserId = new Databases.type.Int32();
-			UserId.cast(this.Session["UserId"]);
-			Databases.memdixyp_film.list[] list = Databases.memdixyp_film.list.list_by_user(UserId.value);
-			System.Text.StringBuilder StringBuilder = new System.Text.StringBuilder();
-			foreach (Databases.type.String item in movie) {
-				StringBuilder.Append(item.value);
-				StringBuilder.Append(",");
-			}
-			return StringBuilder.ToString();
-			*/
 			return "Please reload the page.";
 		}
 	}

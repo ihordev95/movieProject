@@ -1,22 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Team3_Project.Helpers
-{
-    public class Watchable
-    {
-        public String imdbID;
-        public String title;
-        public String plot;
-        public String longDescription;
-        public String poster;
-        public String type;
-        public String year;
-        public String contentRating;
-        public String runtime;
-        public String genre;
-        public String websiteUrl;
-    }
+﻿namespace Team3_Project.Helpers {
+	public class Watchable {
+		public System.String imdbID;
+		public System.String title;
+		public System.String plot;
+		public System.String longDescription;
+		public System.String poster;
+		public System.String type;
+		public System.String year;
+		public System.String contentRating;
+		public System.String runtime;
+		public System.String genre;
+		public System.String websiteUrl;
+	}
 }

@@ -3,8 +3,8 @@
     browser:true
 */
 /*global
-    XMLHttpRequest, ajax_failure, ajax_join, ajax_prepare, ajax_send,
-    ajax_succeed
+    XMLHttpRequest, ajax_failure, ajax_get, ajax_join, ajax_post, ajax_prepare,
+    ajax_send, ajax_succeed, document
 */
 /*property
     DONE, getElementById, join, onreadystatechange, open, push, readyState,

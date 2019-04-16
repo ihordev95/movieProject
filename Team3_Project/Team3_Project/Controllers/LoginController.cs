@@ -19,7 +19,6 @@
 				this.ViewBag.user = email.value;
 			}
 			return hash == user.password.value ? "Y" : "N";
-			//return View("Login");
 		}
 	}
 }

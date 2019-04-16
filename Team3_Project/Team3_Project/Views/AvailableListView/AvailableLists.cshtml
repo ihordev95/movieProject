@@ -1,51 +1,41 @@
-﻿
-@{
-    ViewBag.Title = "AvailableLists";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-    this.ViewBag.css = new System.String[] { "w3" };
-}
-
-<h2>AvailableLists</h2>
-
-<div>
-    <p>There should be a table here showing a list of lists that are owned by the user</p>
-    <p>Logic here to check to see if the person on the page can manage a list, if so, then a button saying "Manage List" would be available.</p>
-
-    <!-- THIS TABLE IS WHERE THE LIST OF LISTS THAT ARE OWNED BY THE USER IS DISPLAYED -->
-    <table>
-        <tr>
-            <td>
-
-            </td>
-        </tr>
-    </table>
-
-    <!-- THIS NEEDS LOGIC TO BE HIDDEN IF THE USER IS NOT ABLE to MANAGE THE LIST -->
-    <form action="~/ManageList/ManageLists" method="get">
-        <div class="form-row">
-            <div>
-                <button id="Profile" type="submit" class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large">Manage List</button>
-            </div>
-        </div>
-    </form>
-</div>
-
-<div>
-    <p>There should be a table here showing a list of lists that the owner is following</p>
-    <p>There should be a way to unfollow one of these lists (i.e., a check box next to a list for removal and then a button that says "Unfollow List")</p>
-
-    <!-- THIS TABLE IS WHERE THE LIST OF LISTS THAT ARE BEING FOLLOED BY THE USER IS DISPLAYED -->
-    <table>
-        <tr>
-            <td></td>
-        </tr>
-    </table>
-
-
-    <div>
-        <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="javascript:void(0)" onclick="document.getElementById">
-            Unfollow List
-        </a>
-    </div>
-
-</div>
+﻿@{
+	this.Layout = "/Views/Shared/_Layout.cshtml";
+	this.ViewBag.Title = "AvailableLists";
+	this.ViewBag.css = new System.String[] { "w3" };
+}			<h2>
+				AvailableLists
+			</h2>
+			<div>
+				<p>There should be a table here showing a list of lists that are owned by the user</p>
+				<p>Logic here to check to see if the person on the page can manage a list, if so, then a button saying "Manage List" would be available.</p>
+				<!-- THIS TABLE IS WHERE THE LIST OF LISTS THAT ARE OWNED BY THE USER IS DISPLAYED -->
+				<table>
+					<tr>
+						<td>
+						</td>
+					</tr>
+				</table>
+				<!-- THIS NEEDS LOGIC TO BE HIDDEN IF THE USER IS NOT ABLE to MANAGE THE LIST -->
+				<form action="~/ManageList/ManageLists" method="get">
+					<div class="form-row">
+						<div>
+							<button id="Profile" type="submit" class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large">Manage List</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div>
+				<p>There should be a table here showing a list of lists that the owner is following</p>
+				<p>There should be a way to unfollow one of these lists (i.e., a check box next to a list for removal and then a button that says "Unfollow List")</p>
+				<!-- THIS TABLE IS WHERE THE LIST OF LISTS THAT ARE BEING FOLLOED BY THE USER IS DISPLAYED -->
+				<table>
+					<tr>
+						<td></td>
+					</tr>
+				</table>
+				<div>
+					<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="javascript:void(0)" onclick="document.getElementById">
+						Unfollow List
+					</a>
+				</div>
+			</div>

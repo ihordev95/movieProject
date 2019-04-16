@@ -1,6 +1,6 @@
 /* JSLint edition 2019-01-31 */
 /*jslint
-    browser:true, devel:true
+    browser:true
 */
 /*global
     ajax_failure, ajax_get, ajax_join, ajax_prepare, ajax_succeed, alert,
@@ -19,7 +19,7 @@ function ajax_prepare(ignore) {
 }
 function ajax_succeed(data) {
     "use strict";
-    alert(data);
+    return null;
 }
 function ajax_failure(code, text) {
     "use strict";
