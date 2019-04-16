@@ -3,10 +3,13 @@
 	this.ViewBag.Title = "ManageLists";
 	this.ViewBag.css = new System.String[] { "w3" };
 	this.ViewBag.js = new System.String[] { "ajax", "event", "ManageLists" };
-}			<h2>
-				ManageLists
-			</h2>
+}			
+
+            <h2>
+                 Manage @ViewBag.list.name
+            </h2>
 			<table>
+                <!--
 				<tr>
 					<td>
 						Identifier
@@ -15,6 +18,7 @@
 						@ViewBag.list.identifier
 					</td>
 				</tr>
+                    -->
 				<tr>
 					<td>
 						User
@@ -23,6 +27,7 @@
 						@ViewBag.list.user
 					</td>
 				</tr>
+                <!--
 				<tr>
 					<td>
 						Name
@@ -39,6 +44,7 @@
 						@ViewBag.list.hidden
 					</td>
 				</tr>
+                    -->
 			</table>
 			<hr />
 			<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="/ViewList/ViewList/@this.ViewBag.list.identifier">
@@ -73,10 +79,13 @@
 					Remove Movie From List
 				</a>
 			</div>
+
 			<div>
 				<!--NEEDS THE .JS AND CONNECTION TO THE DATABASE TO REMOVE ENTIRE LIST-->
+                <!--
 				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="delete">
 					Delete Entire List
 				</a>
+                    -->
 				<!--AFTER LIST IS DELETED, IT NEEDS TO ROUTE USER BACK TO THE PROFILE PAGE-->
 			</div>

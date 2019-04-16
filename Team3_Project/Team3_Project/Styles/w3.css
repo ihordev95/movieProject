@@ -495,7 +495,7 @@ td {
     vertical-align: top;
     //border: 1px solid red;
     padding: 2px;
-    height: auto;
+    height: 325px;
     width: 220px;
 }
 
@@ -568,6 +568,7 @@ td {
 
 .test1 {
     position: relative;
+    padding-top: 25px;
 }
 
 .test {
