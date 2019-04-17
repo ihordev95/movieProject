@@ -20,5 +20,11 @@
 			}
 			return hash == user.password.value ? "Y" : "N";
 		}
-	}
+
+        public System.Web.Mvc.ActionResult Logout()
+        {
+            this.Session["UserId"] = null;
+            return this.View();
+        }
+    }
 }

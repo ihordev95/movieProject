@@ -32,14 +32,23 @@
 						<a class="nav-link" href="/Profile/Profile">Profile</a>
 					</li>
 				</ul>
-				<ul class="form-inline mt-2 mt-md-0">
-					<li class="nav-item w3-btn w3-black w3-hover-green w3-round-xxlarge w3-small">
-						<a class="nav-link" href="/Register/Register">Register</a>
-					</li>
-					<li class="nav-item w3-btn w3-black w3-hover-green w3-round-xxlarge w3-small">
-						<a class="nav-link" href="/Login/Login">Log in</a>
-					</li>
-				</ul>
+                <ul class="form-inline mt-2 mt-md-0">
+                    <li class="nav-item w3-btn w3-black w3-hover-green w3-round-xxlarge w3-small">
+                        <a class="nav-link" href="/Register/Register">Register</a>
+                    </li>
+                    @if (Session["UserId"] == null)
+                    {
+                        <li class="nav-item w3-btn w3-black w3-hover-green w3-round-xxlarge w3-small">
+                            <a class="nav-link" href="/Login/Login">Log in</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item w3-btn w3-black w3-hover-green w3-round-xxlarge w3-small">
+                            <a class="nav-link" href="/Login/Logout">Log out</a>
+                        </li>
+                    }
+                </ul>
 			</div>
 		</nav>
 		<div class="container body-content">@RenderBody()
