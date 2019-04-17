@@ -1,9 +1,7 @@
-﻿using System.Web.Http;
-using System.Web.Routing;
-namespace Team3_Project {
+﻿namespace Team3_Project {
 	public class MvcApplication : System.Web.HttpApplication {
 		protected void Application_Start() {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+			System.Web.Http.GlobalConfiguration.Configure(WebApiConfig.Register);
 			System.Web.Mvc.AreaRegistration.RegisterAllAreas();
 			FilterConfig.RegisterGlobalFilters(System.Web.Mvc.GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(System.Web.Routing.RouteTable.Routes);
