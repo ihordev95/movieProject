@@ -7,8 +7,8 @@
 			identifier.parse(id);
 			UserId.cast(this.Session["UserId"]);
 			System.Int32 profile = identifier.value < 0 ? UserId.value : identifier.value;
-			System.Int32 user = UserId.value;
-			this.ViewBag.can_manage = profile == user && user != 0;
+			Databases.memdixyp_film.user user = Databases.memdixyp_film.user.get_user_by_id(profile);
+			this.ViewBag.can_manage = profile == UserId.value && UserId.value != 0;
 			this.ViewBag.profile = profile;
 			this.ViewBag.user = user;
 			this.ViewBag.list = Databases.memdixyp_film.list.list_by_user(profile);

@@ -6,18 +6,12 @@
 }
 @if (this.ViewBag.can_manage)
 {
-    <h2>Welcome to your profile page <!--Put username here--> !</h2>
+    <h2>Welcome to your profile page @this.ViewBag.user.name !</h2>
 }
 else
 {
-    <h2>You are viewing the profile of <!--Put username here--> </h2>
+    <h2>You are viewing the profile of @this.ViewBag.user.name </h2>
 }
-
-<p>
-    Profile: @this.ViewBag.profile
-    <br />
-    User: @this.ViewBag.user
-</p>
 <hr />
 <div>
     @foreach (Team3_Project.Databases.memdixyp_film.list list in this.ViewBag.list)
