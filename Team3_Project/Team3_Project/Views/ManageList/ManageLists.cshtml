@@ -1,60 +1,71 @@
 ﻿@{
-	this.Layout = "/Views/Shared/_Layout.cshtml";
-	this.ViewBag.Title = "ManageLists";
-	this.ViewBag.css = new System.String[] { "w3" };
-	this.ViewBag.js = new System.String[] { "ajax", "event", "ManageLists" };
-}			<h2>
-				Manage @ViewBag.list.name
-			</h2>
-			<table>
-				<tr>
-					<td>
-						User
-					</td>
-					<td>
-						@ViewBag.list.user
-					</td>
-				</tr>
-			</table>
-			<hr />
-			<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="/ViewList/ViewList/@this.ViewBag.list.identifier">
-				View List Page
-			</a>
-			<hr />
-			<table>
-				<tr>
-					<th>
-						Remove Movie From List
-					</th>
-				</tr>
-@foreach (Team3_Project.Databases.memdixyp_film.view_list view_list in this.ViewBag.view_list) {
-				<tr>
-					<td>
-						<span>
-							<a class="elements w3-btn w3-black w3-hover-blue w3-round-xxlarge w3-tiny" href="/Movie/MoviePage/@view_list.tconst">
-								View Movie
-							</a>
-						</span>
-						<label>
-							<input id="@view_list.tconst" type="checkbox" value="@view_list.tconst" />
-							@view_list.primaryTitle (@view_list.startYear)
-						</label>
-					</td>
-				</tr>
-}			</table>
-			<hr />
-			<div>
-				<input id="list" type="hidden" value="@this.ViewBag.identifier" />
-				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="remove">
-					Remove Movie From List
-				</a>
-			</div>
-			<div>
-				<!--NEEDS THE .JS AND CONNECTION TO THE DATABASE TO REMOVE ENTIRE LIST-->
-<!--
-				<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="delete">
-					Delete Entire List
-				</a>
--->
-				<!--AFTER LIST IS DELETED, IT NEEDS TO ROUTE USER BACK TO THE PROFILE PAGE-->
-			</div>
+    this.Layout = "/Views/Shared/_Layout.cshtml";
+    this.ViewBag.Title = "ManageLists";
+    this.ViewBag.css = new System.String[] { "w3" };
+    this.ViewBag.js = new System.String[] { "ajax", "event", "ManageLists" };
+}
+@if (@Session["UserId"] != null && ViewBag.can_manage)
+{
+    <h2>
+        Managing: @ViewBag.list.name
+    </h2>
+    <table>
+        <tr>
+            <td>
+                List by: 
+            </td>
+            <td>
+                <!--Put username here that when clicked goes to the profile page of this user-->
+          
+            </td>
+        </tr>
+    </table>
+    <hr />
+    <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="/ViewList/ViewList/@this.ViewBag.list.identifier">
+        View List Page
+    </a>
+    <hr />
+    <table>
+        <tr>
+            <th>
+                Remove Movie From List
+            </th>
+        </tr>
+        @foreach (Team3_Project.Databases.memdixyp_film.view_list view_list in this.ViewBag.view_list)
+        {
+            <tr>
+                <td>
+                    <span>
+                        <a class="elements w3-btn w3-black w3-hover-blue w3-round-xxlarge w3-tiny" href="/Movie/MoviePage/@view_list.tconst">
+                            View Movie
+                        </a>
+                    </span>
+                    <label>
+                        <input id="@view_list.tconst" type="checkbox" value="@view_list.tconst" />
+                        @view_list.primaryTitle (@view_list.startYear)
+                    </label>
+                </td>
+            </tr>
+        }
+    </table>
+    <hr />
+    <div>
+        <input id="list" type="hidden" value="@this.ViewBag.identifier" />
+        <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="remove">
+            Remove Movie From List
+        </a>
+    </div>
+    <div>
+        <!--NEEDS THE .JS AND CONNECTION TO THE DATABASE TO REMOVE ENTIRE LIST-->
+        <!--
+                        <a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" id="delete">
+                            Delete Entire List
+                        </a>
+        -->
+        <!--AFTER LIST IS DELETED, IT NEEDS TO ROUTE USER BACK TO THE PROFILE PAGE-->
+    </div>
+}
+else
+{
+    <h>You must be logged in and the owner of a list to manage it.</h>
+}

@@ -3,10 +3,16 @@
 		// GET: ManageList
 		public System.Web.Mvc.ActionResult ManageLists(System.String id = "1") {
 			Databases.type.Int32 identifier = new Databases.type.Int32(1);
-			identifier.parse(id);
-			this.ViewBag.identifier = identifier.value;
+            Databases.type.Int32 user_ident = new Databases.type.Int32(1);
+            Databases.type.Int32 UserId = new Databases.type.Int32(0);
+            identifier.parse(id);
+            UserId.cast(this.Session["UserId"]);
+            System.Int32 user = UserId.value;
+            this.ViewBag.identifier = identifier.value;
 			this.ViewBag.list = Databases.memdixyp_film.list.get_list_by_id(identifier.value);
-			this.ViewBag.view_list = Databases.memdixyp_film.view_list.show_movie_list(identifier);
+            user_ident.parse(this.ViewBag.list.user.ToString());
+            this.ViewBag.can_manage = (user_ident.value == user && user != 0);
+            this.ViewBag.view_list = Databases.memdixyp_film.view_list.show_movie_list(identifier);
 			return this.View();
 		}
 		public System.String RemoveMovie() {
