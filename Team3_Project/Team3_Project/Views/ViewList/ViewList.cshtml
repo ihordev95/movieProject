@@ -10,10 +10,11 @@
 					<td>
 						List By:
 					</td>
-                    <td>
-                        <!--Put username here that when clicked goes to the profile page of this user-->
-                        @ViewBag.list.user
-                    </td>
+					<td>
+						<a class="w3-btn w3-black w3-hover-green w3-round-xxlarge w3-large" href="/Profile/Profile/@this.ViewBag.list.user">
+							@this.ViewBag.user.name
+						</a>
+					</td>
 				</tr>
 			</table>
 			<hr />
