@@ -1,18 +1,18 @@
 ﻿namespace Team3_Project.Controllers {
 	public class ManageListController : System.Web.Mvc.Controller {
 		// GET: ManageList
-		public System.Web.Mvc.ActionResult ManageLists(System.String id = "1") {
-			Databases.type.Int32 identifier = new Databases.type.Int32(1);
-            Databases.type.Int32 user_ident = new Databases.type.Int32(1);
-            Databases.type.Int32 UserId = new Databases.type.Int32(0);
-            identifier.parse(id);
-            UserId.cast(this.Session["UserId"]);
-            System.Int32 user = UserId.value;
-            this.ViewBag.identifier = identifier.value;
-			this.ViewBag.list = Databases.memdixyp_film.list.get_list_by_id(identifier.value);
-            user_ident.parse(this.ViewBag.list.user.ToString());
-            this.ViewBag.can_manage = (user_ident.value == user && user != 0);
-            this.ViewBag.view_list = Databases.memdixyp_film.view_list.show_movie_list(identifier);
+		public System.Web.Mvc.ActionResult ManageLists(System.String id = "0") {
+			Databases.type.Int32 list_identifier = new Databases.type.Int32(0);
+			Databases.type.Int32 UserId = new Databases.type.Int32(0);
+			list_identifier.parse(id);
+			UserId.cast(this.Session["UserId"]);
+			Databases.memdixyp_film.list list = Databases.memdixyp_film.list.get_list_by_id(list_identifier.value);
+			Databases.memdixyp_film.view_list[] view_list = Databases.memdixyp_film.view_list.show_movie_list(list_identifier);
+			Databases.memdixyp_film.user user = Databases.memdixyp_film.user.get_user_by_id(list.user.value);
+			this.ViewBag.user = user;
+			this.ViewBag.list = list;
+			this.ViewBag.view_list = view_list;
+			this.ViewBag.can_manage = list.user.value == UserId.value && UserId.value != 0;
 			return this.View();
 		}
 		public System.String RemoveMovie() {

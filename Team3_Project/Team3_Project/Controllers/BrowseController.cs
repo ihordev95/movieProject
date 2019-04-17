@@ -15,7 +15,7 @@
 		public System.Web.Mvc.ActionResult SearchMovies(System.String Title) {
 			System.Collections.Generic.List<Helpers.Watchable> resultList = new System.Collections.Generic.List<Helpers.Watchable>();
 			Helpers.ODBAPI api = new Helpers.ODBAPI();
-            for(int i = 1; i<5; i++)
+            for(System.Int32 i = 1; i<5; i++)
             {
                 System.String response = api.GetAPIinfo("s=" + Title + "&page=" + i);
                 api.ParseSearch(resultList, response);
